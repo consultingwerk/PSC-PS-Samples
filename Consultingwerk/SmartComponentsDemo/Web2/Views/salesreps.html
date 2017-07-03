@@ -1,0 +1,98 @@
+
+<div ng-controller="simpleCtrl" style="background-color: white;">
+    <h1>Salesrep Overview</h1>
+
+    <div class="row">
+        <div class="col-md-28">
+
+		    <smart-data-source 
+		        smart-object-name='salesrepDataSource' 
+		        smart-business-entity-name="Consultingwerk.SmartComponentsDemo.OERA.Sports2000.SalesRepBusinessEntity"
+		        smart-entity-table="eSalesrep"></smart-data-source>
+		    <smart-grid 
+		        smart-object-name='salesrepGrid' 
+		        smart-data-source='salesrepDataSource' 
+		        smart-grid-layout='Consultingwerk.SmartComponentsDemo.OERA.Sports2000.SalesRepBusinessEntity/salesrep'></smart-grid>
+
+        </div>
+
+        <div class="col-md-20">
+
+	        <smart-toolbar
+	                smart-object-name='salesrepToolbar'></smart-toolbar>
+	
+	        <smart-viewer 
+	                smart-object-name='salesrepViewer' 
+	                smart-data-source='salesrepDataSource'
+	                smart-tableio-source='salesrepToolbar'
+	                smart-viewer-layout='Consultingwerk.SmartComponentsDemo.OERA.Sports2000.SalesRepBusinessEntity/salesrep'></smart-viewer> 
+
+        </div>
+    </div>
+
+	<div ng-controller="SalesRepChartController">
+	
+	    <div class="row">
+	        <div class="col-md-48">
+<!--WSS IF get-field ("bindings") = "Angular2" THEN -->
+    <h1 *ngIf="salesrepDataSource && salesrepDataSource.selected">Month Quota for {{ salesrepDataSource.selected.RepName }}</h1>
+<!--WSS ELSE -->
+    <h1><!--WSE get-field ("Title") --></h1>	        
+	            <h1>Month Quota for {{ salesrepDataSource.selected.RepName }}</h1>
+	            
+	            <div id="chart"></div>
+	    </div>
+	</div>    
+</div>	    
+	    
+            
+    <script>
+        
+        function createChart() {
+            var quota = [0, 0, 0, 0, 0, 0, 
+                         0, 0, 0, 0, 0, 0]; 
+        
+            $("#chart").kendoChart({
+                dataSource: { 
+                    data: quota 
+                },
+                legend: {
+                    visible: false
+                },
+                seriesDefaults: {
+                    type: "column"
+                },
+                series: [{
+                    name: "Month Quota",
+                    field: "value"                    
+                }],
+                valueAxis: {
+                    max: 8000,
+                    line: {
+                        visible: false
+                    },
+                    minorGridLines: {
+                        visible: true
+                    },
+                    labels: {
+                        rotation: "auto"
+                    }
+                },
+                categoryAxis: {
+                    categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    majorGridLines: {
+                        visible: true
+                    }
+                },
+                tooltip: {
+                    visible: true,
+                    template: "#= series.name #: #= value #"
+                }
+            });
+        }
+
+        $(document).ready(createChart);
+        $(document).bind("kendo:skinChange", createChart);
+    </script>
+            
+

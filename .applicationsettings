@@ -1,0 +1,21 @@
+{
+    "appServerKeepAlivePeriod":"120",
+    "authenticationDb":"sports2000",
+    "authenticateWithDomainName": "false",
+    "DontFetchTranslationsWhenAllTranslationsCached": "true",
+    "homePageUrl":"http://www.consultingwerk.de",
+    "_frameworkLoader":"Consultingwerk.SmartComponentsDemo.CustomerExplorer.FrameworkLoader",
+    "defaultPartition":"Default",
+    "maintainPasswordInSmartUser":"false",
+    "systemDescription":"Development",
+    "rollbaseRestApiUrl":"https://www.rollbase.com/rest/api/",
+    "SmtpHostName":"mail.consultingwerk.de",
+    "SmtpSenderName":"no-reply@consultingwerk.de",
+    
+    "StudioServicesFile":"Consultingwerk/Studio/services_studio.xml",
+    
+    "AnnotationCacheMaxAge": "60",
+    "BusinessEntityDescriptorCacheMaxAge": "60",
+    
+    "RepositoryFieldTypes": "SmartLookup,MetaLookup,MetaEditor"
+}

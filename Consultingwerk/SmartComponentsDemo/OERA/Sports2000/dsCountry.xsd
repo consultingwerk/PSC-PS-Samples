@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="" xmlns:prodata="urn:schemas-progress-com:xml-prodata:0001">
+  <xsd:element name="dsCountry" prodata:proDataSet="true">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="eCountry" minOccurs="0" maxOccurs="unbounded" prodata:beforeTable="eCountryBefore">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Country" type="xsd:string" nillable="true" default="USA" prodata:fieldName="Country" prodata:format="x(20)"/>
+              <xsd:element name="CountryName" type="xsd:string" nillable="true" prodata:fieldName="CountryName" prodata:format="x(80)" prodata:label="Name"/>
+              <xsd:element name="CountryFlag" type="xsd:base64Binary" nillable="true" prodata:dataType="prodata:blob" prodata:fieldName="CountryFlag"/>
+              <xsd:element name="NumberOfCustomers" type="xsd:long" nillable="true" prodata:format=">>>,>>>,>>9" prodata:label="Number of Customers"/>
+              <xsd:element name="CountryEuropeanUnion" type="xsd:boolean" nillable="true" prodata:fieldName="CountryEuropeanUnion" prodata:label="EU Member"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:unique name="Country" prodata:primaryIndex="true">
+      <xsd:selector xpath=".//eCountry"/>
+      <xsd:field xpath="Country"/>
+    </xsd:unique>
+  </xsd:element>
+</xsd:schema>

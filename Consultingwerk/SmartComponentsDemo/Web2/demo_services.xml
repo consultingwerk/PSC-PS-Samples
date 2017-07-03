@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<ttServiceLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <ttServiceLoaderRow>
+    <Order>0</Order>
+    <ServiceTypeName>Consultingwerk.SmartComponentsDemo.Web2.DemoGridCustomizationProvider</ServiceTypeName>
+    <ServiceClassName>Consultingwerk.SmartComponentsDemo.Web2.DemoGridCustomizationProvider</ServiceClassName>
+  </ttServiceLoaderRow>
+
+  <ttServiceLoaderRow>
+    <Order>1</Order>
+    <ServiceTypeName>Consultingwerk.SmartComponentsDemo.Web2.DemoGridCustomProvider</ServiceTypeName>
+    <ServiceClassName>Consultingwerk.SmartComponentsDemo.Web2.DemoGridCustomProvider</ServiceClassName>
+  </ttServiceLoaderRow>
+
+  <ttServiceLoaderRow>
+    <Order>2</Order>
+    <ServiceTypeName>Consultingwerk.SmartFramework.System.IDownloadAttachmentController</ServiceTypeName>
+    <ServiceClassName>Consultingwerk.SmartComponentsDemo.Web2.Attachments.DemoDownloadAttachmentController</ServiceClassName>
+  </ttServiceLoaderRow>
+
+  <ttServiceLoaderRow>
+    <Order>3</Order>
+    <ServiceTypeName>Consultingwerk.SmartComponentsDemo.Web2.Web2DemoRouteProvider</ServiceTypeName>
+    <ServiceClassName>Consultingwerk.SmartComponentsDemo.Web2.Web2DemoRouteProvider</ServiceClassName>
+  </ttServiceLoaderRow>
+
+  <ttServiceLoaderRow>
+    <Order>4</Order>
+    <ServiceTypeName>Consultingwerk.OERA.ICountResultsCache</ServiceTypeName>
+    <ServiceClassName>Consultingwerk.OERA.CountResultsCache</ServiceClassName>
+  </ttServiceLoaderRow>
+  
+</ttServiceLoader>

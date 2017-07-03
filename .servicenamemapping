@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ttServiceNameMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ttServiceNameMappingRow>
+    <SourceServiceName>CustomerBusinessEntity</SourceServiceName>
+    <MappedServiceName>Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity</MappedServiceName>
+</ttServiceNameMappingRow>
+<ttServiceNameMappingRow>
+    <SourceServiceName>Consultingwerk~SmartComponentsDemo~OERA~Sports2000~CustomerBusinessEntity</SourceServiceName>
+    <MappedServiceName>Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity</MappedServiceName>
+</ttServiceNameMappingRow>
+</ttServiceNameMapping>

@@ -1,0 +1,244 @@
+{
+  "SerializedType": "Consultingwerk.Framework.TypeDescriptor.ClassAnnotationContainer",
+  "ClassName": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity",
+  "TimeStamp": "2016-11-17T19:22:25.382+01:00",
+  "Annotations": [
+    {
+      "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableAnnotation",
+      "Name": "@BusinessEntityTable",
+      "Parameters": [
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "name",
+          "Value": "eCustomer"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "MandatoryColumns",
+          "Value": "Name,SalesRep"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "ReadOnlyColumns",
+          "Value": "CustNum"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "DefaultSort",
+          "Value": "BY eCustomer.Country BY eCustomer.Name"
+        }
+      ]
+    },
+    {
+      "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableAnnotation",
+      "Name": "@BusinessEntityView",
+      "Parameters": [
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "name",
+          "Value": "customer"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "isdefault",
+          "Value": "true"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "entitytable",
+          "Value": "eCustomer"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "entityview",
+          "Value": "eSalesrep"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "listcolumns",
+          "Value": "eCustomer.CustNum,eCustomer.Name,eCustomer.Country,eCustomer.City,eSalesrep.RepName"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "viewercolumns",
+          "Value": "eCustomer.CustNum,eCustomer.Name,eCustomer.Country,eCustomer.SalesRep,eSalesrep.RepName,Comments"
+        }
+      ]
+    },
+    {
+      "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableAnnotation",
+      "Name": "@BusinessEntityView",
+      "Parameters": [
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "name",
+          "Value": "customerDetails"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "entitytable",
+          "Value": "eCustomer"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "entityview",
+          "Value": "eSalesrep"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "listcolumns",
+          "Value": "eCustomer.CustNum,eCustomer.Name,eCustomer.Country,eCustomer.City"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "viewercolumns",
+          "Value": "eCustomer.CustNum,eCustomer.Name,Country,eCustomer.SalesRep,eSalesrep.RepName,Comments,Balance,CreditLimit"
+        }
+      ]
+    }
+  ],
+  "Methods": [
+    {
+      "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableClassMemberAnnotation",
+      "Name": "TestMethodMobile",
+      "Annotations": [
+        {
+          "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableAnnotation",
+          "Name": "@InvokeMethod",
+          "Parameters": [
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "template",
+              "Value": "invoke-receive-dataset"
+            },
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "parameterClassName",
+              "Value": "Consultingwerk.CharacterHolder"
+            },
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "datasetInput",
+              "Value": "true"
+            },
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "datasetOutput",
+              "Value": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableClassMemberAnnotation",
+      "Name": "TestMethodMobile42",
+      "Annotations": [
+        {
+          "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableAnnotation",
+          "Name": "@InvokeMethod",
+          "Parameters": [
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "template",
+              "Value": "invoke-receive-dataset"
+            },
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "parameterClassName",
+              "Value": "Consultingwerk.CharacterHolder"
+            },
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "datasetInput",
+              "Value": "false"
+            },
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "datasetOutput",
+              "Value": "true"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TempTables": [
+    {
+      "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableClassMemberAnnotation",
+      "Name": "eCustomer",
+      "Annotations": [
+        {
+          "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableAnnotation",
+          "Name": "@openapi.openedge.entity.primarykey",
+          "Parameters": [
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "fields",
+              "Value": "CustNum"
+            }
+          ]
+        },
+        {
+          "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableAnnotation",
+          "Name": "@openapi.openedge.entity.field.property",
+          "Parameters": [
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "field",
+              "Value": "EmailAddress"
+            },
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "name",
+              "Value": "semanticType"
+            },
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "value",
+              "Value": "Email"
+            }
+          ]
+        },
+        {
+          "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableAnnotation",
+          "Name": "@openapi.openedge.entity.field.property",
+          "Parameters": [
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "field",
+              "Value": "Phone"
+            },
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "name",
+              "Value": "semanticType"
+            },
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "value",
+              "Value": "PhoneNumber"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableClassMemberAnnotation",
+      "Name": "eSalesrep",
+      "Annotations": [
+        {
+          "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableAnnotation",
+          "Name": "@openapi.openedge.entity.primarykey",
+          "Parameters": [
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "fields",
+              "Value": "SalesRep"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

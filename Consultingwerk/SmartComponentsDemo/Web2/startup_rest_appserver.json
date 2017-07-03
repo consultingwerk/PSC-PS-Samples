@@ -1,0 +1,28 @@
+{
+	"basedOn": "Consultingwerk/Framework/Server/startup_rest_appserver.json",
+	"inheritStaticProperties": true,
+	"staticProperties": {
+		"Consultingwerk.Framework.FrameworkSettings:DebugMode": true,
+		"Consultingwerk.OERA.DataAccess:LogFetchDataDetails": true
+	},
+	"inheritLoadServices": true,
+	"loadServices": [
+	    "Consultingwerk/SmartComponentsDemo/Web2/demo_services.xml",
+        "Consultingwerk/OERA/TableStatistics/services_request_monitor.xml"],
+    "inheritCustomLogEntries": true,
+    "customLogEntries": [
+        "ServiceInterface",
+        "ServiceLoader",
+        "ConfigurationProvider",
+        "ServiceNameMappingService",
+        "SmartWebHandlerRequest",                	
+        "SmartHybridRealm",
+        "SmartRepositoryService",
+        "ContextDatasetStore",
+        "ClassHelper",
+        "ClassHelperExt"],
+    "inheritAliases": true,
+    "aliases": {
+    	"sports2000": ["dictdb", "appdb"]
+    }
+}

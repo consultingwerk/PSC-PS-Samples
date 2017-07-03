@@ -1,0 +1,81 @@
+{
+  "SerializedType": "Consultingwerk.Framework.TypeDescriptor.ClassAnnotationContainer",
+  "ClassName": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.SalesRepBusinessEntity",
+  "TimeStamp": "2016-11-06T18:48:43.078+01:00",
+  "Annotations": [
+    {
+      "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableAnnotation",
+      "Name": "@BusinessEntityTable",
+      "Parameters": [
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "name",
+          "Value": "eSalesrep"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "MandatoryColumns",
+          "Value": "SalesRep"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "ReadOnlyColumns"
+        }
+      ]
+    },
+    {
+      "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableAnnotation",
+      "Name": "@BusinessEntityView",
+      "Parameters": [
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "name",
+          "Value": "salesrep"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "isdefault",
+          "Value": "true"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "entitytable",
+          "Value": "eSalesrep"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "entityview"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "listcolumns",
+          "Value": "SalesRep,RepName,Region"
+        },
+        {
+          "SerializedType": "Consultingwerk.NameValuePair",
+          "Name": "viewercolumns",
+          "Value": "SalesRep,RepName,Region"
+        }
+      ]
+    }
+  ],
+  "TempTables": [
+    {
+      "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableClassMemberAnnotation",
+      "Name": "eSalesrep",
+      "Annotations": [
+        {
+          "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableAnnotation",
+          "Name": "@openapi.openedge.entity.primarykey",
+          "Parameters": [
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "fields",
+              "Value": "SalesRep"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

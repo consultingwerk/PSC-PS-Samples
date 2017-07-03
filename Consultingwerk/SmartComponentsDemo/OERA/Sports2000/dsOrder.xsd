@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="" xmlns:prodata="urn:schemas-progress-com:xml-prodata:0001">
+  <xsd:element name="dsOrder" prodata:proDataSet="true">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="eOrder" minOccurs="0" maxOccurs="unbounded" prodata:beforeTable="eOrderBefore">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Ordernum" type="xsd:int" nillable="true" prodata:fieldName="Ordernum" prodata:format="zzzzzzzzz9" prodata:label="Order Num"/>
+              <xsd:element name="CustNum" type="xsd:int" nillable="true" prodata:fieldName="CustNum" prodata:format=">>>>9" prodata:label="Cust Num"/>
+              <xsd:element name="OrderDate" type="xsd:date" nillable="true" prodata:initial="prodata:today" prodata:fieldName="OrderDate" prodata:label="Ordered"/>
+              <xsd:element name="ShipDate" type="xsd:date" nillable="true" prodata:fieldName="ShipDate" prodata:format="99/99/9999" prodata:label="Shipped"/>
+              <xsd:element name="PromiseDate" type="xsd:date" nillable="true" prodata:fieldName="PromiseDate" prodata:label="Promised"/>
+              <xsd:element name="Carrier" type="xsd:string" nillable="true" prodata:fieldName="Carrier" prodata:format="x(25)"/>
+              <xsd:element name="Instructions" type="xsd:string" nillable="true" prodata:fieldName="Instructions" prodata:format="x(50)"/>
+              <xsd:element name="PO" type="xsd:string" nillable="true" prodata:fieldName="PO" prodata:format="x(20)"/>
+              <xsd:element name="Terms" type="xsd:string" nillable="true" default="Net30" prodata:fieldName="Terms" prodata:format="x(20)"/>
+              <xsd:element name="SalesRep" type="xsd:string" nillable="true" prodata:fieldName="SalesRep" prodata:format="x(4)" prodata:label="Sales Rep"/>
+              <xsd:element name="BillToID" type="xsd:int" nillable="true" prodata:fieldName="BillToID" prodata:format="zzzzzzzzz9" prodata:label="Bill To ID"/>
+              <xsd:element name="ShipToID" type="xsd:int" nillable="true" prodata:fieldName="ShipToID" prodata:format="zzzzzzzzz9" prodata:label="Ship To ID"/>
+              <xsd:element name="OrderStatus" type="xsd:string" nillable="true" default="Ordered" prodata:fieldName="OrderStatus" prodata:format="x(20)" prodata:label="Order Status"/>
+              <xsd:element name="WarehouseNum" type="xsd:int" nillable="true" prodata:fieldName="WarehouseNum" prodata:format="zzzzzzzzz9" prodata:label="Warehouse Num"/>
+              <xsd:element name="Creditcard" type="xsd:string" nillable="true" default="Visa" prodata:fieldName="Creditcard" prodata:format="x(20)" prodata:label="Credit Card"/>
+              <xsd:element name="CustName" type="xsd:string" nillable="true" prodata:format="X(30)"/>
+              <xsd:element name="RepName" type="xsd:string" nillable="true" prodata:format="X(30)"/>
+              <xsd:element name="OrderTotal" type="xsd:decimal" nillable="true" prodata:format=">>>>>9.99"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="eCustomer" minOccurs="0" maxOccurs="unbounded" prodata:beforeTable="eCustomerBefore">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="CustNum" type="xsd:int" nillable="true" prodata:fieldName="CustNum" prodata:format=">>>>9" prodata:label="Cust Num"/>
+              <xsd:element name="Country" type="xsd:string" nillable="true" default="USA" prodata:fieldName="Country" prodata:format="x(20)"/>
+              <xsd:element name="Name" type="xsd:string" nillable="true" prodata:fieldName="Name" prodata:format="x(30)"/>
+              <xsd:element name="Address" type="xsd:string" nillable="true" prodata:fieldName="Address" prodata:format="x(35)"/>
+              <xsd:element name="Address2" type="xsd:string" nillable="true" prodata:fieldName="Address2" prodata:format="x(35)"/>
+              <xsd:element name="City" type="xsd:string" nillable="true" prodata:fieldName="City" prodata:format="x(25)"/>
+              <xsd:element name="State" type="xsd:string" nillable="true" prodata:fieldName="State" prodata:format="x(20)"/>
+              <xsd:element name="PostalCode" type="xsd:string" nillable="true" prodata:fieldName="PostalCode" prodata:format="x(10)" prodata:label="Postal Code"/>
+              <xsd:element name="Contact" type="xsd:string" nillable="true" prodata:fieldName="Contact" prodata:format="x(30)"/>
+              <xsd:element name="Phone" type="xsd:string" nillable="true" prodata:fieldName="Phone" prodata:format="x(20)"/>
+              <xsd:element name="SalesRep" type="xsd:string" nillable="true" prodata:fieldName="SalesRep" prodata:format="x(4)" prodata:label="Sales Rep"/>
+              <xsd:element name="CreditLimit" type="xsd:decimal" nillable="true" default="1500.0" prodata:fieldName="CreditLimit" prodata:format="->,>>>,>>9" prodata:label="Credit Limit"/>
+              <xsd:element name="Balance" type="xsd:decimal" nillable="true" prodata:fieldName="Balance" prodata:format="->,>>>,>>9.99"/>
+              <xsd:element name="Terms" type="xsd:string" nillable="true" default="Net30" prodata:fieldName="Terms" prodata:format="x(20)"/>
+              <xsd:element name="Discount" type="xsd:int" nillable="true" prodata:fieldName="Discount" prodata:format=">>9%"/>
+              <xsd:element name="Comments" type="xsd:string" nillable="true" prodata:fieldName="Comments" prodata:format="x(80)"/>
+              <xsd:element name="Fax" type="xsd:string" nillable="true" prodata:fieldName="Fax" prodata:format="x(20)"/>
+              <xsd:element name="EmailAddress" type="xsd:string" nillable="true" prodata:fieldName="EmailAddress" prodata:format="x(50)" prodata:label="Email"/>
+              <xsd:element name="Flags" type="xsd:string" nillable="true" prodata:label="Notes"/>
+              <xsd:element name="SmartRecordKey" type="xsd:string" nillable="true" prodata:format="X(80)"/>
+              <xsd:element name="SmartAttachments" type="xsd:boolean" nillable="true" prodata:label="Attachments"/>
+              <xsd:element name="SmartComments" type="xsd:boolean" nillable="true" prodata:label="Comments"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="eOrderLine" minOccurs="0" maxOccurs="unbounded" prodata:beforeTable="eOrderLineBefore">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Ordernum" type="xsd:int" nillable="true" prodata:fieldName="Ordernum" prodata:format="zzzzzzzzz9" prodata:label="Order Num"/>
+              <xsd:element name="Linenum" type="xsd:int" nillable="true" prodata:fieldName="Linenum" prodata:format=">>9" prodata:label="Line Num"/>
+              <xsd:element name="Itemnum" type="xsd:int" nillable="true" prodata:fieldName="Itemnum" prodata:format="zzzzzzzzz9" prodata:label="Item Num"/>
+              <xsd:element name="Price" type="xsd:decimal" nillable="true" prodata:fieldName="Price" prodata:format="->,>>>,>>9.99"/>
+              <xsd:element name="Qty" type="xsd:int" nillable="true" prodata:fieldName="Qty" prodata:format="->>>>9"/>
+              <xsd:element name="Discount" type="xsd:int" nillable="true" prodata:fieldName="Discount" prodata:format=">>9%"/>
+              <xsd:element name="ExtendedPrice" type="xsd:decimal" nillable="true" prodata:fieldName="ExtendedPrice" prodata:format="->>>,>>9.99" prodata:label="Extended Price"/>
+              <xsd:element name="OrderLineStatus" type="xsd:string" nillable="true" default="Ordered" prodata:fieldName="OrderLineStatus" prodata:format="x(20)" prodata:label="Order Line Status"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="eItem" minOccurs="0" maxOccurs="unbounded" prodata:beforeTable="eItemBefore">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Itemnum" type="xsd:int" nillable="true" prodata:fieldName="Itemnum" prodata:format="zzzzzzzzz9" prodata:label="Item Num"/>
+              <xsd:element name="ItemName" type="xsd:string" nillable="true" prodata:fieldName="ItemName" prodata:format="x(25)" prodata:label="Item Name"/>
+              <xsd:element name="Price" type="xsd:decimal" nillable="true" prodata:fieldName="Price" prodata:format="->,>>>,>>9.99"/>
+              <xsd:element name="Onhand" type="xsd:int" nillable="true" prodata:fieldName="Onhand" prodata:format="->>>>9" prodata:label="On Hand"/>
+              <xsd:element name="Allocated" type="xsd:int" nillable="true" prodata:fieldName="Allocated" prodata:format="->>>>9"/>
+              <xsd:element name="ReOrder" type="xsd:int" nillable="true" prodata:fieldName="ReOrder" prodata:format="->>>>9" prodata:label="Re Order"/>
+              <xsd:element name="OnOrder" type="xsd:int" nillable="true" prodata:fieldName="OnOrder" prodata:format="->>>>9" prodata:label="On Order"/>
+              <xsd:element name="CatPage" type="xsd:int" nillable="true" prodata:fieldName="CatPage" prodata:format=">>9" prodata:label="Cat Page"/>
+              <xsd:element name="CatDescription" type="xsd:string" nillable="true" prodata:fieldName="CatDescription" prodata:format="X(200)" prodata:label="Cat-Description"/>
+              <xsd:element name="Category1" type="xsd:string" nillable="true" prodata:fieldName="Category1" prodata:format="x(30)"/>
+              <xsd:element name="Category2" type="xsd:string" nillable="true" prodata:fieldName="Category2" prodata:format="x(30)"/>
+              <xsd:element name="Special" type="xsd:string" nillable="true" prodata:fieldName="Special"/>
+              <xsd:element name="Weight" type="xsd:decimal" nillable="true" prodata:fieldName="Weight"/>
+              <xsd:element name="Minqty" type="xsd:int" nillable="true" prodata:fieldName="Minqty" prodata:format="->>>>9" prodata:label="Min Qty"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="eSalesrep" minOccurs="0" maxOccurs="unbounded" prodata:beforeTable="eSalesrepBefore">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="SalesRep" type="xsd:string" nillable="true" prodata:fieldName="SalesRep" prodata:format="x(4)" prodata:label="Sales Rep"/>
+              <xsd:element name="RepName" type="xsd:string" nillable="true" prodata:fieldName="RepName" prodata:format="x(30)" prodata:label="Rep Name"/>
+              <xsd:element name="Region" type="xsd:string" nillable="true" prodata:fieldName="Region"/>
+              <xsd:element name="MonthQuota" type="xsd:int" nillable="true" prodata:fieldName="MonthQuota01" prodata:label="Month Quota"/>
+              <xsd:element name="MonthQuota02" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota03" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota04" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota05" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota06" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota07" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota08" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota09" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota10" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota11" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota12" type="xsd:int" nillable="true"/>
+              <xsd:element name="SmallImage" type="xsd:base64Binary" nillable="true" prodata:dataType="prodata:blob" prodata:fieldName="SmallImage"/>
+              <xsd:element name="LargeImage" type="xsd:base64Binary" nillable="true" prodata:dataType="prodata:blob" prodata:fieldName="LargeImage"/>
+              <xsd:element name="Email" type="xsd:string" nillable="true" prodata:fieldName="Email" prodata:format="x(80)" prodata:label="E-Mail"/>
+              <xsd:element name="PhoneMobile" type="xsd:string" nillable="true" prodata:fieldName="PhoneMobile" prodata:format="x(40)" prodata:label="Mobile Phone"/>
+              <xsd:element name="PhoneOffice" type="xsd:string" nillable="true" prodata:fieldName="PhoneOffice" prodata:format="x(40)" prodata:label="Office Phone"/>
+              <xsd:element name="PhonePrivate" type="xsd:string" nillable="true" prodata:fieldName="PhonePrivate" prodata:format="x(40)" prodata:label="Private Phone"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:unique name="OrderNum" prodata:primaryIndex="true">
+      <xsd:selector xpath=".//eOrder"/>
+      <xsd:field xpath="Ordernum"/>
+    </xsd:unique>
+    <xsd:unique name="CustNum" prodata:primaryIndex="true">
+      <xsd:selector xpath=".//eCustomer"/>
+      <xsd:field xpath="CustNum"/>
+    </xsd:unique>
+    <xsd:unique name="orderline" prodata:primaryIndex="true">
+      <xsd:selector xpath=".//eOrderLine"/>
+      <xsd:field xpath="Ordernum"/>
+      <xsd:field xpath="Linenum"/>
+    </xsd:unique>
+    <xsd:unique name="ItemNum" prodata:primaryIndex="true">
+      <xsd:selector xpath=".//eItem"/>
+      <xsd:field xpath="Itemnum"/>
+    </xsd:unique>
+    <xsd:unique name="SalesRep" prodata:primaryIndex="true">
+      <xsd:selector xpath=".//eSalesrep"/>
+      <xsd:field xpath="SalesRep"/>
+    </xsd:unique>
+    <xsd:keyref name="eOrdereOrderLineRelation" refer="OrderNum">
+      <xsd:selector xpath=".//eOrderLine"/>
+      <xsd:field xpath="Ordernum"/>
+    </xsd:keyref>
+  </xsd:element>
+  <xsd:annotation>
+    <xsd:appinfo>
+      <prodata:index name="Comments" prodata:wordIndex="true">
+        <prodata:table name="eCustomer"/>
+        <prodata:field name="Comments"/>
+      </prodata:index>
+      <prodata:index name="CountryPost">
+        <prodata:table name="eCustomer"/>
+        <prodata:field name="Country"/>
+        <prodata:field name="PostalCode"/>
+      </prodata:index>
+      <prodata:index name="Name">
+        <prodata:table name="eCustomer"/>
+        <prodata:field name="Name"/>
+      </prodata:index>
+      <prodata:index name="SalesRep">
+        <prodata:table name="eCustomer"/>
+        <prodata:field name="SalesRep"/>
+      </prodata:index>
+      <prodata:relation name="eOrdereCustomerRelation" prodata:parent="eOrder" prodata:child="eCustomer" prodata:relationFields="CustNum,CustNum"/>
+      <prodata:relation name="eOrdereSalesrepRelation" prodata:parent="eOrder" prodata:child="eSalesrep" prodata:relationFields="SalesRep,SalesRep"/>
+      <prodata:relation name="eOrderLineeItemRelation" prodata:parent="eOrderLine" prodata:child="eItem" prodata:relationFields="Itemnum,Itemnum"/>
+    </xsd:appinfo>
+  </xsd:annotation>
+</xsd:schema>

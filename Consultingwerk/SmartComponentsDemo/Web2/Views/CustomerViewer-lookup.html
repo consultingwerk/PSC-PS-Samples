@@ -1,0 +1,91 @@
+
+<form class="form-horizontal" style="margin-top: 0.5em; background-color: white;">
+    <fieldset>
+        <div class="form-group">
+            <label for="inputCustNum" class="col-md-10 control-label">Cust Num:</label>
+            <div class="col-md-14">
+                <input type="text" class="form-control"  ng-disabled="true" id="inputCustNum" ng-model="customerDataSource.selected.CustNum" style="width: 64px;" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputName" class="col-md-10 control-label">Name:</label>
+            <div class="col-md-14">
+                <input type="text" class="form-control" ng-required  id="inputName" ng-model="customerDataSource.selected.Name" style="width: 264px;" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputCountry" class="col-md-10 control-label">Country:</label>
+            <div class="col-md-14">
+                <input type="text" class="form-control"   id="inputCountry" ng-model="customerDataSource.selected.Country" style="width: 184px;" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputSalesRep" class="col-md-10 control-label">Sales Rep:</label>
+            <div class="col-md-14">
+                                <smart-lookup
+                                  smart-lookup-header="Salesrep Lookup"
+                                  smart-lookup-key-field="SalesRep"
+                                  smart-lookup-key-value-field=""
+                                  smart-lookup-fields="RepName,Region"
+                                  smart-lookup-fields-binding="customerDataSource.selected.eSalesrep[0].RepName,customerDataSource.selected.eSalesrep[0].Region" 
+                                  smart-business-entity-name="Consultingwerk.SmartComponentsDemo.OERA.Sports2000.SalesRepBusinessEntity"
+                                  smart-entity-table="eSalesrep"
+                                  smart-grid-layout="Consultingwerk.SmartComponentsDemo.OERA.Sports2000.SalesRepBusinessEntity/salesrep"
+                                  id="inputSalesRep"
+                                  ng-model="customerDataSource.selected.SalesRep"
+                                  ng-required      
+                                  style="width: 120px;" 
+                                  smart-lookup-dialog-options="width=600px; height=500px;"
+                                  >            
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputeSalesrepRepName" class="col-md-10 control-label">Rep Name:</label>
+            <div class="col-md-14">
+                <input type="text" class="form-control"   id="inputeSalesrepRepName" ng-model="customerDataSource.selected.eSalesrep[0].RepName" style="width: 264px;" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputComments" class="col-md-10 control-label">Comments:</label>
+            <div class="col-md-14">
+                <input type="text" class="form-control"   id="inputComments" ng-model="customerDataSource.selected.Comments" style="width: 664px;" />
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+
+
+<!-- 
+<form class="form-horizontal" style="margin-top: 0.5em; background-color: white; position:relative;">
+    <fieldset>
+    
+        <label style="position:absolute; left:7px; top:17px;">Cust Num</label>
+        <input type="text" id="Customer_CustNum" style="position:absolute; left:85px; top:12px; width: 59px;" ng-model="<%= get-field ('scope':U) %>.CustNum"></input>
+        <label style="position:absolute; left:397px; top:17px;">Balance</label>
+        <input type="text" id="Customer_Balance" style="position:absolute; left:475px; top:12px; width: 131px;" ng-model="<%= get-field ('scope':U) %>.Balance"></input>
+        <label style="position:absolute; left:7px; top:42px;">Name</label>
+        <input type="text" id="Customer_Name" style="position:absolute; left:85px; top:37px; width: 208px;" ng-model="<%= get-field ('scope':U) %>.Name"></input>
+        <label style="position:absolute; left:397px; top:42px;">Credit Limit</label>
+        <input type="text" id="Customer_CreditLimit" style="position:absolute; left:475px; top:37px; width: 104px;" ng-model="<%= get-field ('scope':U) %>.CreditLimit"></input>
+        <label style="position:absolute; left:7px; top:67px;">Address</label>
+        <input type="text" id="Customer_Address" style="position:absolute; left:85px; top:62px; width: 241px;" ng-model="<%= get-field ('scope':U) %>.Address"></input>
+        <label style="position:absolute; left:397px; top:67px;">Discount</label>
+        <input type="text" id="Customer_Discount" style="position:absolute; left:475px; top:62px; width: 49px;" ng-model="<%= get-field ('scope':U) %>.Discount"></input>
+        <label style="position:absolute; left:7px; top:92px;">Address2</label>
+        <input type="text" id="Customer_Address2" style="position:absolute; left:85px; top:88px; width: 241px;" ng-model="<%= get-field ('scope':U) %>.Address2"></input>
+        <label style="position:absolute; left:397px; top:92px;">Terms</label>
+        <input type="text" id="Customer_Terms" style="position:absolute; left:475px; top:88px; width: 143px;" ng-model="<%= get-field ('scope':U) %>.Terms"></input>
+        <label style="position:absolute; left:7px; top:118px;">City</label>
+        <input type="text" id="Customer_City" style="position:absolute; left:85px; top:113px; width: 176px;" ng-model="<%= get-field ('scope':U) %>.City"></input>
+        <label style="position:absolute; left:7px; top:143px;">Postal Code</label>
+        <input type="text" id="Customer_PostalCode" style="position:absolute; left:85px; top:138px; width: 101px;" ng-model="<%= get-field ('scope':U) %>.PostalCode"></input>
+        <label style="position:absolute; left:7px; top:168px;">Country</label>
+        <input type="text" id="Customer_Country" style="position:absolute; left:85px; top:163px; width: 143px;" ng-model="<%= get-field ('scope':U) %>.Country"></input>
+
+        <div style="position:absolute; left:0px; top:0px; width:689px; height:486px; border:1px; solid #C0C0C0;"></div>
+
+
+    </fieldset>
+</form>    
+-->

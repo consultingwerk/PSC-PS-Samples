@@ -1,0 +1,36 @@
+<h2>Put a customer on hold</h2>
+
+<smart-data-source smart-object-name='customerDataSource'
+	smart-business-entity-name="Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity"
+	smart-entity-table="eCustomer"> </smart-data-source>
+
+<div class="container-fluid">
+	<div class="row">
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label class="control-label col-xs-4">Customer Number:</label>
+				<div class="col-xs-8">
+					<input [(ngModel)]="custNum" name="custnum"
+						placeholder="Customer Number" type="number" class="form-control"
+						step="1" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-4">Comments:</label>
+				<div class="col-xs-8">
+					<textarea name="comments" class="form-control"
+						[(ngModel)]="comments"></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-primary col-xs-4 col-xs-offset-4"
+					(click)="putOnHold()">Put on hold</button>
+			</div>
+		</form>
+	</div>
+	<div class="row">
+	   <textarea [ngModel]="resultJson" disabled *ngIf="!!resultJson" rows="20" cols="60"></textarea>
+	</div>
+</div>
+
+

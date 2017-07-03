@@ -1,0 +1,67 @@
+<!--
+    Template for the customer Smart Viewer. To bind to the Smart Data Source's selected object,
+    use "selected", which is contextually available to all children of the Smart Viewer.
+    Example: <input type="text" [(ngModel)]="selected.RepName" placeholder="Name" [ngModelOptions]="{standalone: true}"/>
+-->
+
+<form class="form-horizontal">
+        <div class="form-group">
+            <label for="inputCustNum" class="col-xs-4 control-label">Cust Num:</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control"   enabledState="add" id="inputCustNum" [(ngModel)]="selected.CustNum" [ngModelOptions]="{standalone: true}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputName" class="col-xs-4 control-label">Name:</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" required   id="inputName" [(ngModel)]="selected.Name" [ngModelOptions]="{standalone: true}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputCountry" class="col-xs-4 control-label">Country:</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control"    id="inputCountry" [(ngModel)]="selected.Country" [ngModelOptions]="{standalone: true}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputSalesRep" class="col-xs-4 control-label">Sales Rep:</label>
+            <div class="col-xs-8">
+                <!-- To bind the Smart Lookup to additional fields, other than the key field,
+                     the smart-lookup-fields-binding attribute can be used as shown below.
+                     This setting expects an object of the form
+                        { <lookup_internal_data_source_field>: <viewer_data_source_field> }
+                     
+                     To include a Smart Filter in the lookup's dialog, specify the
+                     show-filter="true" attribute. The filter-fields-initial and filter-fields-optional attributes can also be used,
+                     but are not required. If optional fields are desired, then an additional allow-optional-fields="true" attribute must pe specified as well.
+                -->
+                <smart-lookup 
+                    smart-lookup-header="Lookup SalesRep" 
+                    smart-lookup-key-field="SalesRep" 
+                    smart-lookup-key-value-field="" 
+                    smart-lookup-fields="RepName" 
+                    [smart-lookup-fields-binding]="{'RepName':'selected.eSalesrep[0].RepName'}" 
+                    smart-business-entity-name="Consultingwerk.SmartComponentsDemo.OERA.Sports2000.SalesRepBusinessEntity" 
+                    smart-entity-table="eSalesrep" 
+                    smart-grid-layout="Consultingwerk.SmartComponentsDemo.OERA.Sports2000.SalesRepBusinessEntity/salesrep" 
+                    id="SalesRep" 
+                    [(smartModel)]="selected.SalesRep" 
+                    smart-lookup-dialog-options="width=700px; height=500px;"
+                    show-filter="true"
+                    allow-optional-filter-fields="true">
+                </smart-lookup> 
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputeSalesrepRepName" class="col-xs-4 control-label">Rep Name:</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" id="inputeSalesrepRepName" [(ngModel)]="selected.eSalesrep[0].RepName" [ngModelOptions]="{standalone: true}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputComments" class="col-xs-4 control-label">Comments:</label>
+            <div class="col-xs-8">
+                <textarea class="form-control" [(ngModel)]="selected.Comments" [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+        </div>
+</form>

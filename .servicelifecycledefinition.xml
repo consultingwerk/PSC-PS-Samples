@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ttServiceLifeCycleDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ttServiceLifeCycleDefinitionRow>
+    <ServiceNamePattern>Consultingwerk.*</ServiceNamePattern>
+    <StopAfterEachRequest xsi:nil="true"/>
+    <TimeoutAfterLastRequest>60</TimeoutAfterLastRequest>
+    <TimeoutAfterStart xsi:nil="true"/>
+  </ttServiceLifeCycleDefinitionRow>
+  <ttServiceLifeCycleDefinitionRow>
+    <ServiceNamePattern>Consultingwerk.SmartComponentsDemo.*</ServiceNamePattern>
+    <StopAfterEachRequest>true</StopAfterEachRequest>
+    <TimeoutAfterLastRequest xsi:nil="true"/>
+    <TimeoutAfterStart xsi:nil="true"/>
+  </ttServiceLifeCycleDefinitionRow>
+</ttServiceLifeCycleDefinition>

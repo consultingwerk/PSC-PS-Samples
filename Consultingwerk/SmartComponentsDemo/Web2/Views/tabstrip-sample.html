@@ -1,0 +1,76 @@
+
+<div ng-controller="simpleCtrl" style="background-color: white;">
+
+   <h1>Customers and Salesreps</h1>
+
+	<div kendo-tab-strip k-content-urls="[ null, null]" class="row">
+		<!-- tab list -->
+		<ul>
+			<li class="k-state-active">Salesreps</li>
+			<li>Customers</li>
+		</ul>
+
+		<div style="padding: 1em">
+			<h1>Salesreps</h1>
+
+			<div class="col-sm-38 col-md-20">
+
+				<smart-data-source smart-object-name='salesrepDataSource'
+					smart-business-entity-name="Consultingwerk.SmartComponentsDemo.OERA.Sports2000.SalesRepBusinessEntity"
+					smart-entity-table="eSalesrep"></smart-data-source>
+				<smart-grid smart-object-name='salesrepGrid'
+					smart-data-source='salesrepDataSource'
+					smart-grid-layout='Consultingwerk.SmartComponentsDemo.OERA.Sports2000.SalesRepBusinessEntity/salesrep'></smart-grid>
+
+			</div>
+
+			<div class="col-sm-38 col-md-18">
+
+				<smart-toolbar smart-object-name='salesrepToolbar'></smart-toolbar>
+
+				<smart-viewer smart-object-name='salesrepViewer'
+					smart-data-source='salesrepDataSource'
+					smart-tableio-source='salesrepToolbar'
+					smart-viewer-layout='Consultingwerk.SmartComponentsDemo.OERA.Sports2000.SalesRepBusinessEntity/salesrep'></smart-viewer>
+
+			</div>
+		</div>
+
+		<div style="padding: 1em">
+<!--WSS IF get-field ("bindings") = "Angular2" THEN -->
+    <h1 *ngIf="salesrepDataSource && salesrepDataSource.selected">Customers of {{ salesrepDataSource.selected.RepName }}</h1>
+<!--WSS ELSE -->
+    <h1><!--WSE get-field ("Title") --></h1>		
+			<h1>Customers of {{ salesrepDataSource.selected.RepName }}</h1>
+
+			<div class="col-md-20">
+
+				<smart-data-source smart-object-name='customerDataSource'
+					smart-business-entity-name="Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity"
+					smart-entity-table="eCustomer" smart-entity-view="eSalesrep"
+					smart-sort='[{ field: "Name", dir: "asc" }, { field: "CustNum", dir: "asc" }]'
+					smart-filter='[{ field: "Country", operator: "eq", value: "USA" }]'
+					smart-data-source='salesrepDataSource'
+					smart-foreign-fields='SalesRep,SalesRep'></smart-data-source>
+				<smart-grid smart-object-name='customerGrid'
+					smart-data-source='customerDataSource'
+					smart-grid-layout='Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity/customer'></smart-grid>
+
+			</div>
+
+			<div class="col-md-18">
+
+				<smart-toolbar smart-object-name='customerToolbar'></smart-toolbar>
+
+				<smart-viewer smart-object-name='customerViewer'
+					smart-data-source='customerDataSource'
+					smart-tableio-source='customerToolbar'
+					smart-viewer-layout='Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity/customer'></smart-viewer>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

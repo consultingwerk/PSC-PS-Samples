@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="" xmlns:prodata="urn:schemas-progress-com:xml-prodata:0001">
+  <xsd:element name="dsSalesRep" prodata:proDataSet="true">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="eSalesrep" minOccurs="0" maxOccurs="unbounded" prodata:beforeTable="eSalesrepBefore">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="SalesRep" type="xsd:string" nillable="true" prodata:fieldName="SalesRep" prodata:format="x(4)" prodata:label="Sales Rep"/>
+              <xsd:element name="RepName" type="xsd:string" nillable="true" prodata:fieldName="RepName" prodata:format="x(30)" prodata:label="Rep Name"/>
+              <xsd:element name="Region" type="xsd:string" nillable="true" prodata:fieldName="Region"/>
+              <xsd:element name="MonthQuota01" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota02" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota03" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota04" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota05" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota06" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota07" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota08" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota09" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota10" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota11" type="xsd:int" nillable="true"/>
+              <xsd:element name="MonthQuota12" type="xsd:int" nillable="true"/>
+              <xsd:element name="SmallImage" type="xsd:base64Binary" nillable="true" prodata:dataType="prodata:blob" prodata:fieldName="SmallImage"/>
+              <xsd:element name="LargeImage" type="xsd:base64Binary" nillable="true" prodata:dataType="prodata:blob" prodata:fieldName="LargeImage"/>
+              <xsd:element name="Email" type="xsd:string" nillable="true" prodata:fieldName="Email" prodata:format="x(80)" prodata:label="E-Mail"/>
+              <xsd:element name="PhoneMobile" type="xsd:string" nillable="true" prodata:fieldName="PhoneMobile" prodata:format="x(40)" prodata:label="Mobile Phone"/>
+              <xsd:element name="PhoneOffice" type="xsd:string" nillable="true" prodata:fieldName="PhoneOffice" prodata:format="x(40)" prodata:label="Office Phone"/>
+              <xsd:element name="PhonePrivate" type="xsd:string" nillable="true" prodata:fieldName="PhonePrivate" prodata:format="x(40)" prodata:label="Private Phone"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:unique name="SalesRep" prodata:primaryIndex="true">
+      <xsd:selector xpath=".//eSalesrep"/>
+      <xsd:field xpath="SalesRep"/>
+    </xsd:unique>
+  </xsd:element>
+</xsd:schema>

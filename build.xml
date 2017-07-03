@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="SmartComponent Library" basedir=".">
+
+	<description>SmartComponent Library</description>
+
+    <property environment="env" />
+    <property file="build.props" />
+
+	<!-- Définition des tâches externes -->
+    <taskdef resource="PCT.properties" classpath="PCT.jar" />
+
+    <import file="../SmartComponentLibrary/Consultingwerk/Studio/ExtractClassAnnotations/extract-class-annotations.xml"/>
+	
+	<target name="ExtractClassAnnotations">
+		<extractClassAnnotations directory="."
+		                         fileMask="*BusinessEntity.cls"
+		                         overwriteWriteProtected="true"
+		                         excludeAnnotations="@Test,@TestIgnore,@BusinessEntityGenerator"
+		                         verbose="true"
+			                     iniFile="../ini/progress.ini"
+			                     assemblies="../SmartComponentLibrary/Assemblies">
+			<propathentries>
+				<pathelement path="../SmartComponentLibrary" />
+			</propathentries>
+		</extractClassAnnotations>	
+	</target> 
+	
+    <!-- For use as an Eclipse ANT builder with the -DbuildFiles={build_files} parameter -->	
+    <target name="ExtractClassAnnotationsBuilder">
+        <extractClassAnnotations directory="."
+                                 fileMask="*BusinessEntity.cls"
+                                 overwriteWriteProtected="true"
+                                 excludeAnnotations="@Test,@TestIgnore,@BusinessEntityGenerator"
+                                 verbose="true" 
+                                 buildFiles="${buildFiles}"
+        	                     iniFile="../ini/progress.ini"
+                                 assemblies="../SmartComponentLibrary/Assemblies">
+            <propathentries>
+                <pathelement path="../SmartComponentLibrary" />
+            </propathentries>
+        </extractClassAnnotations>        	
+    </target> 
+
+	<!-- Extracts class annotations for the files defined by the directory and fileMask
+	     parameters -->
+    <target name="ExtractClassAnnotationsWithParameters">
+        <extractClassAnnotations directory="${directory}"
+                                 fileMask="${fileMask}"
+                                 overwriteWriteProtected="true"
+                                 excludeAnnotations="@Test,@TestIgnore,@BusinessEntityGenerator"
+                                 verbose="true"
+                                 iniFile="../ini/progress.ini"
+                                 assemblies="../SmartComponentLibrary/Assemblies">
+            <propathentries>
+                <pathelement path="../SmartComponentLibrary" />
+            </propathentries>
+        </extractClassAnnotations>          
+    </target> 
+	
+</project>
