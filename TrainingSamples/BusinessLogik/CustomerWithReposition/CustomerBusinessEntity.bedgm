@@ -4,14 +4,14 @@
     <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
     <BusinessEntityPurpose>Business Entity for Customer</BusinessEntityPurpose>
     <BusinessEntityDescription/>
-    <BusinessEntityPackage>TrainingSamples.BusinessLogik.Customer</BusinessEntityPackage>
+    <BusinessEntityPackage>TrainingSamples.BusinessLogik.CustomerWithReposition</BusinessEntityPackage>
     <DataAccessName>CustomerDataAccess</DataAccessName>
-    <DataAccessPackage>TrainingSamples.BusinessLogik.Customer</DataAccessPackage>
+    <DataAccessPackage>TrainingSamples.BusinessLogik.CustomerWithReposition</DataAccessPackage>
     <DatasetControllerName>CustomerDatasetController</DatasetControllerName>
-    <DatasetControllerPackage>TrainingSamples.BusinessLogik.Customer</DatasetControllerPackage>
+    <DatasetControllerPackage>TrainingSamples.BusinessLogik.CustomerWithReposition</DatasetControllerPackage>
     <DatasetName>dsCustomer</DatasetName>
-    <DatasetPath>TrainingSamples/BusinessLogik/Customer</DatasetPath>
-    <DefaultTablePath>TrainingSamples/BusinessLogik/Customer</DefaultTablePath>
+    <DatasetPath>TrainingSamples/BusinessLogik/CustomerWithReposition</DatasetPath>
+    <DefaultTablePath>TrainingSamples/BusinessLogik/CustomerWithReposition</DefaultTablePath>
     <DefaultTablePrefix>e</DefaultTablePrefix>
     <DefaultTableSuffix/>
     <DefaultBeforeTablePrefix>e</DefaultBeforeTablePrefix>
@@ -28,7 +28,7 @@
     <ChildTempTableName>eSalesrep</ChildTempTableName>
     <RelationFields>SalesRep,SalesRep</RelationFields>
     <DataRelationDescription/>
-    <DataRelationReposition>false</DataRelationReposition>
+    <DataRelationReposition>true</DataRelationReposition>
     <DataRelationNested>false</DataRelationNested>
     <DataRelationForeignKeyHidden>false</DataRelationForeignKeyHidden>
     <DataRelationNotActive>false</DataRelationNotActive>
@@ -45,9 +45,9 @@
     <SourceBufferKeys/>
     <TempTablePurpose/>
     <TempTableDescription/>
-    <TempTablePath>TrainingSamples/BusinessLogik/Customer</TempTablePath>
+    <TempTablePath>TrainingSamples/BusinessLogik/CustomerWithReposition</TempTablePath>
     <TempTableBeforeName>eCustomerBefore</TempTableBeforeName>
-    <LayoutColumn>142</LayoutColumn>
+    <LayoutColumn>67</LayoutColumn>
     <LayoutRow>16</LayoutRow>
     <LayoutWidth>200</LayoutWidth>
     <LayoutHeight>550</LayoutHeight>
@@ -56,7 +56,7 @@
     <XmlNodeName/>
     <SerializeName/>
     <NoBeforeTable>false</NoBeforeTable>
-    <EntityPackageName>TrainingSamples.BusinessLogik.Customer</EntityPackageName>
+    <EntityPackageName>TrainingSamples.BusinessLogik.CustomerWithReposition</EntityPackageName>
     <EntityClassName>Customer</EntityClassName>
     <DeletedFields/>
   </eTable>
@@ -69,10 +69,10 @@
     <SourceBufferKeys/>
     <TempTablePurpose/>
     <TempTableDescription/>
-    <TempTablePath>TrainingSamples/BusinessLogik/Customer</TempTablePath>
+    <TempTablePath>TrainingSamples/BusinessLogik/CustomerWithReposition</TempTablePath>
     <TempTableBeforeName>eSalesrepBefore</TempTableBeforeName>
-    <LayoutColumn>526</LayoutColumn>
-    <LayoutRow>18</LayoutRow>
+    <LayoutColumn>501</LayoutColumn>
+    <LayoutRow>33</LayoutRow>
     <LayoutWidth>200</LayoutWidth>
     <LayoutHeight>530</LayoutHeight>
     <NamespaceUri/>
@@ -80,7 +80,7 @@
     <XmlNodeName/>
     <SerializeName/>
     <NoBeforeTable>false</NoBeforeTable>
-    <EntityPackageName>TrainingSamples.BusinessLogik.Customer</EntityPackageName>
+    <EntityPackageName>TrainingSamples.BusinessLogik.CustomerWithReposition</EntityPackageName>
     <EntityClassName>Salesrep</EntityClassName>
     <DeletedFields/>
   </eTable>
@@ -96,9 +96,9 @@
     <FieldLabel>Address</FieldLabel>
     <FieldFormat>x(35)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>Address</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.Address</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -123,9 +123,9 @@
     <FieldLabel>Address2</FieldLabel>
     <FieldFormat>x(35)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>Address2</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.Address2</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -150,9 +150,9 @@
     <FieldLabel>Balance</FieldLabel>
     <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9.99</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>Balance</FieldSerializeName>
+    <FieldXmlDataType>decimal</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.Balance</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -177,9 +177,9 @@
     <FieldLabel>City</FieldLabel>
     <FieldFormat>x(25)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>City</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.City</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -204,9 +204,9 @@
     <FieldLabel>Comments</FieldLabel>
     <FieldFormat>x(80)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>Comments</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.Comments</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -231,9 +231,9 @@
     <FieldLabel>Contact</FieldLabel>
     <FieldFormat>x(30)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>Contact</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.Contact</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -258,9 +258,9 @@
     <FieldLabel>Country</FieldLabel>
     <FieldFormat>x(20)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>Country</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.Country</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -285,9 +285,9 @@
     <FieldLabel>Credit Limit</FieldLabel>
     <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>CreditLimit</FieldSerializeName>
+    <FieldXmlDataType>decimal</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.CreditLimit</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -312,9 +312,9 @@
     <FieldLabel>Cust Num</FieldLabel>
     <FieldFormat>&gt;&gt;&gt;&gt;9</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>CustNum</FieldSerializeName>
+    <FieldXmlDataType>int</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.CustNum</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -339,9 +339,9 @@
     <FieldLabel>Discount</FieldLabel>
     <FieldFormat>&gt;&gt;9%</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>Discount</FieldSerializeName>
+    <FieldXmlDataType>int</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.Discount</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -366,9 +366,9 @@
     <FieldLabel>Email</FieldLabel>
     <FieldFormat>x(50)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>EmailAddress</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.EmailAddress</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -393,9 +393,9 @@
     <FieldLabel>Fax</FieldLabel>
     <FieldFormat>x(20)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>Fax</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.Fax</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -420,9 +420,9 @@
     <FieldLabel>Name</FieldLabel>
     <FieldFormat>x(30)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>Name</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.Name</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -447,9 +447,9 @@
     <FieldLabel>Phone</FieldLabel>
     <FieldFormat>x(20)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>Phone</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.Phone</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -474,9 +474,9 @@
     <FieldLabel>Postal Code</FieldLabel>
     <FieldFormat>x(10)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>PostalCode</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.PostalCode</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -501,9 +501,9 @@
     <FieldLabel>Sales Rep</FieldLabel>
     <FieldFormat>x(4)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>SalesRep</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.SalesRep</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -528,9 +528,9 @@
     <FieldLabel>State</FieldLabel>
     <FieldFormat>x(20)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>State</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.State</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -555,9 +555,9 @@
     <FieldLabel>Terms</FieldLabel>
     <FieldFormat>x(20)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>Terms</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Customer.Terms</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -582,9 +582,9 @@
     <FieldLabel>E-Mail</FieldLabel>
     <FieldFormat>x(80)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>Email</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.Email</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -609,9 +609,9 @@
     <FieldLabel>LargeImage</FieldLabel>
     <FieldFormat>x(8)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>LargeImage</FieldSerializeName>
+    <FieldXmlDataType>base64Binary</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.LargeImage</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -636,9 +636,9 @@
     <FieldLabel>Month Quota</FieldLabel>
     <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>MonthQuota_01</FieldSerializeName>
+    <FieldXmlDataType>int</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.MonthQuota[1]</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -663,9 +663,9 @@
     <FieldLabel>Month Quota</FieldLabel>
     <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>MonthQuota_02</FieldSerializeName>
+    <FieldXmlDataType>int</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.MonthQuota[2]</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -690,9 +690,9 @@
     <FieldLabel>Month Quota</FieldLabel>
     <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>MonthQuota_03</FieldSerializeName>
+    <FieldXmlDataType>int</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.MonthQuota[3]</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -717,9 +717,9 @@
     <FieldLabel>Month Quota</FieldLabel>
     <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>MonthQuota_04</FieldSerializeName>
+    <FieldXmlDataType>int</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.MonthQuota[4]</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -744,9 +744,9 @@
     <FieldLabel>Month Quota</FieldLabel>
     <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>MonthQuota_05</FieldSerializeName>
+    <FieldXmlDataType>int</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.MonthQuota[5]</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -771,9 +771,9 @@
     <FieldLabel>Month Quota</FieldLabel>
     <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>MonthQuota_06</FieldSerializeName>
+    <FieldXmlDataType>int</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.MonthQuota[6]</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -798,9 +798,9 @@
     <FieldLabel>Month Quota</FieldLabel>
     <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>MonthQuota_07</FieldSerializeName>
+    <FieldXmlDataType>int</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.MonthQuota[7]</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -825,9 +825,9 @@
     <FieldLabel>Month Quota</FieldLabel>
     <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>MonthQuota_08</FieldSerializeName>
+    <FieldXmlDataType>int</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.MonthQuota[8]</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -852,9 +852,9 @@
     <FieldLabel>Month Quota</FieldLabel>
     <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>MonthQuota_09</FieldSerializeName>
+    <FieldXmlDataType>int</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.MonthQuota[9]</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -879,9 +879,9 @@
     <FieldLabel>Month Quota</FieldLabel>
     <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>MonthQuota_10</FieldSerializeName>
+    <FieldXmlDataType>int</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.MonthQuota[10]</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -906,9 +906,9 @@
     <FieldLabel>Month Quota</FieldLabel>
     <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>MonthQuota_11</FieldSerializeName>
+    <FieldXmlDataType>int</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.MonthQuota[11]</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -933,9 +933,9 @@
     <FieldLabel>Month Quota</FieldLabel>
     <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>MonthQuota_12</FieldSerializeName>
+    <FieldXmlDataType>int</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.MonthQuota[12]</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -960,9 +960,9 @@
     <FieldLabel>Mobile Phone</FieldLabel>
     <FieldFormat>x(40)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>PhoneMobile</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.PhoneMobile</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -987,9 +987,9 @@
     <FieldLabel>Office Phone</FieldLabel>
     <FieldFormat>x(40)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>PhoneOffice</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.PhoneOffice</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -1014,9 +1014,9 @@
     <FieldLabel>Private Phone</FieldLabel>
     <FieldFormat>x(40)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>PhonePrivate</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.PhonePrivate</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -1041,9 +1041,9 @@
     <FieldLabel>Region</FieldLabel>
     <FieldFormat>x(8)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>Region</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.Region</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -1068,9 +1068,9 @@
     <FieldLabel>Rep Name</FieldLabel>
     <FieldFormat>x(30)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>RepName</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.RepName</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -1095,9 +1095,9 @@
     <FieldLabel>Sales Rep</FieldLabel>
     <FieldFormat>x(4)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>SalesRep</FieldSerializeName>
+    <FieldXmlDataType>string</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.SalesRep</FieldSource>
     <FieldExtent>0</FieldExtent>
@@ -1122,9 +1122,9 @@
     <FieldLabel>SmallImage</FieldLabel>
     <FieldFormat>x(8)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
+    <FieldSerializeName>SmallImage</FieldSerializeName>
+    <FieldXmlDataType>base64Binary</FieldXmlDataType>
+    <FieldXmlNodeType>ELEMENT</FieldXmlNodeType>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.SmallImage</FieldSource>
     <FieldExtent>0</FieldExtent>
