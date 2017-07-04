@@ -126,4 +126,39 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderBusinessEntity
         
     END METHOD.
 
+
+    @InvokeMethod (template="invoke-receive-dataset", parameterClassName="TrainingSamples.BusinessLogik.Order.CancelOrderParameter", datasetInput="false", datasetOutput="true") . 
+    /*------------------------------------------------------------------------------
+        Purpose:  
+        Notes:   
+        @param dsOrder INPUT-OUTPUT DATASET
+        @param poParameter The Parameter Object for this method 
+    ------------------------------------------------------------------------------*/
+    METHOD PUBLIC VOID CancelOrder (INPUT-OUTPUT DATASET dsOrder, 
+                                    poParameter AS TrainingSamples.BusinessLogik.Order.CancelOrderParameter):
+    
+        DEFINE VARIABLE oRequest AS IFetchDataRequest NO-UNDO . 
+        
+        oRequest = NEW FetchDataRequest ("eOrder", 
+                                         SUBSTITUTE ("for each eOrder where eOrder.OrderNum = &1",
+                                                     QUOTER (poParameter:OrderNumber))) .
+        THIS-OBJECT:FetchData(oRequest) .                           
+                                                     
+        FIND FIRST eOrder . /* why not just fail, when not available? */                                                     
+    
+/* Disabled validation, to allow repeated usage ....  
+      IF eOrder.OrderStatus <> "Ordered" THEN 
+            UNDO, THROW NEW AppError ("Cannot cancel this order because of it's order status.", 0) .
+  */  
+        THIS-OBJECT:TrackingChanges = TRUE . 
+    
+        ASSIGN eOrder.OrderStatus = "Cancelled" 
+               eOrder.Instructions = "Cancelled because of: " + poParameter:CancelationReason . 
+    
+        THIS-OBJECT:SaveChanges () . 
+        
+        DatasetHelper:ThrowDatasetErrors(THIS-OBJECT:DatasetHandle) .
+        
+    END METHOD .
+    
 END CLASS.

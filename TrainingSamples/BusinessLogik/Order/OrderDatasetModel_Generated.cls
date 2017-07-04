@@ -15,7 +15,7 @@
     Syntax      : 
     Description : 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 04/07/2017 13:46:39,880+02:00
+    Created     : 04/07/2017 16:04:34,774+02:00
     Notes       : 
   ----------------------------------------------------------------------*/
 
@@ -73,6 +73,36 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderDatasetModel_Generated
 
     
     END CONSTRUCTOR.
+
+    /*------------------------------------------------------------------------------
+        Purpose: Invokes the Business Entity Method CancelOrder  
+        Notes:   Receives the dataset CancelOrder from the backend
+        @param poParameter The Parameter Object for this method 
+    ------------------------------------------------------------------------------*/
+    METHOD PUBLIC VOID CancelOrder (poParameter AS TrainingSamples.BusinessLogik.Order.CancelOrderParameter):
+        
+        DATASET dsOrder:EMPTY-DATASET () .
+        
+        IF THIS-OBJECT:UseInterface = Consultingwerk.OERA.UseInterfaceEnum:ServiceAdapter THEN 
+            Consultingwerk.Framework.FrameworkSettings:ServiceAdapter:InvokeMethod ("":U,
+                                                                                    THIS-OBJECT:EntityName,
+                                                                                    "CancelOrder":U,
+                                                                                    INPUT-OUTPUT DATASET dsOrder,
+                                                                                    poParameter) .
+        ELSE 
+            Consultingwerk.OERA.ServiceInterface:InvokeMethod (THIS-OBJECT:EntityName,
+                                                               "CancelOrder":U,
+                                                               INPUT-OUTPUT DATASET dsOrder BY-REFERENCE,
+                                                               poParameter) .
+
+        {Consultingwerk/foreachABL.i Consultingwerk.OERA.TableModel oTable in THIS-OBJECT:TableModels}
+            IF VALID-HANDLE (oTable:QueryHandle) THEN DO:
+                oTable:QueryHandle:QUERY-OPEN () .
+                oTable:QueryHandle:GET-FIRST () .
+            END. 
+        END.
+        
+    END METHOD .
 
   
 

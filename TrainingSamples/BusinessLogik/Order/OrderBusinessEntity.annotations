@@ -1,7 +1,41 @@
 {
   "SerializedType": "Consultingwerk.Framework.TypeDescriptor.ClassAnnotationContainer",
   "ClassName": "TrainingSamples.BusinessLogik.Order.OrderBusinessEntity",
-  "TimeStamp": "2017-07-04T13:46:44.414+02:00",
+  "TimeStamp": "2017-07-04T15:48:20.699+02:00",
+  "Methods": [
+    {
+      "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableClassMemberAnnotation",
+      "Name": "CancelOrder",
+      "Annotations": [
+        {
+          "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableAnnotation",
+          "Name": "@InvokeMethod",
+          "Parameters": [
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "template",
+              "Value": "invoke-receive-dataset"
+            },
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "parameterClassName",
+              "Value": "TrainingSamples.BusinessLogik.Order.CancelOrderParameter"
+            },
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "datasetInput",
+              "Value": "false"
+            },
+            {
+              "SerializedType": "Consultingwerk.NameValuePair",
+              "Name": "datasetOutput",
+              "Value": "true"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "TempTables": [
     {
       "SerializedType": "Consultingwerk.Framework.TypeDescriptor.SerializableClassMemberAnnotation",
