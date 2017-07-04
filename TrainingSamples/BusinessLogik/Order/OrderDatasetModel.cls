@@ -10,12 +10,12 @@
  *                                                                    *
  **********************************************************************/
 /*------------------------------------------------------------------------
-    File        : Customer
+    File        : Order
     Purpose     : 
     Syntax      : 
     Description : 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 03/07/2017 14:41:48,089+02:00
+    Created     : 04/07/2017 13:46:39,890+02:00
     Notes       : Custom constructors that should not be replaced when the  
                   DatasetModel class is regenerated, need to be annotated 
                   using the @CustomConstructor. annotation
@@ -24,59 +24,61 @@
 ROUTINE-LEVEL ON ERROR UNDO, THROW.
 
 USING Consultingwerk.OERA.* FROM PROPATH .
-USING TrainingSamples.BusinessLogik.Customer.* FROM PROPATH .  
+USING TrainingSamples.BusinessLogik.Order.* FROM PROPATH .  
 USING Progress.Lang.* FROM PROPATH .
 
-@BusinessEntityGenerator (entityname="TrainingSamples.BusinessLogik.Customer.CustomerBusinessEntity", type="DatasetModel") .
+@BusinessEntityGenerator (entityname="TrainingSamples.BusinessLogik.Order.OrderBusinessEntity", type="DatasetModel") .
 
-CLASS TrainingSamples.BusinessLogik.Customer.CustomerDatasetModel
-    INHERITS CustomerDatasetModel_Generated: 
+CLASS TrainingSamples.BusinessLogik.Order.OrderDatasetModel
+    INHERITS OrderDatasetModel_Generated: 
 
     /*------------------------------------------------------------------------------
-        Purpose: Constructor for the CustomerDatasetModel class
+        Purpose: Constructor for the OrderDatasetModel class
         Notes:   
     ------------------------------------------------------------------------------*/
-    CONSTRUCTOR PUBLIC CustomerDatasetModel ():
+    CONSTRUCTOR PUBLIC OrderDatasetModel ():
         SUPER ().
 
     END CONSTRUCTOR.
 
     /*------------------------------------------------------------------------------
-        Purpose: Constructor for the CustomerDatasetModel class
+        Purpose: Constructor for the OrderDatasetModel class
         Notes:   
-        @param pCustNum The filter value for the eCustomer.CustNum field
+        @param pOrdernum The filter value for the eOrder.Ordernum field
     ------------------------------------------------------------------------------*/
-    CONSTRUCTOR PUBLIC CustomerDatasetModel (pCustNum AS INTEGER):
+    CONSTRUCTOR PUBLIC OrderDatasetModel (pOrdernum AS INTEGER):
         SUPER ().
 
-        THIS-OBJECT:Customer:Filter:CustNum:EQ (pCustNum) .
+        THIS-OBJECT:Order:Filter:Ordernum:EQ (pOrdernum) .
 
-        THIS-OBJECT:Customer:Filter:Run () .
+        THIS-OBJECT:Order:Filter:Run () .
 
     END CONSTRUCTOR.
 
     /*------------------------------------------------------------------------------
-        Purpose: Constructor for the CustomerDatasetModel class
+        Purpose: Constructor for the OrderDatasetModel class
         Notes:   
-        @param pSalesRep The filter value for the eCustomer.SalesRep field
+        @param pOrdernum The filter value for the eOrderLine.Ordernum field
+        @param pLinenum The filter value for the eOrderLine.Linenum field
     ------------------------------------------------------------------------------*/
-    CONSTRUCTOR PUBLIC CustomerDatasetModel (pSalesRep AS CHARACTER):
+    CONSTRUCTOR PUBLIC OrderDatasetModel (pOrdernum AS INTEGER, pLinenum AS INTEGER):
         SUPER ().
 
-        THIS-OBJECT:Customer:Filter:SalesRep:EQ (pSalesRep) .
+        THIS-OBJECT:OrderLine:Filter:Ordernum:EQ (pOrdernum) .
+        THIS-OBJECT:OrderLine:Filter:Linenum:EQ (pLinenum) .
 
-        THIS-OBJECT:Customer:Filter:Run () .
+        THIS-OBJECT:OrderLine:Filter:Run () .
 
     END CONSTRUCTOR.
 
     @CustomConstructor.
     /*------------------------------------------------------------------------------
-        Purpose: Constructor for the CustomerDatasetModel class
+        Purpose: Constructor for the OrderDatasetModel class
         Notes:   Retrieves data based on a named query   
         @param pcTables The comma delimited list of the Table Names to retrieve
         @param poNamedQuery The INamedQueryParameter that defines a named query
     ------------------------------------------------------------------------------*/
-    CONSTRUCTOR PUBLIC CustomerDatasetModel (pcTables AS CHARACTER,
+    CONSTRUCTOR PUBLIC OrderDatasetModel (pcTables AS CHARACTER,
                                        poNamedQuery AS INamedQueryParameter):
         SUPER ().
 
@@ -86,34 +88,15 @@ CLASS TrainingSamples.BusinessLogik.Customer.CustomerDatasetModel
 
     @CustomConstructor.
     /*------------------------------------------------------------------------------
-        Purpose: Constructor for the CustomerDatasetModel class
+        Purpose: Constructor for the OrderDatasetModel class
         Notes:   Retrieves data based on a named query   
         @param poNamedQuery The INamedQueryParameter that defines a named query
     ------------------------------------------------------------------------------*/
-    CONSTRUCTOR PUBLIC CustomerDatasetModel (poNamedQuery AS INamedQueryParameter):
+    CONSTRUCTOR PUBLIC OrderDatasetModel (poNamedQuery AS INamedQueryParameter):
         SUPER ().
 
         THIS-OBJECT:RetrieveData (poNamedQuery) .
 
     END CONSTRUCTOR.
-
-    /*------------------------------------------------------------------------------
-     Purpose:
-     Notes:
-    ------------------------------------------------------------------------------*/
-    METHOD PUBLIC STATIC CustomerDatasetModel FromNameAndCity (pcName AS CHARACTER, 
-                                                               pcCity AS CHARACTER):
-        
-        DEFINE VARIABLE oCustomer AS CustomerDatasetModel NO-UNDO . 
-
-        oCustomer = NEW CustomerDatasetModel () . 
-        
-        oCustomer:Customer:Filter:Name:Begins (pcName) .
-        oCustomer:Customer:Filter:City:Begins (pcCity):Run() .
-
-        RETURN oCustomer . 
-
-    END METHOD.
-    
 
 END CLASS.

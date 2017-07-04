@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="" xmlns:prodata="urn:schemas-progress-com:xml-prodata:0001">
+  <xsd:element name="dsOrder" prodata:proDataSet="true">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="eOrder" minOccurs="0" maxOccurs="unbounded" prodata:beforeTable="eOrderBefore">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Ordernum" type="xsd:int" nillable="true" prodata:format="zzzzzzzzz9" prodata:label="Order Num"/>
+              <xsd:element name="CustNum" type="xsd:int" nillable="true" prodata:format=">>>>9" prodata:label="Cust Num"/>
+              <xsd:element name="OrderDate" type="xsd:date" nillable="true" prodata:initial="prodata:today" prodata:label="Ordered"/>
+              <xsd:element name="ShipDate" type="xsd:date" nillable="true" prodata:format="99/99/9999" prodata:label="Shipped"/>
+              <xsd:element name="PromiseDate" type="xsd:date" nillable="true" prodata:label="Promised"/>
+              <xsd:element name="Carrier" type="xsd:string" nillable="true" prodata:format="x(25)"/>
+              <xsd:element name="Instructions" type="xsd:string" nillable="true" prodata:format="x(50)"/>
+              <xsd:element name="PO" type="xsd:string" nillable="true" prodata:format="x(20)"/>
+              <xsd:element name="Terms" type="xsd:string" nillable="true" default="Net30" prodata:format="x(20)"/>
+              <xsd:element name="SalesRep" type="xsd:string" nillable="true" prodata:format="x(4)" prodata:label="Sales Rep"/>
+              <xsd:element name="BillToID" type="xsd:int" nillable="true" prodata:format="zzzzzzzzz9" prodata:label="Bill To ID"/>
+              <xsd:element name="ShipToID" type="xsd:int" nillable="true" prodata:format="zzzzzzzzz9" prodata:label="Ship To ID"/>
+              <xsd:element name="OrderStatus" type="xsd:string" nillable="true" default="Ordered" prodata:format="x(20)" prodata:label="Order Status"/>
+              <xsd:element name="WarehouseNum" type="xsd:int" nillable="true" prodata:format="zzzzzzzzz9" prodata:label="Warehouse Num"/>
+              <xsd:element name="Creditcard" type="xsd:string" nillable="true" default="Visa" prodata:format="x(20)" prodata:label="Credit Card"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="eOrderLine" minOccurs="0" maxOccurs="unbounded" prodata:beforeTable="eOrderLineBefore">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Ordernum" type="xsd:int" nillable="true" prodata:format="zzzzzzzzz9" prodata:label="Order Num"/>
+              <xsd:element name="Linenum" type="xsd:int" nillable="true" prodata:format=">>9" prodata:label="Line Num"/>
+              <xsd:element name="Itemnum" type="xsd:int" nillable="true" prodata:format="zzzzzzzzz9" prodata:label="Item Num"/>
+              <xsd:element name="Price" type="xsd:decimal" nillable="true" prodata:format="->,>>>,>>9.99"/>
+              <xsd:element name="Qty" type="xsd:int" nillable="true" prodata:format="->>>>9"/>
+              <xsd:element name="Discount" type="xsd:int" nillable="true" prodata:format=">>9%"/>
+              <xsd:element name="ExtendedPrice" type="xsd:decimal" nillable="true" prodata:format="->>>,>>9.99" prodata:label="Extended Price"/>
+              <xsd:element name="OrderLineStatus" type="xsd:string" nillable="true" default="Ordered" prodata:format="x(20)" prodata:label="Order Line Status"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:unique name="CustOrder">
+      <xsd:selector xpath=".//eOrder"/>
+      <xsd:field xpath="CustNum"/>
+      <xsd:field xpath="Ordernum"/>
+    </xsd:unique>
+    <xsd:unique name="OrderNum" prodata:primaryIndex="true">
+      <xsd:selector xpath=".//eOrder"/>
+      <xsd:field xpath="Ordernum"/>
+    </xsd:unique>
+    <xsd:unique name="orderline" prodata:primaryIndex="true">
+      <xsd:selector xpath=".//eOrderLine"/>
+      <xsd:field xpath="Ordernum"/>
+      <xsd:field xpath="Linenum"/>
+    </xsd:unique>
+    <xsd:keyref name="eOrdereOrderLineRelation" refer="OrderNum">
+      <xsd:selector xpath=".//eOrderLine"/>
+      <xsd:field xpath="Ordernum"/>
+    </xsd:keyref>
+  </xsd:element>
+  <xsd:annotation>
+    <xsd:appinfo>
+      <prodata:index name="OrderDate">
+        <prodata:table name="eOrder"/>
+        <prodata:field name="OrderDate"/>
+      </prodata:index>
+      <prodata:index name="OrderStatus">
+        <prodata:table name="eOrder"/>
+        <prodata:field name="OrderStatus"/>
+      </prodata:index>
+      <prodata:index name="SalesRep">
+        <prodata:table name="eOrder"/>
+        <prodata:field name="SalesRep"/>
+      </prodata:index>
+      <prodata:index name="itemnum">
+        <prodata:table name="eOrderLine"/>
+        <prodata:field name="Itemnum"/>
+      </prodata:index>
+      <prodata:index name="OrderLineStatus">
+        <prodata:table name="eOrderLine"/>
+        <prodata:field name="OrderLineStatus"/>
+      </prodata:index>
+    </xsd:appinfo>
+  </xsd:annotation>
+</xsd:schema>
