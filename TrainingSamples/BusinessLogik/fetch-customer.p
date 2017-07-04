@@ -40,7 +40,7 @@ oRequest = NEW FetchDataRequest ("eCustomer",
 
 ServiceInterface:FetchData("TrainingSamples.BusinessLogik.Customer.CustomerBusinessEntity",
                            oRequest,
-                           OUTPUT DATASET dsCustomer) .
+                           OUTPUT DATASET dsCustomer BY-REFERENCE) .
                            
 FOR EACH eCustomer:
     DISPL eCustomer.CustNum FORMAT ">>>,>>>,>>9" eCustomer.Name eCustomer.City WITH WIDTH 200 .                            
@@ -50,7 +50,7 @@ oRequest = NEW FetchDataRequest ("eSalesrep") .
 
 ServiceInterface:FetchData("TrainingSamples.BusinessLogik.Customer.CustomerBusinessEntity",
                            oRequest,
-                           OUTPUT DATASET dsCustomer) .
+                           OUTPUT DATASET dsCustomer BY-REFERENCE) .
 
 FOR EACH eSalesrep:
     DISPL eSalesrep.Salesrep eSalesrep.RepName WITH WIDTH 200 .                            
@@ -60,7 +60,7 @@ END.
 
 ServiceInterface:FetchData("TrainingSamples.BusinessLogik.Customer.CustomerBusinessEntity",
                            NEW FetchDataRequest ("eCustomer,eSalesRep", 20),
-                           OUTPUT DATASET dsCustomer) .
+                           OUTPUT DATASET dsCustomer BY-REFERENCE) .
 
 FOR EACH eCustomer, FIRST eSalesrep OF eCustomer:
     DISPL eCustomer.CustNum eCustomer.Name eCustomer.Salesrep eSalesrep.RepName WITH WIDTH 200 .                            

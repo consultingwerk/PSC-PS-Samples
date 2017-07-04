@@ -30,7 +30,7 @@ USING Progress.Lang.*                 FROM PROPATH .
 @BusinessEntityGenerator (entityname="TrainingSamples.BusinessLogik.CustomerWithReposition.CustomerBusinessEntity", type="BusinessEntity") .
 
 CLASS TrainingSamples.BusinessLogik.CustomerWithReposition.CustomerBusinessEntity 
-    INHERITS PscBusinessEntity
+    INHERITS PscBusinessEntity IMPLEMENTS IFetchDataByReference
     USE-WIDGET-POOL: 
 
     { TrainingSamples/BusinessLogik/CustomerWithReposition/dsCustomer.i }
@@ -46,6 +46,19 @@ CLASS TrainingSamples.BusinessLogik.CustomerWithReposition.CustomerBusinessEntit
         THIS-OBJECT:DataAccessName = "TrainingSamples.BusinessLogik.CustomerWithReposition.CustomerDataAccess":U .
 
     END CONSTRUCTOR.
+
+    /*------------------------------------------------------------------------------
+        Purpose:  Fetch data from the Data Access object
+        Notes:
+        @param poFetchDataRequest The IFetchDataRequest object with the parameters for this call
+        @param dsCustomer The dataset, intended to by passed BY-REFERENCE
+    ------------------------------------------------------------------------------*/
+    METHOD PUBLIC FINAL VOID FetchDataByReference (poFetchDataRequest AS Consultingwerk.OERA.IFetchDataRequest,
+                                                   OUTPUT DATASET dsCustomer):
+
+        THIS-OBJECT:FetchData (poFetchDataRequest, DATASET dsCustomer:HANDLE) .
+
+    END METHOD.
 
     /*------------------------------------------------------------------------------
         Purpose: Provides a hook to modify data in the ProDataset after Read and 

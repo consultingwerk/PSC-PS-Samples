@@ -27,7 +27,7 @@ DEFINE VARIABLE oRequest AS IFetchDataRequest NO-UNDO .
 
 ServiceInterface:FetchData("TrainingSamples.BusinessLogik.Customer.CustomerBusinessEntity",
                            NEW FetchDataRequest ("eCustomer,eSalesRep", 20),
-                           OUTPUT DATASET dsCustomer) .
+                           OUTPUT DATASET dsCustomer BY-REFERENCE) .
 
 
 DATASET dsCustomer:TOP-NAV-QUERY:QUERY-OPEN () .
