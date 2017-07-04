@@ -4,7 +4,7 @@
     Syntax      : 
     Description : 
     Author(s)   : Mike Fechner
-    Created     : 03/07/2017 14:41:47,825+02:00
+    Created     : 04/07/2017 09:39:24,682+02:00
     Notes       : 
   ----------------------------------------------------------------------*/
 
@@ -79,93 +79,12 @@ CLASS TrainingSamples.BusinessLogik.Customer.SalesrepTableModelSort
     END GET.
 
     /*------------------------------------------------------------------------------
-        Purpose: Returns the Sort option for the MonthQuota_04 field
+        Purpose: Returns the Sort option for the EmailAddress field
         Notes:   
     ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_04 AS TableModelSortField NO-UNDO 
+    DEFINE PUBLIC PROPERTY EmailAddress AS TableModelSortField NO-UNDO 
     GET:
-        RETURN NEW TableModelSortField (THIS-OBJECT, "MonthQuota_04":U). 
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the Sort option for the MonthQuota_05 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_05 AS TableModelSortField NO-UNDO 
-    GET:
-        RETURN NEW TableModelSortField (THIS-OBJECT, "MonthQuota_05":U). 
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the Sort option for the MonthQuota_06 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_06 AS TableModelSortField NO-UNDO 
-    GET:
-        RETURN NEW TableModelSortField (THIS-OBJECT, "MonthQuota_06":U). 
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the Sort option for the MonthQuota_07 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_07 AS TableModelSortField NO-UNDO 
-    GET:
-        RETURN NEW TableModelSortField (THIS-OBJECT, "MonthQuota_07":U). 
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the Sort option for the MonthQuota_08 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_08 AS TableModelSortField NO-UNDO 
-    GET:
-        RETURN NEW TableModelSortField (THIS-OBJECT, "MonthQuota_08":U). 
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the Sort option for the MonthQuota_09 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_09 AS TableModelSortField NO-UNDO 
-    GET:
-        RETURN NEW TableModelSortField (THIS-OBJECT, "MonthQuota_09":U). 
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the Sort option for the MonthQuota_10 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_10 AS TableModelSortField NO-UNDO 
-    GET:
-        RETURN NEW TableModelSortField (THIS-OBJECT, "MonthQuota_10":U). 
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the Sort option for the MonthQuota_11 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_11 AS TableModelSortField NO-UNDO 
-    GET:
-        RETURN NEW TableModelSortField (THIS-OBJECT, "MonthQuota_11":U). 
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the Sort option for the MonthQuota_12 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_12 AS TableModelSortField NO-UNDO 
-    GET:
-        RETURN NEW TableModelSortField (THIS-OBJECT, "MonthQuota_12":U). 
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the Sort option for the Email field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY Email AS TableModelSortField NO-UNDO 
-    GET:
-        RETURN NEW TableModelSortField (THIS-OBJECT, "Email":U). 
+        RETURN NEW TableModelSortField (THIS-OBJECT, "EmailAddress":U). 
     END GET.
 
     /*------------------------------------------------------------------------------
@@ -187,12 +106,12 @@ CLASS TrainingSamples.BusinessLogik.Customer.SalesrepTableModelSort
     END GET.
 
     /*------------------------------------------------------------------------------
-        Purpose: Returns the Sort option for the PhoneMobile field
+        Purpose: Returns the Sort option for the PhoneHandy field
         Notes:   
     ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY PhoneMobile AS TableModelSortField NO-UNDO 
+    DEFINE PUBLIC PROPERTY PhoneHandy AS TableModelSortField NO-UNDO 
     GET:
-        RETURN NEW TableModelSortField (THIS-OBJECT, "PhoneMobile":U). 
+        RETURN NEW TableModelSortField (THIS-OBJECT, "PhoneHandy":U). 
     END GET.
 
 

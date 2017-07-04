@@ -36,21 +36,13 @@
               <xsd:element name="MonthQuota_01" type="xsd:int" nillable="true" prodata:label="Month Quota"/>
               <xsd:element name="MonthQuota_02" type="xsd:int" nillable="true" prodata:label="Month Quota"/>
               <xsd:element name="MonthQuota_03" type="xsd:int" nillable="true" prodata:label="Month Quota"/>
-              <xsd:element name="MonthQuota_04" type="xsd:int" nillable="true" prodata:label="Month Quota"/>
-              <xsd:element name="MonthQuota_05" type="xsd:int" nillable="true" prodata:label="Month Quota"/>
-              <xsd:element name="MonthQuota_06" type="xsd:int" nillable="true" prodata:label="Month Quota"/>
-              <xsd:element name="MonthQuota_07" type="xsd:int" nillable="true" prodata:label="Month Quota"/>
-              <xsd:element name="MonthQuota_08" type="xsd:int" nillable="true" prodata:label="Month Quota"/>
-              <xsd:element name="MonthQuota_09" type="xsd:int" nillable="true" prodata:label="Month Quota"/>
-              <xsd:element name="MonthQuota_10" type="xsd:int" nillable="true" prodata:label="Month Quota"/>
-              <xsd:element name="MonthQuota_11" type="xsd:int" nillable="true" prodata:label="Month Quota"/>
-              <xsd:element name="MonthQuota_12" type="xsd:int" nillable="true" prodata:label="Month Quota"/>
               <xsd:element name="SmallImage" type="xsd:base64Binary" nillable="true" prodata:dataType="prodata:blob"/>
-              <xsd:element name="LargeImage" type="xsd:base64Binary" nillable="true" prodata:dataType="prodata:blob"/>
-              <xsd:element name="Email" type="xsd:string" nillable="true" prodata:format="x(80)" prodata:label="E-Mail"/>
+              <xsd:element name="EmailAddress" type="xsd:string" nillable="true" prodata:format="x(80)" prodata:label="E-Mail"/>
               <xsd:element name="PhoneOffice" type="xsd:string" nillable="true" prodata:format="x(40)" prodata:label="Office Phone"/>
               <xsd:element name="PhonePrivate" type="xsd:string" nillable="true" prodata:format="x(40)" prodata:label="Private Phone"/>
-              <xsd:element name="PhoneMobile" type="xsd:string" nillable="true" prodata:format="x(40)" prodata:label="Mobile Phone"/>
+              <xsd:element name="PhoneHandy" type="xsd:string" nillable="true" prodata:format="x(40)" prodata:label="Mobile Phone"/>
+              <xsd:element name="SmallImage1" type="xsd:base64Binary" nillable="true" prodata:dataType="prodata:blob" prodata:label="SmallImage"/>
+              <xsd:element name="SmallImage2" type="xsd:base64Binary" nillable="true" prodata:dataType="prodata:blob" prodata:label="SmallImage"/>
             </xsd:sequence>
           </xsd:complexType>
         </xsd:element>

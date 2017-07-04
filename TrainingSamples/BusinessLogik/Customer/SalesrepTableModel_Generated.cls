@@ -15,7 +15,7 @@
     Syntax      : 
     Description : 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 03/07/2017 14:41:47,829+02:00
+    Created     : 04/07/2017 09:39:24,703+02:00
     Notes       : 
   ----------------------------------------------------------------------*/
 
@@ -181,251 +181,26 @@ CLASS TrainingSamples.BusinessLogik.Customer.SalesrepTableModel_Generated
     END METHOD .
 
     /*------------------------------------------------------------------------------
-        Purpose: Gets and sets the current MonthQuota_04 value
+        Purpose: Gets and sets the current EmailAddress value
         Notes:   
     ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_04 AS INTEGER NO-UNDO
+    DEFINE PUBLIC PROPERTY EmailAddress AS CHARACTER NO-UNDO
     GET:
-        RETURN THIS-OBJECT:GetIntegerFieldValue ("MonthQuota_04":U) .
-    END GET . 
-    PUBLIC SET (arg AS INTEGER):
-        THIS-OBJECT:SetIntegerFieldValue ("MonthQuota_04":U, arg) .
-    END SET .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the value of the MonthQuota_04 field when a record is available
-        Notes:   Returns the default value, when no record
-        @param pDefaultValue The default value to return when no record is available
-        @return The field value or the default value when no record is available
-    ------------------------------------------------------------------------------*/
-    METHOD PUBLIC INTEGER MonthQuota_04WhenAvailable (pDefaultValue AS INTEGER):
-        IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
-            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("MonthQuota_04":U):BUFFER-VALUE .
-        ELSE 
-            RETURN pDefaultValue .
-    END METHOD .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Gets and sets the current MonthQuota_05 value
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_05 AS INTEGER NO-UNDO
-    GET:
-        RETURN THIS-OBJECT:GetIntegerFieldValue ("MonthQuota_05":U) .
-    END GET . 
-    PUBLIC SET (arg AS INTEGER):
-        THIS-OBJECT:SetIntegerFieldValue ("MonthQuota_05":U, arg) .
-    END SET .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the value of the MonthQuota_05 field when a record is available
-        Notes:   Returns the default value, when no record
-        @param pDefaultValue The default value to return when no record is available
-        @return The field value or the default value when no record is available
-    ------------------------------------------------------------------------------*/
-    METHOD PUBLIC INTEGER MonthQuota_05WhenAvailable (pDefaultValue AS INTEGER):
-        IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
-            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("MonthQuota_05":U):BUFFER-VALUE .
-        ELSE 
-            RETURN pDefaultValue .
-    END METHOD .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Gets and sets the current MonthQuota_06 value
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_06 AS INTEGER NO-UNDO
-    GET:
-        RETURN THIS-OBJECT:GetIntegerFieldValue ("MonthQuota_06":U) .
-    END GET . 
-    PUBLIC SET (arg AS INTEGER):
-        THIS-OBJECT:SetIntegerFieldValue ("MonthQuota_06":U, arg) .
-    END SET .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the value of the MonthQuota_06 field when a record is available
-        Notes:   Returns the default value, when no record
-        @param pDefaultValue The default value to return when no record is available
-        @return The field value or the default value when no record is available
-    ------------------------------------------------------------------------------*/
-    METHOD PUBLIC INTEGER MonthQuota_06WhenAvailable (pDefaultValue AS INTEGER):
-        IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
-            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("MonthQuota_06":U):BUFFER-VALUE .
-        ELSE 
-            RETURN pDefaultValue .
-    END METHOD .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Gets and sets the current MonthQuota_07 value
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_07 AS INTEGER NO-UNDO
-    GET:
-        RETURN THIS-OBJECT:GetIntegerFieldValue ("MonthQuota_07":U) .
-    END GET . 
-    PUBLIC SET (arg AS INTEGER):
-        THIS-OBJECT:SetIntegerFieldValue ("MonthQuota_07":U, arg) .
-    END SET .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the value of the MonthQuota_07 field when a record is available
-        Notes:   Returns the default value, when no record
-        @param pDefaultValue The default value to return when no record is available
-        @return The field value or the default value when no record is available
-    ------------------------------------------------------------------------------*/
-    METHOD PUBLIC INTEGER MonthQuota_07WhenAvailable (pDefaultValue AS INTEGER):
-        IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
-            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("MonthQuota_07":U):BUFFER-VALUE .
-        ELSE 
-            RETURN pDefaultValue .
-    END METHOD .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Gets and sets the current MonthQuota_08 value
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_08 AS INTEGER NO-UNDO
-    GET:
-        RETURN THIS-OBJECT:GetIntegerFieldValue ("MonthQuota_08":U) .
-    END GET . 
-    PUBLIC SET (arg AS INTEGER):
-        THIS-OBJECT:SetIntegerFieldValue ("MonthQuota_08":U, arg) .
-    END SET .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the value of the MonthQuota_08 field when a record is available
-        Notes:   Returns the default value, when no record
-        @param pDefaultValue The default value to return when no record is available
-        @return The field value or the default value when no record is available
-    ------------------------------------------------------------------------------*/
-    METHOD PUBLIC INTEGER MonthQuota_08WhenAvailable (pDefaultValue AS INTEGER):
-        IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
-            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("MonthQuota_08":U):BUFFER-VALUE .
-        ELSE 
-            RETURN pDefaultValue .
-    END METHOD .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Gets and sets the current MonthQuota_09 value
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_09 AS INTEGER NO-UNDO
-    GET:
-        RETURN THIS-OBJECT:GetIntegerFieldValue ("MonthQuota_09":U) .
-    END GET . 
-    PUBLIC SET (arg AS INTEGER):
-        THIS-OBJECT:SetIntegerFieldValue ("MonthQuota_09":U, arg) .
-    END SET .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the value of the MonthQuota_09 field when a record is available
-        Notes:   Returns the default value, when no record
-        @param pDefaultValue The default value to return when no record is available
-        @return The field value or the default value when no record is available
-    ------------------------------------------------------------------------------*/
-    METHOD PUBLIC INTEGER MonthQuota_09WhenAvailable (pDefaultValue AS INTEGER):
-        IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
-            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("MonthQuota_09":U):BUFFER-VALUE .
-        ELSE 
-            RETURN pDefaultValue .
-    END METHOD .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Gets and sets the current MonthQuota_10 value
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_10 AS INTEGER NO-UNDO
-    GET:
-        RETURN THIS-OBJECT:GetIntegerFieldValue ("MonthQuota_10":U) .
-    END GET . 
-    PUBLIC SET (arg AS INTEGER):
-        THIS-OBJECT:SetIntegerFieldValue ("MonthQuota_10":U, arg) .
-    END SET .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the value of the MonthQuota_10 field when a record is available
-        Notes:   Returns the default value, when no record
-        @param pDefaultValue The default value to return when no record is available
-        @return The field value or the default value when no record is available
-    ------------------------------------------------------------------------------*/
-    METHOD PUBLIC INTEGER MonthQuota_10WhenAvailable (pDefaultValue AS INTEGER):
-        IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
-            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("MonthQuota_10":U):BUFFER-VALUE .
-        ELSE 
-            RETURN pDefaultValue .
-    END METHOD .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Gets and sets the current MonthQuota_11 value
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_11 AS INTEGER NO-UNDO
-    GET:
-        RETURN THIS-OBJECT:GetIntegerFieldValue ("MonthQuota_11":U) .
-    END GET . 
-    PUBLIC SET (arg AS INTEGER):
-        THIS-OBJECT:SetIntegerFieldValue ("MonthQuota_11":U, arg) .
-    END SET .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the value of the MonthQuota_11 field when a record is available
-        Notes:   Returns the default value, when no record
-        @param pDefaultValue The default value to return when no record is available
-        @return The field value or the default value when no record is available
-    ------------------------------------------------------------------------------*/
-    METHOD PUBLIC INTEGER MonthQuota_11WhenAvailable (pDefaultValue AS INTEGER):
-        IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
-            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("MonthQuota_11":U):BUFFER-VALUE .
-        ELSE 
-            RETURN pDefaultValue .
-    END METHOD .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Gets and sets the current MonthQuota_12 value
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_12 AS INTEGER NO-UNDO
-    GET:
-        RETURN THIS-OBJECT:GetIntegerFieldValue ("MonthQuota_12":U) .
-    END GET . 
-    PUBLIC SET (arg AS INTEGER):
-        THIS-OBJECT:SetIntegerFieldValue ("MonthQuota_12":U, arg) .
-    END SET .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the value of the MonthQuota_12 field when a record is available
-        Notes:   Returns the default value, when no record
-        @param pDefaultValue The default value to return when no record is available
-        @return The field value or the default value when no record is available
-    ------------------------------------------------------------------------------*/
-    METHOD PUBLIC INTEGER MonthQuota_12WhenAvailable (pDefaultValue AS INTEGER):
-        IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
-            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("MonthQuota_12":U):BUFFER-VALUE .
-        ELSE 
-            RETURN pDefaultValue .
-    END METHOD .
-
-    /*------------------------------------------------------------------------------
-        Purpose: Gets and sets the current Email value
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY Email AS CHARACTER NO-UNDO
-    GET:
-        RETURN THIS-OBJECT:GetCharacterFieldValue ("Email":U) .
+        RETURN THIS-OBJECT:GetCharacterFieldValue ("EmailAddress":U) .
     END GET . 
     PUBLIC SET (arg AS CHARACTER):
-        THIS-OBJECT:SetCharacterFieldValue ("Email":U, arg) .
+        THIS-OBJECT:SetCharacterFieldValue ("EmailAddress":U, arg) .
     END SET .
 
     /*------------------------------------------------------------------------------
-        Purpose: Returns the value of the Email field when a record is available
+        Purpose: Returns the value of the EmailAddress field when a record is available
         Notes:   Returns the default value, when no record
         @param pDefaultValue The default value to return when no record is available
         @return The field value or the default value when no record is available
     ------------------------------------------------------------------------------*/
-    METHOD PUBLIC CHARACTER EmailWhenAvailable (pDefaultValue AS CHARACTER):
+    METHOD PUBLIC CHARACTER EmailAddressWhenAvailable (pDefaultValue AS CHARACTER):
         IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
-            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("Email":U):BUFFER-VALUE .
+            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("EmailAddress":U):BUFFER-VALUE .
         ELSE 
             RETURN pDefaultValue .
     END METHOD .
@@ -481,26 +256,26 @@ CLASS TrainingSamples.BusinessLogik.Customer.SalesrepTableModel_Generated
     END METHOD .
 
     /*------------------------------------------------------------------------------
-        Purpose: Gets and sets the current PhoneMobile value
+        Purpose: Gets and sets the current PhoneHandy value
         Notes:   
     ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY PhoneMobile AS CHARACTER NO-UNDO
+    DEFINE PUBLIC PROPERTY PhoneHandy AS CHARACTER NO-UNDO
     GET:
-        RETURN THIS-OBJECT:GetCharacterFieldValue ("PhoneMobile":U) .
+        RETURN THIS-OBJECT:GetCharacterFieldValue ("PhoneHandy":U) .
     END GET . 
     PUBLIC SET (arg AS CHARACTER):
-        THIS-OBJECT:SetCharacterFieldValue ("PhoneMobile":U, arg) .
+        THIS-OBJECT:SetCharacterFieldValue ("PhoneHandy":U, arg) .
     END SET .
 
     /*------------------------------------------------------------------------------
-        Purpose: Returns the value of the PhoneMobile field when a record is available
+        Purpose: Returns the value of the PhoneHandy field when a record is available
         Notes:   Returns the default value, when no record
         @param pDefaultValue The default value to return when no record is available
         @return The field value or the default value when no record is available
     ------------------------------------------------------------------------------*/
-    METHOD PUBLIC CHARACTER PhoneMobileWhenAvailable (pDefaultValue AS CHARACTER):
+    METHOD PUBLIC CHARACTER PhoneHandyWhenAvailable (pDefaultValue AS CHARACTER):
         IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
-            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("PhoneMobile":U):BUFFER-VALUE .
+            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("PhoneHandy":U):BUFFER-VALUE .
         ELSE 
             RETURN pDefaultValue .
     END METHOD .

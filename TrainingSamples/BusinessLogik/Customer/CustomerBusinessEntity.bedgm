@@ -71,10 +71,10 @@
     <TempTableDescription/>
     <TempTablePath>TrainingSamples/BusinessLogik/Customer</TempTablePath>
     <TempTableBeforeName>eSalesrepBefore</TempTableBeforeName>
-    <LayoutColumn>526</LayoutColumn>
-    <LayoutRow>18</LayoutRow>
+    <LayoutColumn>520</LayoutColumn>
+    <LayoutRow>20</LayoutRow>
     <LayoutWidth>200</LayoutWidth>
-    <LayoutHeight>530</LayoutHeight>
+    <LayoutHeight>370</LayoutHeight>
     <NamespaceUri/>
     <NamespacePrefix/>
     <XmlNodeName/>
@@ -573,8 +573,8 @@
   <eField>
     <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
     <TempTableName>eSalesrep</TempTableName>
-    <FieldName>Email</FieldName>
-    <FieldOrder>18</FieldOrder>
+    <FieldName>EmailAddress</FieldName>
+    <FieldOrder>8</FieldOrder>
     <FieldDataType>CHARACTER</FieldDataType>
     <FieldDescription>E-Mail</FieldDescription>
     <FieldInitial/>
@@ -587,33 +587,6 @@
     <FieldXmlNodeType/>
     <FieldXmlNodeName/>
     <FieldSource>Salesrep.Email</FieldSource>
-    <FieldExtent>0</FieldExtent>
-    <FieldGetAccess>PUBLIC</FieldGetAccess>
-    <FieldSetAccess>PUBLIC</FieldSetAccess>
-    <FieldCalcExpression/>
-    <FieldCaseSensitive>false</FieldCaseSensitive>
-    <FieldCustomControlName/>
-    <FieldValidationInstance xsi:nil="true"/>
-    <FieldSemanticType/>
-    <FieldSkipAssignment>false</FieldSkipAssignment>
-  </eField>
-  <eField>
-    <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
-    <TempTableName>eSalesrep</TempTableName>
-    <FieldName>LargeImage</FieldName>
-    <FieldOrder>17</FieldOrder>
-    <FieldDataType>BLOB</FieldDataType>
-    <FieldDescription>LargeImage</FieldDescription>
-    <FieldInitial/>
-    <FieldInitialUnknownValue>true</FieldInitialUnknownValue>
-    <FieldLabel>LargeImage</FieldLabel>
-    <FieldFormat>x(8)</FieldFormat>
-    <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
-    <FieldXmlNodeName/>
-    <FieldSource>Salesrep.LargeImage</FieldSource>
     <FieldExtent>0</FieldExtent>
     <FieldGetAccess>PUBLIC</FieldGetAccess>
     <FieldSetAccess>PUBLIC</FieldSetAccess>
@@ -708,251 +681,8 @@
   <eField>
     <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
     <TempTableName>eSalesrep</TempTableName>
-    <FieldName>MonthQuota_04</FieldName>
-    <FieldOrder>7</FieldOrder>
-    <FieldDataType>INTEGER</FieldDataType>
-    <FieldDescription>Month Quota</FieldDescription>
-    <FieldInitial>0</FieldInitial>
-    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
-    <FieldLabel>Month Quota</FieldLabel>
-    <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
-    <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
-    <FieldXmlNodeName/>
-    <FieldSource>Salesrep.MonthQuota[4]</FieldSource>
-    <FieldExtent>0</FieldExtent>
-    <FieldGetAccess>PUBLIC</FieldGetAccess>
-    <FieldSetAccess>PUBLIC</FieldSetAccess>
-    <FieldCalcExpression/>
-    <FieldCaseSensitive>false</FieldCaseSensitive>
-    <FieldCustomControlName/>
-    <FieldValidationInstance xsi:nil="true"/>
-    <FieldSemanticType/>
-    <FieldSkipAssignment>false</FieldSkipAssignment>
-  </eField>
-  <eField>
-    <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
-    <TempTableName>eSalesrep</TempTableName>
-    <FieldName>MonthQuota_05</FieldName>
-    <FieldOrder>8</FieldOrder>
-    <FieldDataType>INTEGER</FieldDataType>
-    <FieldDescription>Month Quota</FieldDescription>
-    <FieldInitial>0</FieldInitial>
-    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
-    <FieldLabel>Month Quota</FieldLabel>
-    <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
-    <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
-    <FieldXmlNodeName/>
-    <FieldSource>Salesrep.MonthQuota[5]</FieldSource>
-    <FieldExtent>0</FieldExtent>
-    <FieldGetAccess>PUBLIC</FieldGetAccess>
-    <FieldSetAccess>PUBLIC</FieldSetAccess>
-    <FieldCalcExpression/>
-    <FieldCaseSensitive>false</FieldCaseSensitive>
-    <FieldCustomControlName/>
-    <FieldValidationInstance xsi:nil="true"/>
-    <FieldSemanticType/>
-    <FieldSkipAssignment>false</FieldSkipAssignment>
-  </eField>
-  <eField>
-    <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
-    <TempTableName>eSalesrep</TempTableName>
-    <FieldName>MonthQuota_06</FieldName>
-    <FieldOrder>9</FieldOrder>
-    <FieldDataType>INTEGER</FieldDataType>
-    <FieldDescription>Month Quota</FieldDescription>
-    <FieldInitial>0</FieldInitial>
-    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
-    <FieldLabel>Month Quota</FieldLabel>
-    <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
-    <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
-    <FieldXmlNodeName/>
-    <FieldSource>Salesrep.MonthQuota[6]</FieldSource>
-    <FieldExtent>0</FieldExtent>
-    <FieldGetAccess>PUBLIC</FieldGetAccess>
-    <FieldSetAccess>PUBLIC</FieldSetAccess>
-    <FieldCalcExpression/>
-    <FieldCaseSensitive>false</FieldCaseSensitive>
-    <FieldCustomControlName/>
-    <FieldValidationInstance xsi:nil="true"/>
-    <FieldSemanticType/>
-    <FieldSkipAssignment>false</FieldSkipAssignment>
-  </eField>
-  <eField>
-    <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
-    <TempTableName>eSalesrep</TempTableName>
-    <FieldName>MonthQuota_07</FieldName>
-    <FieldOrder>10</FieldOrder>
-    <FieldDataType>INTEGER</FieldDataType>
-    <FieldDescription>Month Quota</FieldDescription>
-    <FieldInitial>0</FieldInitial>
-    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
-    <FieldLabel>Month Quota</FieldLabel>
-    <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
-    <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
-    <FieldXmlNodeName/>
-    <FieldSource>Salesrep.MonthQuota[7]</FieldSource>
-    <FieldExtent>0</FieldExtent>
-    <FieldGetAccess>PUBLIC</FieldGetAccess>
-    <FieldSetAccess>PUBLIC</FieldSetAccess>
-    <FieldCalcExpression/>
-    <FieldCaseSensitive>false</FieldCaseSensitive>
-    <FieldCustomControlName/>
-    <FieldValidationInstance xsi:nil="true"/>
-    <FieldSemanticType/>
-    <FieldSkipAssignment>false</FieldSkipAssignment>
-  </eField>
-  <eField>
-    <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
-    <TempTableName>eSalesrep</TempTableName>
-    <FieldName>MonthQuota_08</FieldName>
+    <FieldName>PhoneHandy</FieldName>
     <FieldOrder>11</FieldOrder>
-    <FieldDataType>INTEGER</FieldDataType>
-    <FieldDescription>Month Quota</FieldDescription>
-    <FieldInitial>0</FieldInitial>
-    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
-    <FieldLabel>Month Quota</FieldLabel>
-    <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
-    <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
-    <FieldXmlNodeName/>
-    <FieldSource>Salesrep.MonthQuota[8]</FieldSource>
-    <FieldExtent>0</FieldExtent>
-    <FieldGetAccess>PUBLIC</FieldGetAccess>
-    <FieldSetAccess>PUBLIC</FieldSetAccess>
-    <FieldCalcExpression/>
-    <FieldCaseSensitive>false</FieldCaseSensitive>
-    <FieldCustomControlName/>
-    <FieldValidationInstance xsi:nil="true"/>
-    <FieldSemanticType/>
-    <FieldSkipAssignment>false</FieldSkipAssignment>
-  </eField>
-  <eField>
-    <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
-    <TempTableName>eSalesrep</TempTableName>
-    <FieldName>MonthQuota_09</FieldName>
-    <FieldOrder>12</FieldOrder>
-    <FieldDataType>INTEGER</FieldDataType>
-    <FieldDescription>Month Quota</FieldDescription>
-    <FieldInitial>0</FieldInitial>
-    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
-    <FieldLabel>Month Quota</FieldLabel>
-    <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
-    <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
-    <FieldXmlNodeName/>
-    <FieldSource>Salesrep.MonthQuota[9]</FieldSource>
-    <FieldExtent>0</FieldExtent>
-    <FieldGetAccess>PUBLIC</FieldGetAccess>
-    <FieldSetAccess>PUBLIC</FieldSetAccess>
-    <FieldCalcExpression/>
-    <FieldCaseSensitive>false</FieldCaseSensitive>
-    <FieldCustomControlName/>
-    <FieldValidationInstance xsi:nil="true"/>
-    <FieldSemanticType/>
-    <FieldSkipAssignment>false</FieldSkipAssignment>
-  </eField>
-  <eField>
-    <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
-    <TempTableName>eSalesrep</TempTableName>
-    <FieldName>MonthQuota_10</FieldName>
-    <FieldOrder>13</FieldOrder>
-    <FieldDataType>INTEGER</FieldDataType>
-    <FieldDescription>Month Quota</FieldDescription>
-    <FieldInitial>0</FieldInitial>
-    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
-    <FieldLabel>Month Quota</FieldLabel>
-    <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
-    <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
-    <FieldXmlNodeName/>
-    <FieldSource>Salesrep.MonthQuota[10]</FieldSource>
-    <FieldExtent>0</FieldExtent>
-    <FieldGetAccess>PUBLIC</FieldGetAccess>
-    <FieldSetAccess>PUBLIC</FieldSetAccess>
-    <FieldCalcExpression/>
-    <FieldCaseSensitive>false</FieldCaseSensitive>
-    <FieldCustomControlName/>
-    <FieldValidationInstance xsi:nil="true"/>
-    <FieldSemanticType/>
-    <FieldSkipAssignment>false</FieldSkipAssignment>
-  </eField>
-  <eField>
-    <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
-    <TempTableName>eSalesrep</TempTableName>
-    <FieldName>MonthQuota_11</FieldName>
-    <FieldOrder>14</FieldOrder>
-    <FieldDataType>INTEGER</FieldDataType>
-    <FieldDescription>Month Quota</FieldDescription>
-    <FieldInitial>0</FieldInitial>
-    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
-    <FieldLabel>Month Quota</FieldLabel>
-    <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
-    <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
-    <FieldXmlNodeName/>
-    <FieldSource>Salesrep.MonthQuota[11]</FieldSource>
-    <FieldExtent>0</FieldExtent>
-    <FieldGetAccess>PUBLIC</FieldGetAccess>
-    <FieldSetAccess>PUBLIC</FieldSetAccess>
-    <FieldCalcExpression/>
-    <FieldCaseSensitive>false</FieldCaseSensitive>
-    <FieldCustomControlName/>
-    <FieldValidationInstance xsi:nil="true"/>
-    <FieldSemanticType/>
-    <FieldSkipAssignment>false</FieldSkipAssignment>
-  </eField>
-  <eField>
-    <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
-    <TempTableName>eSalesrep</TempTableName>
-    <FieldName>MonthQuota_12</FieldName>
-    <FieldOrder>15</FieldOrder>
-    <FieldDataType>INTEGER</FieldDataType>
-    <FieldDescription>Month Quota</FieldDescription>
-    <FieldInitial>0</FieldInitial>
-    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
-    <FieldLabel>Month Quota</FieldLabel>
-    <FieldFormat>-&gt;,&gt;&gt;&gt;,&gt;&gt;9</FieldFormat>
-    <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
-    <FieldXmlNodeName/>
-    <FieldSource>Salesrep.MonthQuota[12]</FieldSource>
-    <FieldExtent>0</FieldExtent>
-    <FieldGetAccess>PUBLIC</FieldGetAccess>
-    <FieldSetAccess>PUBLIC</FieldSetAccess>
-    <FieldCalcExpression/>
-    <FieldCaseSensitive>false</FieldCaseSensitive>
-    <FieldCustomControlName/>
-    <FieldValidationInstance xsi:nil="true"/>
-    <FieldSemanticType/>
-    <FieldSkipAssignment>false</FieldSkipAssignment>
-  </eField>
-  <eField>
-    <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
-    <TempTableName>eSalesrep</TempTableName>
-    <FieldName>PhoneMobile</FieldName>
-    <FieldOrder>21</FieldOrder>
     <FieldDataType>CHARACTER</FieldDataType>
     <FieldDescription>Mobile Phone</FieldDescription>
     <FieldInitial/>
@@ -979,7 +709,7 @@
     <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
     <TempTableName>eSalesrep</TempTableName>
     <FieldName>PhoneOffice</FieldName>
-    <FieldOrder>19</FieldOrder>
+    <FieldOrder>9</FieldOrder>
     <FieldDataType>CHARACTER</FieldDataType>
     <FieldDescription>Office Phone</FieldDescription>
     <FieldInitial/>
@@ -1006,7 +736,7 @@
     <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
     <TempTableName>eSalesrep</TempTableName>
     <FieldName>PhonePrivate</FieldName>
-    <FieldOrder>20</FieldOrder>
+    <FieldOrder>10</FieldOrder>
     <FieldDataType>CHARACTER</FieldDataType>
     <FieldDescription>Private Phone</FieldDescription>
     <FieldInitial/>
@@ -1114,11 +844,65 @@
     <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
     <TempTableName>eSalesrep</TempTableName>
     <FieldName>SmallImage</FieldName>
-    <FieldOrder>16</FieldOrder>
+    <FieldOrder>7</FieldOrder>
     <FieldDataType>BLOB</FieldDataType>
     <FieldDescription>SmallImage</FieldDescription>
     <FieldInitial/>
     <FieldInitialUnknownValue>true</FieldInitialUnknownValue>
+    <FieldLabel>SmallImage</FieldLabel>
+    <FieldFormat>x(8)</FieldFormat>
+    <FieldSerializeHidden>false</FieldSerializeHidden>
+    <FieldSerializeName/>
+    <FieldXmlDataType/>
+    <FieldXmlNodeType/>
+    <FieldXmlNodeName/>
+    <FieldSource>Salesrep.SmallImage</FieldSource>
+    <FieldExtent>0</FieldExtent>
+    <FieldGetAccess>PUBLIC</FieldGetAccess>
+    <FieldSetAccess>PUBLIC</FieldSetAccess>
+    <FieldCalcExpression/>
+    <FieldCaseSensitive>false</FieldCaseSensitive>
+    <FieldCustomControlName/>
+    <FieldValidationInstance xsi:nil="true"/>
+    <FieldSemanticType/>
+    <FieldSkipAssignment>false</FieldSkipAssignment>
+  </eField>
+  <eField>
+    <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
+    <TempTableName>eSalesrep</TempTableName>
+    <FieldName>SmallImage1</FieldName>
+    <FieldOrder>12</FieldOrder>
+    <FieldDataType>BLOB</FieldDataType>
+    <FieldDescription/>
+    <FieldInitial/>
+    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
+    <FieldLabel>SmallImage</FieldLabel>
+    <FieldFormat>x(8)</FieldFormat>
+    <FieldSerializeHidden>false</FieldSerializeHidden>
+    <FieldSerializeName/>
+    <FieldXmlDataType/>
+    <FieldXmlNodeType/>
+    <FieldXmlNodeName/>
+    <FieldSource>Salesrep.SmallImage</FieldSource>
+    <FieldExtent>0</FieldExtent>
+    <FieldGetAccess>PUBLIC</FieldGetAccess>
+    <FieldSetAccess>PUBLIC</FieldSetAccess>
+    <FieldCalcExpression/>
+    <FieldCaseSensitive>false</FieldCaseSensitive>
+    <FieldCustomControlName/>
+    <FieldValidationInstance xsi:nil="true"/>
+    <FieldSemanticType/>
+    <FieldSkipAssignment>false</FieldSkipAssignment>
+  </eField>
+  <eField>
+    <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
+    <TempTableName>eSalesrep</TempTableName>
+    <FieldName>SmallImage2</FieldName>
+    <FieldOrder>13</FieldOrder>
+    <FieldDataType>BLOB</FieldDataType>
+    <FieldDescription/>
+    <FieldInitial/>
+    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
     <FieldLabel>SmallImage</FieldLabel>
     <FieldFormat>x(8)</FieldFormat>
     <FieldSerializeHidden>false</FieldSerializeHidden>

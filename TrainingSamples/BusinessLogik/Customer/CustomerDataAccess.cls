@@ -101,21 +101,13 @@ CLASS TrainingSamples.BusinessLogik.Customer.CustomerDataAccess
                                       MonthQuota_01,Salesrep.MonthQuota[1],
                                       MonthQuota_02,Salesrep.MonthQuota[2],
                                       MonthQuota_03,Salesrep.MonthQuota[3],
-                                      MonthQuota_04,Salesrep.MonthQuota[4],
-                                      MonthQuota_05,Salesrep.MonthQuota[5],
-                                      MonthQuota_06,Salesrep.MonthQuota[6],
-                                      MonthQuota_07,Salesrep.MonthQuota[7],
-                                      MonthQuota_08,Salesrep.MonthQuota[8],
-                                      MonthQuota_09,Salesrep.MonthQuota[9],
-                                      MonthQuota_10,Salesrep.MonthQuota[10],
-                                      MonthQuota_11,Salesrep.MonthQuota[11],
-                                      MonthQuota_12,Salesrep.MonthQuota[12],
                                       SmallImage,Salesrep.SmallImage,
-                                      LargeImage,Salesrep.LargeImage,
-                                      Email,Salesrep.Email,
+                                      EmailAddress,Salesrep.Email,
                                       PhoneOffice,Salesrep.PhoneOffice,
                                       PhonePrivate,Salesrep.PhonePrivate,
-                                      PhoneMobile,Salesrep.PhoneMobile":U) .
+                                      PhoneHandy,Salesrep.PhoneMobile,
+                                      SmallImage1,Salesrep.SmallImage,
+                                      SmallImage2,Salesrep.SmallImage":U) .
         @AttachDataSourcesEnd.
         
     END METHOD.

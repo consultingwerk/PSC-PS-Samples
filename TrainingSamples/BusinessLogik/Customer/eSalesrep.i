@@ -18,7 +18,7 @@
     Description :  
 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 03.07.2017 14:41:45
+    Created     : 04.07.2017 09:39:13
     Notes       :
   ----------------------------------------------------------------------*/
 
@@ -34,21 +34,13 @@ DEFINE {&ACCESS} TEMP-TABLE eSalesrep{&SUFFIX} NO-UNDO {&REFERENCE-ONLY} &IF DEF
     FIELD MonthQuota_01 AS INTEGER FORMAT "->,>>>,>>9":U INITIAL "0":U LABEL "Month Quota":T
     FIELD MonthQuota_02 AS INTEGER FORMAT "->,>>>,>>9":U INITIAL "0":U LABEL "Month Quota":T
     FIELD MonthQuota_03 AS INTEGER FORMAT "->,>>>,>>9":U INITIAL "0":U LABEL "Month Quota":T
-    FIELD MonthQuota_04 AS INTEGER FORMAT "->,>>>,>>9":U INITIAL "0":U LABEL "Month Quota":T
-    FIELD MonthQuota_05 AS INTEGER FORMAT "->,>>>,>>9":U INITIAL "0":U LABEL "Month Quota":T
-    FIELD MonthQuota_06 AS INTEGER FORMAT "->,>>>,>>9":U INITIAL "0":U LABEL "Month Quota":T
-    FIELD MonthQuota_07 AS INTEGER FORMAT "->,>>>,>>9":U INITIAL "0":U LABEL "Month Quota":T
-    FIELD MonthQuota_08 AS INTEGER FORMAT "->,>>>,>>9":U INITIAL "0":U LABEL "Month Quota":T
-    FIELD MonthQuota_09 AS INTEGER FORMAT "->,>>>,>>9":U INITIAL "0":U LABEL "Month Quota":T
-    FIELD MonthQuota_10 AS INTEGER FORMAT "->,>>>,>>9":U INITIAL "0":U LABEL "Month Quota":T
-    FIELD MonthQuota_11 AS INTEGER FORMAT "->,>>>,>>9":U INITIAL "0":U LABEL "Month Quota":T
-    FIELD MonthQuota_12 AS INTEGER FORMAT "->,>>>,>>9":U INITIAL "0":U LABEL "Month Quota":T
     FIELD SmallImage AS BLOB FORMAT "x(8)":U INITIAL ? LABEL "SmallImage":T
-    FIELD LargeImage AS BLOB FORMAT "x(8)":U INITIAL ? LABEL "LargeImage":T
-    FIELD Email AS CHARACTER FORMAT "x(80)":U LABEL "E-Mail":T
+    FIELD EmailAddress AS CHARACTER FORMAT "x(80)":U LABEL "E-Mail":T
     FIELD PhoneOffice AS CHARACTER FORMAT "x(40)":U LABEL "Office Phone":T
     FIELD PhonePrivate AS CHARACTER FORMAT "x(40)":U LABEL "Private Phone":T
-    FIELD PhoneMobile AS CHARACTER FORMAT "x(40)":U LABEL "Mobile Phone":T
+    FIELD PhoneHandy AS CHARACTER FORMAT "x(40)":U LABEL "Mobile Phone":T
+    FIELD SmallImage1 AS BLOB FORMAT "x(8)":U LABEL "SmallImage":T
+    FIELD SmallImage2 AS BLOB FORMAT "x(8)":U LABEL "SmallImage":T
 
     INDEX SalesRep AS UNIQUE PRIMARY SalesRep ASCENDING
 

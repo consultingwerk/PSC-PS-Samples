@@ -15,7 +15,7 @@
     Syntax      :
     Description :
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 03/07/2017 14:41:48,140+02:00
+    Created     : 04/07/2017 09:39:25,256+02:00
     Notes       :
   ----------------------------------------------------------------------*/
 
@@ -85,93 +85,12 @@ CLASS TrainingSamples.BusinessLogik.Customer.SalesrepQuery
     END GET .
 
     /**
-     * Purpose: Provides the filter options for the MonthQuota_04 field
+     * Purpose: Provides the filter options for the EmailAddress field
      * Notes:
      */
-    DEFINE PUBLIC PROPERTY MonthQuota_04 AS SalesrepQueryIntegerPredicate NO-UNDO
+    DEFINE PUBLIC PROPERTY EmailAddress AS SalesrepQueryCharacterPredicate NO-UNDO
     GET:
-        RETURN NEW SalesrepQueryIntegerPredicate (THIS-OBJECT, "MonthQuota_04":U) .
-    END GET .
-
-    /**
-     * Purpose: Provides the filter options for the MonthQuota_05 field
-     * Notes:
-     */
-    DEFINE PUBLIC PROPERTY MonthQuota_05 AS SalesrepQueryIntegerPredicate NO-UNDO
-    GET:
-        RETURN NEW SalesrepQueryIntegerPredicate (THIS-OBJECT, "MonthQuota_05":U) .
-    END GET .
-
-    /**
-     * Purpose: Provides the filter options for the MonthQuota_06 field
-     * Notes:
-     */
-    DEFINE PUBLIC PROPERTY MonthQuota_06 AS SalesrepQueryIntegerPredicate NO-UNDO
-    GET:
-        RETURN NEW SalesrepQueryIntegerPredicate (THIS-OBJECT, "MonthQuota_06":U) .
-    END GET .
-
-    /**
-     * Purpose: Provides the filter options for the MonthQuota_07 field
-     * Notes:
-     */
-    DEFINE PUBLIC PROPERTY MonthQuota_07 AS SalesrepQueryIntegerPredicate NO-UNDO
-    GET:
-        RETURN NEW SalesrepQueryIntegerPredicate (THIS-OBJECT, "MonthQuota_07":U) .
-    END GET .
-
-    /**
-     * Purpose: Provides the filter options for the MonthQuota_08 field
-     * Notes:
-     */
-    DEFINE PUBLIC PROPERTY MonthQuota_08 AS SalesrepQueryIntegerPredicate NO-UNDO
-    GET:
-        RETURN NEW SalesrepQueryIntegerPredicate (THIS-OBJECT, "MonthQuota_08":U) .
-    END GET .
-
-    /**
-     * Purpose: Provides the filter options for the MonthQuota_09 field
-     * Notes:
-     */
-    DEFINE PUBLIC PROPERTY MonthQuota_09 AS SalesrepQueryIntegerPredicate NO-UNDO
-    GET:
-        RETURN NEW SalesrepQueryIntegerPredicate (THIS-OBJECT, "MonthQuota_09":U) .
-    END GET .
-
-    /**
-     * Purpose: Provides the filter options for the MonthQuota_10 field
-     * Notes:
-     */
-    DEFINE PUBLIC PROPERTY MonthQuota_10 AS SalesrepQueryIntegerPredicate NO-UNDO
-    GET:
-        RETURN NEW SalesrepQueryIntegerPredicate (THIS-OBJECT, "MonthQuota_10":U) .
-    END GET .
-
-    /**
-     * Purpose: Provides the filter options for the MonthQuota_11 field
-     * Notes:
-     */
-    DEFINE PUBLIC PROPERTY MonthQuota_11 AS SalesrepQueryIntegerPredicate NO-UNDO
-    GET:
-        RETURN NEW SalesrepQueryIntegerPredicate (THIS-OBJECT, "MonthQuota_11":U) .
-    END GET .
-
-    /**
-     * Purpose: Provides the filter options for the MonthQuota_12 field
-     * Notes:
-     */
-    DEFINE PUBLIC PROPERTY MonthQuota_12 AS SalesrepQueryIntegerPredicate NO-UNDO
-    GET:
-        RETURN NEW SalesrepQueryIntegerPredicate (THIS-OBJECT, "MonthQuota_12":U) .
-    END GET .
-
-    /**
-     * Purpose: Provides the filter options for the Email field
-     * Notes:
-     */
-    DEFINE PUBLIC PROPERTY Email AS SalesrepQueryCharacterPredicate NO-UNDO
-    GET:
-        RETURN NEW SalesrepQueryCharacterPredicate (THIS-OBJECT, "Email":U) .
+        RETURN NEW SalesrepQueryCharacterPredicate (THIS-OBJECT, "EmailAddress":U) .
     END GET .
 
     /**
@@ -193,12 +112,12 @@ CLASS TrainingSamples.BusinessLogik.Customer.SalesrepQuery
     END GET .
 
     /**
-     * Purpose: Provides the filter options for the PhoneMobile field
+     * Purpose: Provides the filter options for the PhoneHandy field
      * Notes:
      */
-    DEFINE PUBLIC PROPERTY PhoneMobile AS SalesrepQueryCharacterPredicate NO-UNDO
+    DEFINE PUBLIC PROPERTY PhoneHandy AS SalesrepQueryCharacterPredicate NO-UNDO
     GET:
-        RETURN NEW SalesrepQueryCharacterPredicate (THIS-OBJECT, "PhoneMobile":U) .
+        RETURN NEW SalesrepQueryCharacterPredicate (THIS-OBJECT, "PhoneHandy":U) .
     END GET .
 
     /**

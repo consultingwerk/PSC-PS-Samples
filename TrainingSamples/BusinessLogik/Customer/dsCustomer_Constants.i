@@ -18,7 +18,7 @@
     Description : 
 
     Author(s)   : Mike Fechner
-    Created     : 03.07.2017 14:41:48
+    Created     : 04.07.2017 09:39:25
     Notes       :
   ----------------------------------------------------------------------*/
 
@@ -51,19 +51,11 @@
 &GLOBAL-DEFINE eSalesrep.MonthQuota_01 "eSalesrep.MonthQuota_01"
 &GLOBAL-DEFINE eSalesrep.MonthQuota_02 "eSalesrep.MonthQuota_02"
 &GLOBAL-DEFINE eSalesrep.MonthQuota_03 "eSalesrep.MonthQuota_03"
-&GLOBAL-DEFINE eSalesrep.MonthQuota_04 "eSalesrep.MonthQuota_04"
-&GLOBAL-DEFINE eSalesrep.MonthQuota_05 "eSalesrep.MonthQuota_05"
-&GLOBAL-DEFINE eSalesrep.MonthQuota_06 "eSalesrep.MonthQuota_06"
-&GLOBAL-DEFINE eSalesrep.MonthQuota_07 "eSalesrep.MonthQuota_07"
-&GLOBAL-DEFINE eSalesrep.MonthQuota_08 "eSalesrep.MonthQuota_08"
-&GLOBAL-DEFINE eSalesrep.MonthQuota_09 "eSalesrep.MonthQuota_09"
-&GLOBAL-DEFINE eSalesrep.MonthQuota_10 "eSalesrep.MonthQuota_10"
-&GLOBAL-DEFINE eSalesrep.MonthQuota_11 "eSalesrep.MonthQuota_11"
-&GLOBAL-DEFINE eSalesrep.MonthQuota_12 "eSalesrep.MonthQuota_12"
 &GLOBAL-DEFINE eSalesrep.SmallImage "eSalesrep.SmallImage"
-&GLOBAL-DEFINE eSalesrep.LargeImage "eSalesrep.LargeImage"
-&GLOBAL-DEFINE eSalesrep.Email "eSalesrep.Email"
+&GLOBAL-DEFINE eSalesrep.EmailAddress "eSalesrep.EmailAddress"
 &GLOBAL-DEFINE eSalesrep.PhoneOffice "eSalesrep.PhoneOffice"
 &GLOBAL-DEFINE eSalesrep.PhonePrivate "eSalesrep.PhonePrivate"
-&GLOBAL-DEFINE eSalesrep.PhoneMobile "eSalesrep.PhoneMobile"
+&GLOBAL-DEFINE eSalesrep.PhoneHandy "eSalesrep.PhoneHandy"
+&GLOBAL-DEFINE eSalesrep.SmallImage1 "eSalesrep.SmallImage1"
+&GLOBAL-DEFINE eSalesrep.SmallImage2 "eSalesrep.SmallImage2"
 

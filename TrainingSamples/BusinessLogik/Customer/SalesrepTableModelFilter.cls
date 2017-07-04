@@ -15,7 +15,7 @@
     Syntax      : 
     Description : 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 03/07/2017 14:41:47,822+02:00
+    Created     : 04/07/2017 09:39:24,658+02:00
     Notes       : 
   ----------------------------------------------------------------------*/
 
@@ -90,93 +90,12 @@ CLASS TrainingSamples.BusinessLogik.Customer.SalesrepTableModelFilter
     END GET.
 
     /*------------------------------------------------------------------------------
-        Purpose: Returns the IntegerFilter for the MonthQuota_04 field
+        Purpose: Returns the CharacterFilter for the EmailAddress field
         Notes:   
     ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_04 AS IntegerFilter NO-UNDO 
+    DEFINE PUBLIC PROPERTY EmailAddress AS CharacterFilter NO-UNDO 
     GET:
-        RETURN oTableModel:NewIntegerFilter ("MonthQuota_04":U, THIS-OBJECT) .
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the IntegerFilter for the MonthQuota_05 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_05 AS IntegerFilter NO-UNDO 
-    GET:
-        RETURN oTableModel:NewIntegerFilter ("MonthQuota_05":U, THIS-OBJECT) .
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the IntegerFilter for the MonthQuota_06 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_06 AS IntegerFilter NO-UNDO 
-    GET:
-        RETURN oTableModel:NewIntegerFilter ("MonthQuota_06":U, THIS-OBJECT) .
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the IntegerFilter for the MonthQuota_07 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_07 AS IntegerFilter NO-UNDO 
-    GET:
-        RETURN oTableModel:NewIntegerFilter ("MonthQuota_07":U, THIS-OBJECT) .
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the IntegerFilter for the MonthQuota_08 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_08 AS IntegerFilter NO-UNDO 
-    GET:
-        RETURN oTableModel:NewIntegerFilter ("MonthQuota_08":U, THIS-OBJECT) .
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the IntegerFilter for the MonthQuota_09 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_09 AS IntegerFilter NO-UNDO 
-    GET:
-        RETURN oTableModel:NewIntegerFilter ("MonthQuota_09":U, THIS-OBJECT) .
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the IntegerFilter for the MonthQuota_10 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_10 AS IntegerFilter NO-UNDO 
-    GET:
-        RETURN oTableModel:NewIntegerFilter ("MonthQuota_10":U, THIS-OBJECT) .
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the IntegerFilter for the MonthQuota_11 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_11 AS IntegerFilter NO-UNDO 
-    GET:
-        RETURN oTableModel:NewIntegerFilter ("MonthQuota_11":U, THIS-OBJECT) .
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the IntegerFilter for the MonthQuota_12 field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY MonthQuota_12 AS IntegerFilter NO-UNDO 
-    GET:
-        RETURN oTableModel:NewIntegerFilter ("MonthQuota_12":U, THIS-OBJECT) .
-    END GET.
-
-    /*------------------------------------------------------------------------------
-        Purpose: Returns the CharacterFilter for the Email field
-        Notes:   
-    ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY Email AS CharacterFilter NO-UNDO 
-    GET:
-        RETURN oTableModel:NewCharacterFilter ("Email":U, THIS-OBJECT) .
+        RETURN oTableModel:NewCharacterFilter ("EmailAddress":U, THIS-OBJECT) .
     END GET.
 
     /*------------------------------------------------------------------------------
@@ -198,12 +117,12 @@ CLASS TrainingSamples.BusinessLogik.Customer.SalesrepTableModelFilter
     END GET.
 
     /*------------------------------------------------------------------------------
-        Purpose: Returns the CharacterFilter for the PhoneMobile field
+        Purpose: Returns the CharacterFilter for the PhoneHandy field
         Notes:   
     ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY PhoneMobile AS CharacterFilter NO-UNDO 
+    DEFINE PUBLIC PROPERTY PhoneHandy AS CharacterFilter NO-UNDO 
     GET:
-        RETURN oTableModel:NewCharacterFilter ("PhoneMobile":U, THIS-OBJECT) .
+        RETURN oTableModel:NewCharacterFilter ("PhoneHandy":U, THIS-OBJECT) .
     END GET.
 
 
