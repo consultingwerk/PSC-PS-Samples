@@ -15,7 +15,7 @@
     Syntax      : 
     Description : 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 04/07/2017 09:39:24,703+02:00
+    Created     : 04/07/2017 10:12:44,950+02:00
     Notes       : 
   ----------------------------------------------------------------------*/
 
@@ -276,6 +276,31 @@ CLASS TrainingSamples.BusinessLogik.Customer.SalesrepTableModel_Generated
     METHOD PUBLIC CHARACTER PhoneHandyWhenAvailable (pDefaultValue AS CHARACTER):
         IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
             RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("PhoneHandy":U):BUFFER-VALUE .
+        ELSE 
+            RETURN pDefaultValue .
+    END METHOD .
+
+    /*------------------------------------------------------------------------------
+        Purpose: Gets and sets the current AverageQuota value
+        Notes:   
+    ------------------------------------------------------------------------------*/
+    DEFINE PUBLIC PROPERTY AverageQuota AS DECIMAL NO-UNDO
+    GET:
+        RETURN THIS-OBJECT:GetDecimalFieldValue ("AverageQuota":U) .
+    END GET . 
+    PUBLIC SET (arg AS DECIMAL):
+        THIS-OBJECT:SetDecimalFieldValue ("AverageQuota":U, arg) .
+    END SET .
+
+    /*------------------------------------------------------------------------------
+        Purpose: Returns the value of the AverageQuota field when a record is available
+        Notes:   Returns the default value, when no record
+        @param pDefaultValue The default value to return when no record is available
+        @return The field value or the default value when no record is available
+    ------------------------------------------------------------------------------*/
+    METHOD PUBLIC DECIMAL AverageQuotaWhenAvailable (pDefaultValue AS DECIMAL):
+        IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
+            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("AverageQuota":U):BUFFER-VALUE .
         ELSE 
             RETURN pDefaultValue .
     END METHOD .

@@ -15,7 +15,7 @@
     Syntax      : 
     Description : 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 03/07/2017 14:41:47,812+02:00
+    Created     : 04/07/2017 10:12:44,835+02:00
     Notes       : 
   ----------------------------------------------------------------------*/
 
@@ -476,6 +476,56 @@ CLASS TrainingSamples.BusinessLogik.Customer.CustomerTableModel_Generated
     METHOD PUBLIC CHARACTER EmailAddressWhenAvailable (pDefaultValue AS CHARACTER):
         IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
             RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("EmailAddress":U):BUFFER-VALUE .
+        ELSE 
+            RETURN pDefaultValue .
+    END METHOD .
+
+    /*------------------------------------------------------------------------------
+        Purpose: Gets and sets the current DuePayments value
+        Notes:   
+    ------------------------------------------------------------------------------*/
+    DEFINE PUBLIC PROPERTY DuePayments AS LOGICAL NO-UNDO
+    GET:
+        RETURN THIS-OBJECT:GetLogicalFieldValue ("DuePayments":U) .
+    END GET . 
+    PUBLIC SET (arg AS LOGICAL):
+        THIS-OBJECT:SetLogicalFieldValue ("DuePayments":U, arg) .
+    END SET .
+
+    /*------------------------------------------------------------------------------
+        Purpose: Returns the value of the DuePayments field when a record is available
+        Notes:   Returns the default value, when no record
+        @param pDefaultValue The default value to return when no record is available
+        @return The field value or the default value when no record is available
+    ------------------------------------------------------------------------------*/
+    METHOD PUBLIC LOGICAL DuePaymentsWhenAvailable (pDefaultValue AS LOGICAL):
+        IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
+            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("DuePayments":U):BUFFER-VALUE .
+        ELSE 
+            RETURN pDefaultValue .
+    END METHOD .
+
+    /*------------------------------------------------------------------------------
+        Purpose: Gets and sets the current CustomerFlags value
+        Notes:   
+    ------------------------------------------------------------------------------*/
+    DEFINE PUBLIC PROPERTY CustomerFlags AS CHARACTER NO-UNDO
+    GET:
+        RETURN THIS-OBJECT:GetCharacterFieldValue ("CustomerFlags":U) .
+    END GET . 
+    PUBLIC SET (arg AS CHARACTER):
+        THIS-OBJECT:SetCharacterFieldValue ("CustomerFlags":U, arg) .
+    END SET .
+
+    /*------------------------------------------------------------------------------
+        Purpose: Returns the value of the CustomerFlags field when a record is available
+        Notes:   Returns the default value, when no record
+        @param pDefaultValue The default value to return when no record is available
+        @return The field value or the default value when no record is available
+    ------------------------------------------------------------------------------*/
+    METHOD PUBLIC CHARACTER CustomerFlagsWhenAvailable (pDefaultValue AS CHARACTER):
+        IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
+            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("CustomerFlags":U):BUFFER-VALUE .
         ELSE 
             RETURN pDefaultValue .
     END METHOD .

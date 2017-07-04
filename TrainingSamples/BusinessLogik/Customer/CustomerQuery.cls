@@ -15,7 +15,7 @@
     Syntax      :
     Description :
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 03/07/2017 14:41:48,134+02:00
+    Created     : 04/07/2017 10:12:45,618+02:00
     Notes       :
   ----------------------------------------------------------------------*/
 
@@ -190,6 +190,24 @@ CLASS TrainingSamples.BusinessLogik.Customer.CustomerQuery
     DEFINE PUBLIC PROPERTY EmailAddress AS CustomerQueryCharacterPredicate NO-UNDO
     GET:
         RETURN NEW CustomerQueryCharacterPredicate (THIS-OBJECT, "EmailAddress":U) .
+    END GET .
+
+    /**
+     * Purpose: Provides the filter options for the DuePayments field
+     * Notes:
+     */
+    DEFINE PUBLIC PROPERTY DuePayments AS CustomerQueryLogicalPredicate NO-UNDO
+    GET:
+        RETURN NEW CustomerQueryLogicalPredicate (THIS-OBJECT, "DuePayments":U) .
+    END GET .
+
+    /**
+     * Purpose: Provides the filter options for the CustomerFlags field
+     * Notes:
+     */
+    DEFINE PUBLIC PROPERTY CustomerFlags AS CustomerQueryCharacterPredicate NO-UNDO
+    GET:
+        RETURN NEW CustomerQueryCharacterPredicate (THIS-OBJECT, "CustomerFlags":U) .
     END GET .
 
     /**

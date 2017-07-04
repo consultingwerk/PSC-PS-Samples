@@ -15,7 +15,7 @@
     Syntax      : 
     Description : 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 04/07/2017 09:39:24,658+02:00
+    Created     : 04/07/2017 10:12:44,914+02:00
     Notes       : 
   ----------------------------------------------------------------------*/
 
@@ -123,6 +123,15 @@ CLASS TrainingSamples.BusinessLogik.Customer.SalesrepTableModelFilter
     DEFINE PUBLIC PROPERTY PhoneHandy AS CharacterFilter NO-UNDO 
     GET:
         RETURN oTableModel:NewCharacterFilter ("PhoneHandy":U, THIS-OBJECT) .
+    END GET.
+
+    /*------------------------------------------------------------------------------
+        Purpose: Returns the DecimalFilter for the AverageQuota field
+        Notes:   
+    ------------------------------------------------------------------------------*/
+    DEFINE PUBLIC PROPERTY AverageQuota AS DecimalFilter NO-UNDO 
+    GET:
+        RETURN oTableModel:NewDecimalFilter ("AverageQuota":U, THIS-OBJECT) .
     END GET.
 
 

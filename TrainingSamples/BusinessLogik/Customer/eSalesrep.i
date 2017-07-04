@@ -18,7 +18,7 @@
     Description :  
 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 04.07.2017 09:39:13
+    Created     : 04.07.2017 10:11:49
     Notes       :
   ----------------------------------------------------------------------*/
 
@@ -41,6 +41,7 @@ DEFINE {&ACCESS} TEMP-TABLE eSalesrep{&SUFFIX} NO-UNDO {&REFERENCE-ONLY} &IF DEF
     FIELD PhoneHandy AS CHARACTER FORMAT "x(40)":U LABEL "Mobile Phone":T
     FIELD SmallImage1 AS BLOB FORMAT "x(8)":U LABEL "SmallImage":T
     FIELD SmallImage2 AS BLOB FORMAT "x(8)":U LABEL "SmallImage":T
+    FIELD AverageQuota AS DECIMAL FORMAT "->>,>>9.99":U LABEL "Average Quota":T
 
     INDEX SalesRep AS UNIQUE PRIMARY SalesRep ASCENDING
 

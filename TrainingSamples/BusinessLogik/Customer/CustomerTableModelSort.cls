@@ -4,7 +4,7 @@
     Syntax      : 
     Description : 
     Author(s)   : Mike Fechner
-    Created     : 03/07/2017 14:41:47,802+02:00
+    Created     : 04/07/2017 10:12:44,802+02:00
     Notes       : 
   ----------------------------------------------------------------------*/
 
@@ -184,6 +184,24 @@ CLASS TrainingSamples.BusinessLogik.Customer.CustomerTableModelSort
     DEFINE PUBLIC PROPERTY EmailAddress AS TableModelSortField NO-UNDO 
     GET:
         RETURN NEW TableModelSortField (THIS-OBJECT, "EmailAddress":U). 
+    END GET.
+
+    /*------------------------------------------------------------------------------
+        Purpose: Returns the Sort option for the DuePayments field
+        Notes:   
+    ------------------------------------------------------------------------------*/
+    DEFINE PUBLIC PROPERTY DuePayments AS TableModelSortField NO-UNDO 
+    GET:
+        RETURN NEW TableModelSortField (THIS-OBJECT, "DuePayments":U). 
+    END GET.
+
+    /*------------------------------------------------------------------------------
+        Purpose: Returns the Sort option for the CustomerFlags field
+        Notes:   
+    ------------------------------------------------------------------------------*/
+    DEFINE PUBLIC PROPERTY CustomerFlags AS TableModelSortField NO-UNDO 
+    GET:
+        RETURN NEW TableModelSortField (THIS-OBJECT, "CustomerFlags":U). 
     END GET.
 
 

@@ -8,7 +8,7 @@
     Notes       : 
   ----------------------------------------------------------------------*/
 
-ROUTINE-LEVEL ON ERROR UNDO, THROW.
+BLOCK-LEVEL ON ERROR UNDO, THROW.
 
 USING Consultingwerk.*                FROM PROPATH .
 USING Consultingwerk.Assertion.*      FROM PROPATH .
@@ -18,6 +18,7 @@ USING Consultingwerk.OERA.*           FROM PROPATH .
 USING Consultingwerk.Util.*           FROM PROPATH . 
 USING ProgressPS.CustomClasses.OERA.* FROM PROPATH .
 USING Progress.Lang.*                 FROM PROPATH .
+USING Consultingwerk.OERA.Enum.RequestTypeEnum FROM PROPATH.
 
 /* Sample Annotations - see http://confluence.consultingwerkcloud.com/wiki/display/SCL/The+Annotation+based+Type+Descriptor
 @BusinessEntityView (name="order", isdefault="true", entitytable="eOrder", entityview="eCustomer", 
@@ -67,6 +68,26 @@ CLASS TrainingSamples.BusinessLogik.Customer.CustomerBusinessEntity
     ------------------------------------------------------------------------------*/
     METHOD OVERRIDE PUBLIC VOID ReceiveData ():
         
+        FOR EACH eCustomer:  // Either use BLOCK-LEVEL above or ON ERROR UNDO, THROW here 
+            
+            ASSIGN eCustomer.DuePayments = eCustomer.CreditLimit < eCustomer.Balance .
+                   
+            /* High credit limit customers */               
+            IF eCustomer.CreditLimit > 100000 THEN 
+                ASSIGN eCustomer.CustomerFlags = "H" .
+            /* Mid credit limit customers */     
+            ELSE IF eCustomer.CreditLimit > 50000 THEN 
+                ASSIGN eCustomer.CustomerFlags = "M" .                                 
+            
+        END. 
+        
+        FOR EACH eSalesrep: // Either use BLOCK-LEVEL above or ON ERROR UNDO, THROW here
+        
+            ASSIGN eSalesrep.AverageQuota = (eSalesrep.MonthQuota_01 + eSalesrep.MonthQuota_02 + 
+                                             eSalesrep.MonthQuota_03) / 3 .  
+        
+        END.
+
     END METHOD.
 
     /*------------------------------------------------------------------------------
@@ -77,6 +98,49 @@ CLASS TrainingSamples.BusinessLogik.Customer.CustomerBusinessEntity
                  the data to the database using the DataAccess object                                                                      
     ------------------------------------------------------------------------------*/
     METHOD OVERRIDE PUBLIC VOID ValidateData ():
+        
+        FOR EACH eCustomer
+            WHERE ROW-STATE (eCustomer) = ROW-CREATED 
+               OR ROW-STATE (eCustomer) = ROW-MODIFIED: // Either use BLOCK-LEVEL above or ON ERROR UNDO, THROW here
+            BufferHelper:FindBeforeBuffer (BUFFER eCustomer:HANDLE) .
+            
+            IF eCustomer.Country = "USA" THEN DO:
+                IF eCustomer.State = "" THEN 
+                    ASSIGN BUFFER eCustomer:ERROR        = TRUE 
+                           BUFFER eCustomer:ERROR-STRING = "USA Customers require a state" 
+                           DATASET dsCustomer:ERROR      = TRUE .
+            END.
+
+            IF eCustomer.City = "" THEN 
+                DatasetHelper:AddErrorString(BUFFER eCustomer:HANDLE, "City", 
+                                             "We really need at least a city for shipping") .
+        
+            IF 
+                ValidationHelper:IsNotNullOrEmpty(BUFFER eCustomer:HANDLE, "Name", "Name must not be empty")  
+            THEN 
+                ValidationHelper:MinLength(BUFFER eCustomer:HANDLE, "Name", 4, "Names must be at least 4 charasters long") .
+                
+            
+            ValidationHelper:IsInList(BUFFER eCustomer:HANDLE, "City",
+                                      "Boston,Cologne,Rotterdam,Brussels,Milano,Alphen,Osnabrück,Stuttgart",
+                                      "Unknown city") .
+        END.
+
+        FOR EACH eCustomerBefore WHERE ROW-STATE (eCustomerBefore) = ROW-DELETED:
+            
+        END.
+
+        @GeneratedValidationStart.
+        /* The following code is auto-generated. Don't insert custom code 
+           between the @GeneratedValidationStart. and @GeneratedValidationEnd.
+           annotations as it would get overwritten when you update the Business
+           entity. */
+
+        FOR EACH eCustomer ON ERROR UNDO, THROW:
+            Consultingwerk.OERA.ValidationHelper:IsNotNullOrEmpty (BUFFER eCustomer:HANDLE, "Address":U, "Address may not be empty.":U).
+            Consultingwerk.OERA.ValidationHelper:IsNotNullOrEmpty (BUFFER eCustomer:HANDLE, "PostalCode":U, "ZIP code must be entered.":U).
+        END .
+        @GeneratedValidationEnd.
         
     END METHOD.
 

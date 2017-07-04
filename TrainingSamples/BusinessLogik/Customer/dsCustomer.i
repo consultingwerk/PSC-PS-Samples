@@ -18,7 +18,7 @@
     Description : 
 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 03.07.2017 14:41:45
+    Created     : 04.07.2017 11:37:35
     Notes       :
   ----------------------------------------------------------------------*/
 
@@ -31,7 +31,7 @@
 &GLOBAL-DEFINE DATASET-NAME dsCustomer
 
 { TrainingSamples/BusinessLogik/Customer/eCustomer.i }
-{ TrainingSamples/BusinessLogik/Customer/eSalesrep.i }
+{ TrainingSamples/BusinessLogik/Customer/eSalesrep.i &NO-BEFORE=YES }
 
 
 @BusinessEntityGenerator (entityname="TrainingSamples.BusinessLogik.Customer.CustomerBusinessEntity", type="Dataset") .

@@ -50,7 +50,7 @@
     <LayoutColumn>142</LayoutColumn>
     <LayoutRow>16</LayoutRow>
     <LayoutWidth>200</LayoutWidth>
-    <LayoutHeight>550</LayoutHeight>
+    <LayoutHeight>590</LayoutHeight>
     <NamespaceUri/>
     <NamespacePrefix/>
     <XmlNodeName/>
@@ -74,12 +74,12 @@
     <LayoutColumn>520</LayoutColumn>
     <LayoutRow>20</LayoutRow>
     <LayoutWidth>200</LayoutWidth>
-    <LayoutHeight>370</LayoutHeight>
+    <LayoutHeight>390</LayoutHeight>
     <NamespaceUri/>
     <NamespacePrefix/>
     <XmlNodeName/>
     <SerializeName/>
-    <NoBeforeTable>false</NoBeforeTable>
+    <NoBeforeTable>true</NoBeforeTable>
     <EntityPackageName>TrainingSamples.BusinessLogik.Customer</EntityPackageName>
     <EntityClassName>Salesrep</EntityClassName>
     <DeletedFields/>
@@ -107,7 +107,12 @@
     <FieldCalcExpression/>
     <FieldCaseSensitive>false</FieldCaseSensitive>
     <FieldCustomControlName/>
-    <FieldValidationInstance xsi:nil="true"/>
+    <FieldValidationInstance>{
+  &quot;SerializedType&quot;: &quot;Consultingwerk.BusinessEntityDesigner.Validation.MandatoryValidationProperties&quot;,
+  &quot;ValidationMessage&quot;: &quot;Address may not be empty.&quot;,
+  &quot;SmartMessageNumber&quot;: 0
+}
+</FieldValidationInstance>
     <FieldSemanticType/>
     <FieldSkipAssignment>false</FieldSkipAssignment>
   </eField>
@@ -330,6 +335,33 @@
   <eField>
     <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
     <TempTableName>eCustomer</TempTableName>
+    <FieldName>CustomerFlags</FieldName>
+    <FieldOrder>20</FieldOrder>
+    <FieldDataType>CHARACTER</FieldDataType>
+    <FieldDescription/>
+    <FieldInitial/>
+    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
+    <FieldLabel>Customer Flags</FieldLabel>
+    <FieldFormat>X(8)</FieldFormat>
+    <FieldSerializeHidden>false</FieldSerializeHidden>
+    <FieldSerializeName/>
+    <FieldXmlDataType/>
+    <FieldXmlNodeType/>
+    <FieldXmlNodeName/>
+    <FieldSource/>
+    <FieldExtent>0</FieldExtent>
+    <FieldGetAccess>PUBLIC</FieldGetAccess>
+    <FieldSetAccess>PUBLIC</FieldSetAccess>
+    <FieldCalcExpression/>
+    <FieldCaseSensitive>false</FieldCaseSensitive>
+    <FieldCustomControlName/>
+    <FieldValidationInstance xsi:nil="true"/>
+    <FieldSemanticType/>
+    <FieldSkipAssignment>false</FieldSkipAssignment>
+  </eField>
+  <eField>
+    <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
+    <TempTableName>eCustomer</TempTableName>
     <FieldName>Discount</FieldName>
     <FieldOrder>15</FieldOrder>
     <FieldDataType>INTEGER</FieldDataType>
@@ -344,6 +376,33 @@
     <FieldXmlNodeType/>
     <FieldXmlNodeName/>
     <FieldSource>Customer.Discount</FieldSource>
+    <FieldExtent>0</FieldExtent>
+    <FieldGetAccess>PUBLIC</FieldGetAccess>
+    <FieldSetAccess>PUBLIC</FieldSetAccess>
+    <FieldCalcExpression/>
+    <FieldCaseSensitive>false</FieldCaseSensitive>
+    <FieldCustomControlName/>
+    <FieldValidationInstance xsi:nil="true"/>
+    <FieldSemanticType/>
+    <FieldSkipAssignment>false</FieldSkipAssignment>
+  </eField>
+  <eField>
+    <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
+    <TempTableName>eCustomer</TempTableName>
+    <FieldName>DuePayments</FieldName>
+    <FieldOrder>19</FieldOrder>
+    <FieldDataType>LOGICAL</FieldDataType>
+    <FieldDescription/>
+    <FieldInitial/>
+    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
+    <FieldLabel>Due Payments</FieldLabel>
+    <FieldFormat>yes/no</FieldFormat>
+    <FieldSerializeHidden>false</FieldSerializeHidden>
+    <FieldSerializeName/>
+    <FieldXmlDataType/>
+    <FieldXmlNodeType/>
+    <FieldXmlNodeName/>
+    <FieldSource/>
     <FieldExtent>0</FieldExtent>
     <FieldGetAccess>PUBLIC</FieldGetAccess>
     <FieldSetAccess>PUBLIC</FieldSetAccess>
@@ -485,7 +544,12 @@
     <FieldCalcExpression/>
     <FieldCaseSensitive>false</FieldCaseSensitive>
     <FieldCustomControlName/>
-    <FieldValidationInstance xsi:nil="true"/>
+    <FieldValidationInstance>{
+  &quot;SerializedType&quot;: &quot;Consultingwerk.BusinessEntityDesigner.Validation.MandatoryValidationProperties&quot;,
+  &quot;ValidationMessage&quot;: &quot;ZIP code must be entered.&quot;,
+  &quot;SmartMessageNumber&quot;: 0
+}
+</FieldValidationInstance>
     <FieldSemanticType/>
     <FieldSkipAssignment>false</FieldSkipAssignment>
   </eField>
@@ -560,6 +624,33 @@
     <FieldXmlNodeType/>
     <FieldXmlNodeName/>
     <FieldSource>Customer.Terms</FieldSource>
+    <FieldExtent>0</FieldExtent>
+    <FieldGetAccess>PUBLIC</FieldGetAccess>
+    <FieldSetAccess>PUBLIC</FieldSetAccess>
+    <FieldCalcExpression/>
+    <FieldCaseSensitive>false</FieldCaseSensitive>
+    <FieldCustomControlName/>
+    <FieldValidationInstance xsi:nil="true"/>
+    <FieldSemanticType/>
+    <FieldSkipAssignment>false</FieldSkipAssignment>
+  </eField>
+  <eField>
+    <BusinessEntityName>CustomerBusinessEntity</BusinessEntityName>
+    <TempTableName>eSalesrep</TempTableName>
+    <FieldName>AverageQuota</FieldName>
+    <FieldOrder>14</FieldOrder>
+    <FieldDataType>DECIMAL</FieldDataType>
+    <FieldDescription/>
+    <FieldInitial/>
+    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
+    <FieldLabel>Average Quota</FieldLabel>
+    <FieldFormat>-&gt;&gt;,&gt;&gt;9.99</FieldFormat>
+    <FieldSerializeHidden>false</FieldSerializeHidden>
+    <FieldSerializeName/>
+    <FieldXmlDataType/>
+    <FieldXmlNodeType/>
+    <FieldXmlNodeName/>
+    <FieldSource/>
     <FieldExtent>0</FieldExtent>
     <FieldGetAccess>PUBLIC</FieldGetAccess>
     <FieldSetAccess>PUBLIC</FieldSetAccess>

@@ -15,7 +15,7 @@
     Syntax      :
     Description :
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 04/07/2017 09:39:25,256+02:00
+    Created     : 04/07/2017 10:12:45,683+02:00
     Notes       :
   ----------------------------------------------------------------------*/
 
@@ -118,6 +118,15 @@ CLASS TrainingSamples.BusinessLogik.Customer.SalesrepQuery
     DEFINE PUBLIC PROPERTY PhoneHandy AS SalesrepQueryCharacterPredicate NO-UNDO
     GET:
         RETURN NEW SalesrepQueryCharacterPredicate (THIS-OBJECT, "PhoneHandy":U) .
+    END GET .
+
+    /**
+     * Purpose: Provides the filter options for the AverageQuota field
+     * Notes:
+     */
+    DEFINE PUBLIC PROPERTY AverageQuota AS SalesrepQueryDecimalPredicate NO-UNDO
+    GET:
+        RETURN NEW SalesrepQueryDecimalPredicate (THIS-OBJECT, "AverageQuota":U) .
     END GET .
 
     /**

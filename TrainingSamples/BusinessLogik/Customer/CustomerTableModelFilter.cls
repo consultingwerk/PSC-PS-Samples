@@ -15,7 +15,7 @@
     Syntax      : 
     Description : 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 03/07/2017 14:41:47,796+02:00
+    Created     : 04/07/2017 10:12:44,767+02:00
     Notes       : 
   ----------------------------------------------------------------------*/
 
@@ -195,6 +195,24 @@ CLASS TrainingSamples.BusinessLogik.Customer.CustomerTableModelFilter
     DEFINE PUBLIC PROPERTY EmailAddress AS CharacterFilter NO-UNDO 
     GET:
         RETURN oTableModel:NewCharacterFilter ("EmailAddress":U, THIS-OBJECT) .
+    END GET.
+
+    /*------------------------------------------------------------------------------
+        Purpose: Returns the LogicalFilter for the DuePayments field
+        Notes:   
+    ------------------------------------------------------------------------------*/
+    DEFINE PUBLIC PROPERTY DuePayments AS LogicalFilter NO-UNDO 
+    GET:
+        RETURN oTableModel:NewLogicalFilter ("DuePayments":U, THIS-OBJECT) .
+    END GET.
+
+    /*------------------------------------------------------------------------------
+        Purpose: Returns the CharacterFilter for the CustomerFlags field
+        Notes:   
+    ------------------------------------------------------------------------------*/
+    DEFINE PUBLIC PROPERTY CustomerFlags AS CharacterFilter NO-UNDO 
+    GET:
+        RETURN oTableModel:NewCharacterFilter ("CustomerFlags":U, THIS-OBJECT) .
     END GET.
 
 

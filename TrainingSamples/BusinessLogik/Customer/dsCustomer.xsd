@@ -24,10 +24,12 @@
               <xsd:element name="Comments" type="xsd:string" nillable="true" prodata:format="x(80)"/>
               <xsd:element name="Fax" type="xsd:string" nillable="true" prodata:format="x(20)"/>
               <xsd:element name="EmailAddress" type="xsd:string" nillable="true" prodata:format="x(50)" prodata:label="Email"/>
+              <xsd:element name="DuePayments" type="xsd:boolean" nillable="true" prodata:label="Due Payments"/>
+              <xsd:element name="CustomerFlags" type="xsd:string" nillable="true" prodata:label="Customer Flags"/>
             </xsd:sequence>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="eSalesrep" minOccurs="0" maxOccurs="unbounded" prodata:beforeTable="eSalesrepBefore">
+        <xsd:element name="eSalesrep" minOccurs="0" maxOccurs="unbounded">
           <xsd:complexType>
             <xsd:sequence>
               <xsd:element name="SalesRep" type="xsd:string" nillable="true" prodata:format="x(4)" prodata:label="Sales Rep"/>
@@ -43,6 +45,7 @@
               <xsd:element name="PhoneHandy" type="xsd:string" nillable="true" prodata:format="x(40)" prodata:label="Mobile Phone"/>
               <xsd:element name="SmallImage1" type="xsd:base64Binary" nillable="true" prodata:dataType="prodata:blob" prodata:label="SmallImage"/>
               <xsd:element name="SmallImage2" type="xsd:base64Binary" nillable="true" prodata:dataType="prodata:blob" prodata:label="SmallImage"/>
+              <xsd:element name="AverageQuota" type="xsd:decimal" nillable="true" prodata:label="Average Quota"/>
             </xsd:sequence>
           </xsd:complexType>
         </xsd:element>

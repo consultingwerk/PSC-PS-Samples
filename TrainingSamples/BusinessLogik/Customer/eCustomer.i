@@ -18,7 +18,7 @@
     Description :  
 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 03.07.2017 14:41:45
+    Created     : 04.07.2017 10:11:49
     Notes       :
   ----------------------------------------------------------------------*/
 
@@ -46,6 +46,8 @@ DEFINE {&ACCESS} TEMP-TABLE eCustomer{&SUFFIX} NO-UNDO {&REFERENCE-ONLY} &IF DEF
     FIELD Comments AS CHARACTER FORMAT "x(80)":U LABEL "Comments":T
     FIELD Fax AS CHARACTER FORMAT "x(20)":U LABEL "Fax":T
     FIELD EmailAddress AS CHARACTER FORMAT "x(50)":U LABEL "Email":T
+    FIELD DuePayments AS LOGICAL FORMAT "yes/no":U LABEL "Due Payments":T
+    FIELD CustomerFlags AS CHARACTER FORMAT "X(8)":U LABEL "Customer Flags":T
 
     INDEX Comments AS WORD-INDEX Comments ASCENDING
     INDEX CountryPost Country ASCENDING PostalCode ASCENDING

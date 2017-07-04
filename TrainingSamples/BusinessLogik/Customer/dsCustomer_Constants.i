@@ -18,7 +18,7 @@
     Description : 
 
     Author(s)   : Mike Fechner
-    Created     : 04.07.2017 09:39:25
+    Created     : 04.07.2017 10:12:45
     Notes       :
   ----------------------------------------------------------------------*/
 
@@ -43,6 +43,8 @@
 &GLOBAL-DEFINE eCustomer.Comments "eCustomer.Comments"
 &GLOBAL-DEFINE eCustomer.Fax "eCustomer.Fax"
 &GLOBAL-DEFINE eCustomer.EmailAddress "eCustomer.EmailAddress"
+&GLOBAL-DEFINE eCustomer.DuePayments "eCustomer.DuePayments"
+&GLOBAL-DEFINE eCustomer.CustomerFlags "eCustomer.CustomerFlags"
 
 &GLOBAL-DEFINE eSalesrep "eSalesrep"
 &GLOBAL-DEFINE eSalesrep.SalesRep "eSalesrep.SalesRep"
@@ -58,4 +60,5 @@
 &GLOBAL-DEFINE eSalesrep.PhoneHandy "eSalesrep.PhoneHandy"
 &GLOBAL-DEFINE eSalesrep.SmallImage1 "eSalesrep.SmallImage1"
 &GLOBAL-DEFINE eSalesrep.SmallImage2 "eSalesrep.SmallImage2"
+&GLOBAL-DEFINE eSalesrep.AverageQuota "eSalesrep.AverageQuota"
 

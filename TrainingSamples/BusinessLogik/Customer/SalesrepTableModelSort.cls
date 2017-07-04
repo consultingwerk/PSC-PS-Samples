@@ -4,7 +4,7 @@
     Syntax      : 
     Description : 
     Author(s)   : Mike Fechner
-    Created     : 04/07/2017 09:39:24,682+02:00
+    Created     : 04/07/2017 10:12:44,933+02:00
     Notes       : 
   ----------------------------------------------------------------------*/
 
@@ -112,6 +112,15 @@ CLASS TrainingSamples.BusinessLogik.Customer.SalesrepTableModelSort
     DEFINE PUBLIC PROPERTY PhoneHandy AS TableModelSortField NO-UNDO 
     GET:
         RETURN NEW TableModelSortField (THIS-OBJECT, "PhoneHandy":U). 
+    END GET.
+
+    /*------------------------------------------------------------------------------
+        Purpose: Returns the Sort option for the AverageQuota field
+        Notes:   
+    ------------------------------------------------------------------------------*/
+    DEFINE PUBLIC PROPERTY AverageQuota AS TableModelSortField NO-UNDO 
+    GET:
+        RETURN NEW TableModelSortField (THIS-OBJECT, "AverageQuota":U). 
     END GET.
 
 
