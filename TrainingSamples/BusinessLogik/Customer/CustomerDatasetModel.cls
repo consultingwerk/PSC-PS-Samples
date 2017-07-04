@@ -58,14 +58,14 @@ CLASS TrainingSamples.BusinessLogik.Customer.CustomerDatasetModel
     /*------------------------------------------------------------------------------
         Purpose: Constructor for the CustomerDatasetModel class
         Notes:   
-        @param pSalesRep The filter value for the eSalesrep.SalesRep field
+        @param pSalesRep The filter value for the eCustomer.SalesRep field
     ------------------------------------------------------------------------------*/
     CONSTRUCTOR PUBLIC CustomerDatasetModel (pSalesRep AS CHARACTER):
         SUPER ().
 
-        THIS-OBJECT:Salesrep:Filter:SalesRep:EQ (pSalesRep) .
+        THIS-OBJECT:Customer:Filter:SalesRep:EQ (pSalesRep) .
 
-        THIS-OBJECT:Salesrep:Filter:Run () .
+        THIS-OBJECT:Customer:Filter:Run () .
 
     END CONSTRUCTOR.
 

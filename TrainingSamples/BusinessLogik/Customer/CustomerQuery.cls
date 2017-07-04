@@ -15,7 +15,7 @@
     Syntax      :
     Description :
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 04/07/2017 10:12:45,618+02:00
+    Created     : 04/07/2017 12:13:00,382+02:00
     Notes       :
   ----------------------------------------------------------------------*/
 
@@ -252,6 +252,18 @@ CLASS TrainingSamples.BusinessLogik.Customer.CustomerQuery
         SUPER ("eCustomer":U).
 
         THIS-OBJECT:CustNum:Eq (PCustNum) .
+
+    END CONSTRUCTOR.
+
+    /**
+     * Purpose: Constructor for the CustomerQuery class
+     * Notes:   
+     * @param pSalesRep The filter value for the eCustomer.SalesRep field
+     */
+    CONSTRUCTOR PUBLIC CustomerQuery (pSalesRep AS CHARACTER):
+        SUPER ("eCustomer":U).
+
+        THIS-OBJECT:SalesRep:Eq (PSalesRep) .
 
     END CONSTRUCTOR.
 

@@ -15,7 +15,7 @@
     Syntax      :
     Description :
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 04/07/2017 10:12:45,683+02:00
+    Created     : 04/07/2017 12:13:35,722+02:00
     Notes       :
   ----------------------------------------------------------------------*/
 
@@ -159,18 +159,6 @@ CLASS TrainingSamples.BusinessLogik.Customer.SalesrepQuery
      */
     CONSTRUCTOR PUBLIC SalesrepQuery ():
         SUPER ("eSalesrep":U) .
-
-    END CONSTRUCTOR.
-
-    /**
-     * Purpose: Constructor for the SalesrepQuery class
-     * Notes:   
-     * @param pSalesRep The filter value for the eSalesrep.SalesRep field
-     */
-    CONSTRUCTOR PUBLIC SalesrepQuery (pSalesRep AS CHARACTER):
-        SUPER ("eSalesrep":U).
-
-        THIS-OBJECT:SalesRep:Eq (PSalesRep) .
 
     END CONSTRUCTOR.
 
