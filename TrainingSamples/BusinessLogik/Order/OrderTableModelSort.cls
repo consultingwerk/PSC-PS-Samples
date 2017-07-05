@@ -4,7 +4,7 @@
     Syntax      : 
     Description : 
     Author(s)   : Mike Fechner
-    Created     : 04/07/2017 13:46:39,535+02:00
+    Created     : 04/07/2017 16:47:58,572+02:00
     Notes       : 
   ----------------------------------------------------------------------*/
 
@@ -34,12 +34,12 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderTableModelSort
     END GET.
 
     /*------------------------------------------------------------------------------
-        Purpose: Returns the Sort option for the CustNum field
+        Purpose: Returns the Sort option for the KlantenNo field
         Notes:   
     ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY CustNum AS TableModelSortField NO-UNDO 
+    DEFINE PUBLIC PROPERTY KlantenNo AS TableModelSortField NO-UNDO 
     GET:
-        RETURN NEW TableModelSortField (THIS-OBJECT, "CustNum":U). 
+        RETURN NEW TableModelSortField (THIS-OBJECT, "KlantenNo":U). 
     END GET.
 
     /*------------------------------------------------------------------------------

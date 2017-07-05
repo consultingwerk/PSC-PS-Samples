@@ -168,33 +168,6 @@
   <eField>
     <BusinessEntityName>OrderBusinessEntity</BusinessEntityName>
     <TempTableName>eOrder</TempTableName>
-    <FieldName>CustNum</FieldName>
-    <FieldOrder>2</FieldOrder>
-    <FieldDataType>INTEGER</FieldDataType>
-    <FieldDescription>Cust Num</FieldDescription>
-    <FieldInitial>0</FieldInitial>
-    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
-    <FieldLabel>Cust Num</FieldLabel>
-    <FieldFormat>&gt;&gt;&gt;&gt;9</FieldFormat>
-    <FieldSerializeHidden>false</FieldSerializeHidden>
-    <FieldSerializeName/>
-    <FieldXmlDataType/>
-    <FieldXmlNodeType/>
-    <FieldXmlNodeName/>
-    <FieldSource>Order.CustNum</FieldSource>
-    <FieldExtent>0</FieldExtent>
-    <FieldGetAccess>PUBLIC</FieldGetAccess>
-    <FieldSetAccess>PUBLIC</FieldSetAccess>
-    <FieldCalcExpression/>
-    <FieldCaseSensitive>false</FieldCaseSensitive>
-    <FieldCustomControlName/>
-    <FieldValidationInstance xsi:nil="true"/>
-    <FieldSemanticType/>
-    <FieldSkipAssignment>false</FieldSkipAssignment>
-  </eField>
-  <eField>
-    <BusinessEntityName>OrderBusinessEntity</BusinessEntityName>
-    <TempTableName>eOrder</TempTableName>
     <FieldName>Instructions</FieldName>
     <FieldOrder>7</FieldOrder>
     <FieldDataType>CHARACTER</FieldDataType>
@@ -209,6 +182,33 @@
     <FieldXmlNodeType/>
     <FieldXmlNodeName/>
     <FieldSource>Order.Instructions</FieldSource>
+    <FieldExtent>0</FieldExtent>
+    <FieldGetAccess>PUBLIC</FieldGetAccess>
+    <FieldSetAccess>PUBLIC</FieldSetAccess>
+    <FieldCalcExpression/>
+    <FieldCaseSensitive>false</FieldCaseSensitive>
+    <FieldCustomControlName/>
+    <FieldValidationInstance xsi:nil="true"/>
+    <FieldSemanticType/>
+    <FieldSkipAssignment>false</FieldSkipAssignment>
+  </eField>
+  <eField>
+    <BusinessEntityName>OrderBusinessEntity</BusinessEntityName>
+    <TempTableName>eOrder</TempTableName>
+    <FieldName>KlantenNo</FieldName>
+    <FieldOrder>2</FieldOrder>
+    <FieldDataType>INTEGER</FieldDataType>
+    <FieldDescription>Cust Num</FieldDescription>
+    <FieldInitial>0</FieldInitial>
+    <FieldInitialUnknownValue>false</FieldInitialUnknownValue>
+    <FieldLabel>Cust Num</FieldLabel>
+    <FieldFormat>&gt;&gt;&gt;&gt;9</FieldFormat>
+    <FieldSerializeHidden>false</FieldSerializeHidden>
+    <FieldSerializeName/>
+    <FieldXmlDataType/>
+    <FieldXmlNodeType/>
+    <FieldXmlNodeName/>
+    <FieldSource>Order.CustNum</FieldSource>
     <FieldExtent>0</FieldExtent>
     <FieldGetAccess>PUBLIC</FieldGetAccess>
     <FieldSetAccess>PUBLIC</FieldSetAccess>
@@ -725,7 +725,7 @@
     <IndexUnique>true</IndexUnique>
     <IndexPrimary>false</IndexPrimary>
     <IndexWordIndex>false</IndexWordIndex>
-    <FieldNames>CustNum,Ordernum</FieldNames>
+    <FieldNames>KlantenNo,Ordernum</FieldNames>
     <FieldSort>ASCENDING,ASCENDING</FieldSort>
     <DefaultSearchCodeGeneration>false</DefaultSearchCodeGeneration>
   </eIndex>

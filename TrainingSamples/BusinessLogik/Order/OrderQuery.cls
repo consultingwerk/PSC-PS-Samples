@@ -15,7 +15,7 @@
     Syntax      :
     Description :
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 04/07/2017 13:46:39,949+02:00
+    Created     : 04/07/2017 16:47:59,178+02:00
     Notes       :
   ----------------------------------------------------------------------*/
 
@@ -40,12 +40,12 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderQuery
     END GET .
 
     /**
-     * Purpose: Provides the filter options for the CustNum field
+     * Purpose: Provides the filter options for the KlantenNo field
      * Notes:
      */
-    DEFINE PUBLIC PROPERTY CustNum AS OrderQueryIntegerPredicate NO-UNDO
+    DEFINE PUBLIC PROPERTY KlantenNo AS OrderQueryIntegerPredicate NO-UNDO
     GET:
-        RETURN NEW OrderQueryIntegerPredicate (THIS-OBJECT, "CustNum":U) .
+        RETURN NEW OrderQueryIntegerPredicate (THIS-OBJECT, "KlantenNo":U) .
     END GET .
 
     /**

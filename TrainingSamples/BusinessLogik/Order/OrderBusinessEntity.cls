@@ -148,8 +148,7 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderBusinessEntity
     
 /* Disabled validation, to allow repeated usage ....  
       IF eOrder.OrderStatus <> "Ordered" THEN 
-            UNDO, THROW NEW AppError ("Cannot cancel this order because of it's order status.", 0) .
-  */  
+            UNDO, THROW NEW AppError ("Cannot cancel this order because of it's order status.", 0) .  */  
         THIS-OBJECT:TrackingChanges = TRUE . 
     
         ASSIGN eOrder.OrderStatus = "Cancelled" 
@@ -162,3 +161,4 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderBusinessEntity
     END METHOD .
     
 END CLASS.
+

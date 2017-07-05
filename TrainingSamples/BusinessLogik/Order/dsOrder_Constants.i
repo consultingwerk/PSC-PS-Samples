@@ -18,7 +18,7 @@
     Description : 
 
     Author(s)   : Mike Fechner
-    Created     : 04.07.2017 13:46:39
+    Created     : 04.07.2017 16:47:59
     Notes       :
   ----------------------------------------------------------------------*/
 
@@ -26,7 +26,7 @@
 
 &GLOBAL-DEFINE eOrder "eOrder"
 &GLOBAL-DEFINE eOrder.Ordernum "eOrder.Ordernum"
-&GLOBAL-DEFINE eOrder.CustNum "eOrder.CustNum"
+&GLOBAL-DEFINE eOrder.KlantenNo "eOrder.KlantenNo"
 &GLOBAL-DEFINE eOrder.OrderDate "eOrder.OrderDate"
 &GLOBAL-DEFINE eOrder.ShipDate "eOrder.ShipDate"
 &GLOBAL-DEFINE eOrder.PromiseDate "eOrder.PromiseDate"

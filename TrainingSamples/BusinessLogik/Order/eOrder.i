@@ -18,7 +18,7 @@
     Description :  
 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 04.07.2017 13:46:38
+    Created     : 04.07.2017 16:47:47
     Notes       :
   ----------------------------------------------------------------------*/
 
@@ -29,7 +29,7 @@
 
 DEFINE {&ACCESS} TEMP-TABLE eOrder{&SUFFIX} NO-UNDO {&REFERENCE-ONLY} &IF DEFINED (NO-BEFORE) EQ 0 &THEN BEFORE-TABLE eOrderBefore{&SUFFIX} &ENDIF
     FIELD Ordernum AS INTEGER FORMAT "zzzzzzzzz9":U INITIAL "0":U LABEL "Order Num":T
-    FIELD CustNum AS INTEGER FORMAT ">>>>9":U INITIAL "0":U LABEL "Cust Num":T
+    FIELD KlantenNo AS INTEGER FORMAT ">>>>9":U INITIAL "0":U LABEL "Cust Num":T
     FIELD OrderDate AS DATE FORMAT "99/99/99":U INITIAL "today":U LABEL "Ordered":T
     FIELD ShipDate AS DATE FORMAT "99/99/9999":U INITIAL ? LABEL "Shipped":T
     FIELD PromiseDate AS DATE FORMAT "99/99/99":U INITIAL ? LABEL "Promised":T
@@ -44,7 +44,7 @@ DEFINE {&ACCESS} TEMP-TABLE eOrder{&SUFFIX} NO-UNDO {&REFERENCE-ONLY} &IF DEFINE
     FIELD WarehouseNum AS INTEGER FORMAT "zzzzzzzzz9":U INITIAL "0":U LABEL "Warehouse Num":T
     FIELD Creditcard AS CHARACTER FORMAT "x(20)":U INITIAL "Visa":U LABEL "Credit Card":T
 
-    INDEX CustOrder AS UNIQUE CustNum ASCENDING Ordernum ASCENDING
+    INDEX CustOrder AS UNIQUE KlantenNo ASCENDING Ordernum ASCENDING
     INDEX OrderDate OrderDate ASCENDING
     INDEX OrderNum AS UNIQUE PRIMARY Ordernum ASCENDING
     INDEX OrderStatus OrderStatus ASCENDING

@@ -15,7 +15,7 @@
     Syntax      : 
     Description : 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 04/07/2017 13:57:01,145+02:00
+    Created     : 04/07/2017 16:47:58,595+02:00
     Notes       : 
   ----------------------------------------------------------------------*/
 
@@ -56,26 +56,26 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderTableModel_Generated
     END METHOD .
 
     /*------------------------------------------------------------------------------
-        Purpose: Gets and sets the current CustNum value
+        Purpose: Gets and sets the current KlantenNo value
         Notes:   
     ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY CustNum AS INTEGER NO-UNDO
+    DEFINE PUBLIC PROPERTY KlantenNo AS INTEGER NO-UNDO
     GET:
-        RETURN THIS-OBJECT:GetIntegerFieldValue ("CustNum":U) .
+        RETURN THIS-OBJECT:GetIntegerFieldValue ("KlantenNo":U) .
     END GET . 
     PUBLIC SET (arg AS INTEGER):
-        THIS-OBJECT:SetIntegerFieldValue ("CustNum":U, arg) .
+        THIS-OBJECT:SetIntegerFieldValue ("KlantenNo":U, arg) .
     END SET .
 
     /*------------------------------------------------------------------------------
-        Purpose: Returns the value of the CustNum field when a record is available
+        Purpose: Returns the value of the KlantenNo field when a record is available
         Notes:   Returns the default value, when no record
         @param pDefaultValue The default value to return when no record is available
         @return The field value or the default value when no record is available
     ------------------------------------------------------------------------------*/
-    METHOD PUBLIC INTEGER CustNumWhenAvailable (pDefaultValue AS INTEGER):
+    METHOD PUBLIC INTEGER KlantenNoWhenAvailable (pDefaultValue AS INTEGER):
         IF THIS-OBJECT:BufferHandle:AVAILABLE THEN 
-            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("CustNum":U):BUFFER-VALUE .
+            RETURN THIS-OBJECT:BufferHandle:BUFFER-FIELD ("KlantenNo":U):BUFFER-VALUE .
         ELSE 
             RETURN pDefaultValue .
     END METHOD .

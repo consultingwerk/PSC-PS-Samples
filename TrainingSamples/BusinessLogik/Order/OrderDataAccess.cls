@@ -16,6 +16,7 @@ USING Consultingwerk.OERA.*           FROM PROPATH .
 USING Consultingwerk.Util.*           FROM PROPATH . 
 USING Progress.Lang.*                 FROM PROPATH .
 USING ProgressPS.CustomClasses.OERA.* FROM PROPATH .
+USING Consultingwerk.* FROM PROPATH.
 
 @BusinessEntityGenerator (entityname="TrainingSamples.BusinessLogik.Order.OrderBusinessEntity", type="DataAccess") .
 
@@ -32,6 +33,8 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderDataAccess
 
     @DefineDataSourceInformationStart.
     @DefineDataSourceInformationEnd.
+
+    DEFINE VARIABLE oOrderDataSource AS IBufferDataSource NO-UNDO . 
 
     /*------------------------------------------------------------------------------
         Purpose: Constructor for the OrderDataAccess class                                                                      
@@ -76,7 +79,7 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderDataAccess
         THIS-OBJECT:AttachDataSource (BUFFER eOrder:HANDLE,
                                       DATA-SOURCE src_Order:HANDLE, "
                                       Ordernum,Order.Ordernum,
-                                      CustNum,Order.CustNum,
+                                      KlantenNo,Order.CustNum,
                                       OrderDate,Order.OrderDate,
                                       ShipDate,Order.ShipDate,
                                       PromiseDate,Order.PromiseDate,
@@ -101,6 +104,13 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderDataAccess
                                       ExtendedPrice,OrderLine.ExtendedPrice,
                                       OrderLineStatus,OrderLine.OrderLineStatus":U) .
         @AttachDataSourcesEnd.
+        
+        DEFINE VARIABLE cMapping AS CHARACTER NO-UNDO.
+        IF VALID-OBJECT (oOrderDataSource) THEN DO:
+            ASSIGN cMapping = BUFFER eOrder:DATA-SOURCE-COMPLETE-MAP .
+            BUFFER eORder:DETACH-DATA-SOURCE () .
+            THIS-OBJECT:AttachDataSource(BUFFER eOrder:HANDLE, oOrderDataSource, cMapping) .
+        END.
         
     END METHOD.
 
@@ -150,6 +160,41 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderDataAccess
     END METHOD.
 
     /*------------------------------------------------------------------------------
+        Purpose: Detaches the DATA-SOURCE objects to the ProDataset Buffers                                                                      
+        Notes:   Overrides ABSTRACT method in Consultingwerk.OERA.DataAccess,
+                 Invoked in FetchData and SaveChanges
+    ------------------------------------------------------------------------------*/
+    METHOD OVERRIDE PUBLIC VOID FetchData (poFetchDataRequest AS IFetchDataRequest):
+    
+        DEFINE VARIABLE oQueryParser     AS QueryParser      NO-UNDO .
+        DEFINE VARIABLE oQueryExpression AS IQueryExpression NO-UNDO .
+        DEFINE VARIABLE cQueryString     AS CHARACTER        NO-UNDO .
+ 
+        /* Only try to filter by eCustomer.ItemNum or eCustomer.RepName, when eCustomer is the first requested table */
+        IF ENTRY (1, THIS-OBJECT:ExpandTables (poFetchDataRequest:Tables)) = "eOrder":U THEN DO:
+ 
+            cQueryString = ENTRY (1, poFetchDataRequest:Queries, CHR(1)) .
+ 
+            /* Parse QueryString of the request into a list of query predicates */
+            oQueryParser = NEW QueryParser () .
+            oQueryExpression = oQueryParser:ParseQueryString (cQueryString) .
+ 
+            /* Filter by ItemNum ? */                                          /* In the client query, it's ways filtered relatively to the TT's */
+            IF VALID-OBJECT (QueryExpression:FindQueryExpressionForBufferField (BufferHelper:ParseFieldName ("eOrder.ItemName":U),
+                                                                                oQueryExpression)) THEN
+                ASSIGN oOrderDataSource = NEW BufferDataSource ("Item", "OrderLine",
+                                                                "Order") .
+        END.        
+
+        SUPER:FetchData (poFetchDataRequest) .
+        
+        FINALLY:
+            GarbageCollectorHelper:DeleteObject(oOrderDataSource) .                    
+        END FINALLY.
+
+    END METHOD .
+
+    /*------------------------------------------------------------------------------
         Purpose: Returns the database field name matching a temp-table field name
                  contained in a consumers query string (query string vs. temp-table
                  definition) 
@@ -164,13 +209,21 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderDataAccess
 
         DEFINE VARIABLE cMap  AS CHARACTER NO-UNDO.
         DEFINE VARIABLE iPos  AS INTEGER   NO-UNDO .
+       
+        IF VALID-OBJECT (oOrderDataSource) THEN 
+            CASE pcColumn:
+                WHEN "eOrder.ItemName" THEN
+                    RETURN "Item.ItemName".
+/*                WHEN "eOrder.KlantenNo" THEN*/
+/*                    RETURN "Order.CustNum" .*/
+            END CASE .            
             
         @SourceColumnCaseBlock.
         CASE pcTable:
             WHEN "eOrder":U THEN
-                cMap = DATA-SOURCE src_Order:GET-DATASET-BUFFER:DATA-SOURCE-COMPLETE-MAP . 
+                cMap = BUFFER eOrder:DATA-SOURCE-COMPLETE-MAP . 
             WHEN "eOrderLine":U THEN
-                cMap = DATA-SOURCE src_OrderLine:GET-DATASET-BUFFER:DATA-SOURCE-COMPLETE-MAP . 
+                cMap = BUFFER eOrderLine:DATA-SOURCE-COMPLETE-MAP . 
 
         END CASE .
      
@@ -195,12 +248,19 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderDataAccess
     ------------------------------------------------------------------------------*/
     METHOD OVERRIDE PUBLIC CHARACTER SourceDefaultQuery (pcTable AS CHARACTER):
     
+        DEFINE VARIABLE cUserId AS CHARACTER NO-UNDO INIT "HXM".
+    
+        IF VALID-OBJECT (oOrderDataSource) THEN 
+            RETURN SUBSTITUTE ("FOR EACH Item,each OrderLine of Item,each Order of Orderline where Order.Salesrep = &1":U,
+                                   QUOTER (cUserId)) .
+    
         @SourceDefaultQueryCaseBlock.
         CASE pcTable:
             WHEN "eOrder":U THEN
-                RETURN "FOR EACH Order INDEXED-REPOSITION":U. 
+                RETURN SUBSTITUTE ("FOR EACH Order where Order.Salesrep = '&1'":U,
+                                   cUserId) . 
             WHEN "eOrderLine":U THEN
-                RETURN "FOR EACH OrderLine INDEXED-REPOSITION":U. 
+                RETURN "FOR EACH OrderLine":U. 
 
         END CASE . 
         

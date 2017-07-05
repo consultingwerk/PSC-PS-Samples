@@ -15,7 +15,7 @@
     Syntax      : 
     Description : 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 04/07/2017 13:46:39,530+02:00
+    Created     : 04/07/2017 16:47:58,545+02:00
     Notes       : 
   ----------------------------------------------------------------------*/
 
@@ -45,12 +45,12 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderTableModelFilter
     END GET.
 
     /*------------------------------------------------------------------------------
-        Purpose: Returns the IntegerFilter for the CustNum field
+        Purpose: Returns the IntegerFilter for the KlantenNo field
         Notes:   
     ------------------------------------------------------------------------------*/
-    DEFINE PUBLIC PROPERTY CustNum AS IntegerFilter NO-UNDO 
+    DEFINE PUBLIC PROPERTY KlantenNo AS IntegerFilter NO-UNDO 
     GET:
-        RETURN oTableModel:NewIntegerFilter ("CustNum":U, THIS-OBJECT) .
+        RETURN oTableModel:NewIntegerFilter ("KlantenNo":U, THIS-OBJECT) .
     END GET.
 
     /*------------------------------------------------------------------------------

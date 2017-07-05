@@ -15,7 +15,7 @@
     Syntax      : 
     Description : 
     Author(s)   : Mike Fechner / Consultingwerk Ltd.
-    Created     : 04/07/2017 16:04:34,774+02:00
+    Created     : 04/07/2017 16:47:59,009+02:00
     Notes       : 
   ----------------------------------------------------------------------*/
 
@@ -92,7 +92,7 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderDatasetModel_Generated
         ELSE 
             Consultingwerk.OERA.ServiceInterface:InvokeMethod (THIS-OBJECT:EntityName,
                                                                "CancelOrder":U,
-                                                               INPUT-OUTPUT DATASET dsOrder BY-REFERENCE,
+                                                               INPUT-OUTPUT DATASET dsOrder,
                                                                poParameter) .
 
         {Consultingwerk/foreachABL.i Consultingwerk.OERA.TableModel oTable in THIS-OBJECT:TableModels}
