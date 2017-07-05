@@ -16,8 +16,15 @@
 
 BLOCK-LEVEL ON ERROR UNDO, THROW.
 
+DEFINE VARIABLE cValues AS CHARACTER NO-UNDO EXTENT .
 
 /* ***************************  Main Block  *************************** */
 
+EXTENT (cValues) = 4 .
+
+EXTENT (cValues) = ? . // Required due to missing capability to resize an 
+                       // array without loosing values 
+
+EXTENT (cValues) = 5 . 
 
 
