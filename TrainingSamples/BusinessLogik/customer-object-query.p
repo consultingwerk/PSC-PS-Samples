@@ -26,10 +26,9 @@ DEFINE VARIABLE oCustomerQuery AS CustomerQuery NO-UNDO .
 oCustomerQuery = NEW CustomerQuery (4) .
 oCustomerQuery
         :And (NEW CustomerQuery():City:Eq("Boston"):OR:City:Eq("Köln"))
-        :And
-        :Balance:Gt(1000.0)
-        :And
-        :Country:Eq("USA") .
+        :And:SalesRep:InList(ArrayHelper:Array ("BBB", "DOS", "HXM"))
+        :And:Balance:InRange(1000.0, 2000.0)
+        :And:Country:Eq("USA") .
 
 MESSAGE oCustomerQuery:ToQueryString(TRUE)
     VIEW-AS ALERT-BOX.
