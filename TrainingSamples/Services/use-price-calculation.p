@@ -11,12 +11,13 @@ MESSAGE 1 VIEW-AS ALERT-BOX.
 
 /* Application Initialization */
 ServiceLoader:LoadFromFile("TrainingSamples/Services/services.xml") .
+ServiceLoader:LoadFromFile("TrainingSamples/Services/services.xml", TRUE) .
 
 MESSAGE 2 VIEW-AS ALERT-BOX.
 
 /* good practice :-) */
-oPriceCalculation = {Consultingwerk/get-service.i 
-        TrainingSamples.Services.IPriceCalculation} . 
+
+oPriceCalculation = {Consultingwerk/get-service.i IPriceCalculation} . 
 
 MESSAGE 3 VIEW-AS ALERT-BOX.
 
