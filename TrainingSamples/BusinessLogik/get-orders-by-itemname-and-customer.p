@@ -31,9 +31,15 @@ oRequest:Queries = "for each eOrder where eOrder.KlantenNo = 81 and eOrder.ItemN
 
 ServiceInterface:FetchData("TrainingSamples.BusinessLogik.Order.OrderBusinessEntity",
                            oRequest, OUTPUT DATASET dsOrder) .
+          
+FIND ITEM WHERE ITEM.ItemName = "Hockey Stick" .          
                            
 FOR EACH eOrder: 
-    DISPL eOrder.KlantenNo eOrder.OrderNum eOrder.OrderStatus eOrder.Salesrep . 
+    DISPL eOrder.KlantenNo eOrder.OrderNum eOrder.OrderStatus eOrder.Salesrep
+            
+           CAN-FIND (OrderLine WHERE OrderLine.OrderNum = eOrder.OrderNum  
+                                 AND OrderLine.ItemNum  = ITEM.ItemNum)
+           . 
 end .                            
                            
 CATCH err AS Progress.Lang.Error :
