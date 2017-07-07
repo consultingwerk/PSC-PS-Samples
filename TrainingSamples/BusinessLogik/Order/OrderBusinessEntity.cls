@@ -162,3 +162,4 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderBusinessEntity
     
 END CLASS.
 
+

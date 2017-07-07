@@ -12,7 +12,7 @@
 
     <import file="../SmartComponentLibrary/Consultingwerk/Studio/ExtractClassAnnotations/extract-class-annotations.xml"/>
 	
-	<target name="ExtractClassAnnotations">
+	<target name="ExtractClassAnnotations">		
 		<extractClassAnnotations directory="."
 		                         fileMask="*BusinessEntity.cls"
 		                         overwriteWriteProtected="true"
@@ -28,7 +28,9 @@
 	
     <!-- For use as an Eclipse ANT builder with the -DbuildFiles={build_files} parameter -->	
     <target name="ExtractClassAnnotationsBuilder">
-        <extractClassAnnotations directory="."
+        <echo>DLC: ${progress.DLC}</echo>
+
+    	<extractClassAnnotations directory="."
                                  fileMask="*BusinessEntity.cls"
                                  overwriteWriteProtected="true"
                                  excludeAnnotations="@Test,@TestIgnore,@BusinessEntityGenerator"

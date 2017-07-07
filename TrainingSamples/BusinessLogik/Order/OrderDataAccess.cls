@@ -141,6 +141,8 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderDataAccess
     ------------------------------------------------------------------------------*/
     METHOD OVERRIDE PROTECTED VOID DefineReadEvents ():
         
+        BUFFER eOrderLine:SET-CALLBACK ("BEFORE-FILL":U, "eOrderLineBeforeFill":U, THIS-OBJECT).
+
     END METHOD.
 
     /*------------------------------------------------------------------------------
@@ -158,6 +160,22 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderDataAccess
         @DetachDataSourcesEnd.
         
     END METHOD.
+
+    /*------------------------------------------------------------------------------
+        Purpose: Callback method for the BEFORE-FILL event of eOrderLine
+        Notes:   Errors thrown from or raised in the FILL call-back methods of the 
+                 DataAccess class (SET-CALLBACK) will stop the Dataset from getting 
+                 filled / filled further. However errors thrown from the call-back 
+                 methods are not thrown from the FILL() method further up into a 
+                 catch block or to the client.  
+                 See http://knowledgebase.progress.com/articles/Article/P188375
+        @param dsOrder The Dataset   
+    ------------------------------------------------------------------------------*/
+    METHOD PUBLIC VOID eOrderLineBeforeFill (DATASET dsOrder):
+    
+        THIS-OBJECT:SuggestDataSourceIndex (BUFFER eOrderLine:HANDLE, "orderline":U) .    
+        
+    END METHOD .
 
     /*------------------------------------------------------------------------------
         Purpose: Detaches the DATA-SOURCE objects to the ProDataset Buffers                                                                      
@@ -257,7 +275,7 @@ CLASS TrainingSamples.BusinessLogik.Order.OrderDataAccess
         @SourceDefaultQueryCaseBlock.
         CASE pcTable:
             WHEN "eOrder":U THEN
-                RETURN SUBSTITUTE ("FOR EACH Order where Order.Salesrep = '&1'":U,
+                RETURN SUBSTITUTE ("FOR EACH Order where Order.Salesrep = '&1' use-index OrderDate":U,
                                    cUserId) . 
             WHEN "eOrderLine":U THEN
                 RETURN "FOR EACH OrderLine":U. 

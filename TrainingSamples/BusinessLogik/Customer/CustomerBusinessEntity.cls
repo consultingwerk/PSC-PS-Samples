@@ -104,6 +104,10 @@ CLASS TrainingSamples.BusinessLogik.Customer.CustomerBusinessEntity
                OR ROW-STATE (eCustomer) = ROW-MODIFIED: // Either use BLOCK-LEVEL above or ON ERROR UNDO, THROW here
             BufferHelper:FindBeforeBuffer (BUFFER eCustomer:HANDLE) .
             
+            
+            Validate:ReadOnly(BUFFER eCustomer:HANDLE, "CustNum", "Field may not be changed") .
+            
+            
             IF eCustomer.Country = "USA" THEN DO:
                 IF eCustomer.State = "" THEN 
                     ASSIGN BUFFER eCustomer:ERROR        = TRUE 

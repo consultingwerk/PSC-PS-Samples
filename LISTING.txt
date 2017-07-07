@@ -1,0 +1,633 @@
+...rBusinessTask.cls                  07/05/2017 17:55:10   PROGRESS(R) Page 1   
+
+{} Line Blk
+-- ---- ---
+      1     /*------------------------------------------------------------------
+      1     ------
+      2         File        : OrderBusinessTask
+      3         Purpose     : 
+      4         Syntax      : 
+      5         Description : 
+      6         Author(s)   : mikef
+      7         Created     : Wed Jul 05 17:08:25 CEST 2017
+      8         Notes       : 
+      9       ------------------------------------------------------------------
+      9     ----*/
+     10     
+     11     BLOCK-LEVEL ON ERROR UNDO, THROW.
+     12     
+     13     USING Consultingwerk.OERA.* FROM PROPATH .
+     14     USING Progress.Lang.*       FROM PROPATH .
+     15     USING TrainingSamples.BusinessLogik.OrderBusinessTask.* FROM PROPATH
+     15     .
+     16     USING Consultingwerk.Util.* FROM PROPATH.
+     17     
+     18     CLASS TrainingSamples.BusinessLogik.OrderBusinessTask.OrderBusinessT
+     18     ask 
+     19         IMPLEMENTS IBusinessService: 
+     20     
+     21         {TrainingSamples/BusinessLogik/Order/dsOrder.i}
+ 1    1     /*******************************************************************
+ 1    1     ***
+ 1    2      * Copyright (C) 2006-2016 by Consultingwerk Ltd. ("CW") -          
+ 1    2       *
+ 1    3      * www.consultingwerk.de and other contributors as listed           
+ 1    3       *
+ 1    4      * below.  All Rights Reserved.                                     
+ 1    4       *
+ 1    5      *                                                                  
+ 1    5       *
+ 1    6      *  Software is distributed on an "AS IS", WITHOUT WARRANTY OF ANY  
+ 1    6       *
+ 1    7      *   KIND, either express or implied.                               
+ 1    7       *
+ 1    8      *                                                                  
+ 1    8       *
+ 1    9      *  Contributors:                                                   
+ 1    9       *
+ 1   10      *                                                                  
+ 1   10       *
+ 1   11      *******************************************************************
+ 1   11     ***/ 
+ 1   12     /*------------------------------------------------------------------
+ 1   12     ------
+ 1   13         File        : dsOrder.i
+ 1   14         Purpose     : Business Entity for Order
+...rBusinessTask.cls                  07/05/2017 17:55:10   PROGRESS(R) Page 2   
+
+{} Line Blk
+-- ---- ---
+ 1   15     
+ 1   16         Syntax      :
+ 1   17     
+ 1   18         Description : 
+ 1   19     
+ 1   20         Author(s)   : Mike Fechner / Consultingwerk Ltd.
+ 1   21         Created     : 04.07.2017 13:46:38
+ 1   22         Notes       :
+ 1   23       ------------------------------------------------------------------
+ 1   23     ----*/
+ 1   24     
+ 1   25     /* ***************************  Definitions  ***********************
+ 1   25     *** */
+ 1   26     
+ 1   27     &SCOPED-DEFINE ACCESS {&ACCESS}
+ 1   28     &SCOPED-DEFINE REFERENCE-ONLY {&REFERENCE-ONLY}
+ 1   29     &SCOPED-DEFINE SUFFIX {&SUFFIX}
+ 1   30     
+ 1   31     &GLOBAL-DEFINE DATASET-NAME dsOrder
+ 1   32     
+ 1   33     { TrainingSamples/BusinessLogik/Order/eOrder.i }
+ 2    1     /*******************************************************************
+ 2    1     ***
+ 2    2      * Copyright (C) 2006-2016 by Consultingwerk Ltd. ("CW") -          
+ 2    2       *
+ 2    3      * www.consultingwerk.de and other contributors as listed           
+ 2    3       *
+ 2    4      * below.  All Rights Reserved.                                     
+ 2    4       *
+ 2    5      *                                                                  
+ 2    5       *
+ 2    6      *  Software is distributed on an "AS IS", WITHOUT WARRANTY OF ANY  
+ 2    6       *
+ 2    7      *   KIND, either express or implied.                               
+ 2    7       *
+ 2    8      *                                                                  
+ 2    8       *
+ 2    9      *  Contributors:                                                   
+ 2    9       *
+ 2   10      *                                                                  
+ 2   10       *
+ 2   11      *******************************************************************
+ 2   11     ***/ 
+ 2   12     /*------------------------------------------------------------------
+ 2   12     ------
+ 2   13         File        : eOrder.i
+ 2   14         Purpose     : 
+ 2   15     
+ 2   16         Syntax      :
+ 2   17     
+ 2   18         Description :  
+...rBusinessTask.cls                  07/05/2017 17:55:10   PROGRESS(R) Page 3   
+
+{} Line Blk
+-- ---- ---
+ 2   19     
+ 2   20         Author(s)   : Mike Fechner / Consultingwerk Ltd.
+ 2   21         Created     : 04.07.2017 16:47:47
+ 2   22         Notes       :
+ 2   23       ------------------------------------------------------------------
+ 2   23     ----*/
+ 2   24     
+ 2   25     /* ***************************  Definitions  ***********************
+ 2   25     *** */
+ 2   26     
+ 2   27     @BusinessEntityGenerator (entityname="TrainingSamples.BusinessLogik.
+ 2   27     Order.OrderBusinessEntity", type="TempTable") .
+ 2   28     @openapi.openedge.entity.primarykey (fields="Ordernum").
+ 2   29     
+ 2   30     DEFINE {&ACCESS} TEMP-TABLE eOrder{&SUFFIX} NO-UNDO {&REFERENCE-ONLY
+ 2   30     } &IF DEFINED (NO-BEFORE) EQ 0 &THEN BEFORE-TABLE eOrderBefore{&SUFF
+ 2   30     IX} &ENDIF
+ 2   31         FIELD Ordernum AS INTEGER FORMAT "zzzzzzzzz9":U INITIAL "0":U LA
+ 2   31     BEL "Order Num":T
+ 2   32         FIELD KlantenNo AS INTEGER FORMAT ">>>>9":U INITIAL "0":U LABEL 
+ 2   32     "Cust Num":T
+ 2   33         FIELD OrderDate AS DATE FORMAT "99/99/99":U INITIAL "today":U LA
+ 2   33     BEL "Ordered":T
+ 2   34         FIELD ShipDate AS DATE FORMAT "99/99/9999":U INITIAL ? LABEL "Sh
+ 2   34     ipped":T
+ 2   35         FIELD PromiseDate AS DATE FORMAT "99/99/99":U INITIAL ? LABEL "P
+ 2   35     romised":T
+ 2   36         FIELD Carrier AS CHARACTER FORMAT "x(25)":U LABEL "Carrier":T
+ 2   37         FIELD Instructions AS CHARACTER FORMAT "x(50)":U LABEL "Instruct
+ 2   37     ions":T
+ 2   38         FIELD PO AS CHARACTER FORMAT "x(20)":U LABEL "PO":T
+ 2   39         FIELD Terms AS CHARACTER FORMAT "x(20)":U INITIAL "Net30":U LABE
+ 2   39     L "Terms":T
+ 2   40         FIELD SalesRep AS CHARACTER FORMAT "x(4)":U LABEL "Sales Rep":T
+ 2   41         FIELD BillToID AS INTEGER FORMAT "zzzzzzzzz9":U INITIAL "0":U LA
+ 2   41     BEL "Bill To ID":T
+ 2   42         FIELD ShipToID AS INTEGER FORMAT "zzzzzzzzz9":U INITIAL "0":U LA
+ 2   42     BEL "Ship To ID":T
+ 2   43         FIELD OrderStatus AS CHARACTER FORMAT "x(20)":U INITIAL "Ordered
+ 2   43     ":U LABEL "Order Status":T
+ 2   44         FIELD WarehouseNum AS INTEGER FORMAT "zzzzzzzzz9":U INITIAL "0":
+ 2   44     U LABEL "Warehouse Num":T
+ 2   45         FIELD Creditcard AS CHARACTER FORMAT "x(20)":U INITIAL "Visa":U 
+ 2   45     LABEL "Credit Card":T
+ 2   46     
+ 2   47         INDEX CustOrder AS UNIQUE KlantenNo ASCENDING Ordernum ASCENDING
+ 2   48         INDEX OrderDate OrderDate ASCENDING
+ 2   49         INDEX OrderNum AS UNIQUE PRIMARY Ordernum ASCENDING
+ 2   50         INDEX OrderStatus OrderStatus ASCENDING
+ 2   51         INDEX SalesRep SalesRep ASCENDING
+ 2   52     
+...rBusinessTask.cls                  07/05/2017 17:55:10   PROGRESS(R) Page 4   
+
+{} Line Blk
+-- ---- ---
+ 2   53         .
+ 2   54     
+ 2   54         
+ 1   33      
+ 1   34     { TrainingSamples/BusinessLogik/Order/eOrderLine.i }
+ 2    1     /*******************************************************************
+ 2    1     ***
+ 2    2      * Copyright (C) 2006-2016 by Consultingwerk Ltd. ("CW") -          
+ 2    2       *
+ 2    3      * www.consultingwerk.de and other contributors as listed           
+ 2    3       *
+ 2    4      * below.  All Rights Reserved.                                     
+ 2    4       *
+ 2    5      *                                                                  
+ 2    5       *
+ 2    6      *  Software is distributed on an "AS IS", WITHOUT WARRANTY OF ANY  
+ 2    6       *
+ 2    7      *   KIND, either express or implied.                               
+ 2    7       *
+ 2    8      *                                                                  
+ 2    8       *
+ 2    9      *  Contributors:                                                   
+ 2    9       *
+ 2   10      *                                                                  
+ 2   10       *
+ 2   11      *******************************************************************
+ 2   11     ***/ 
+ 2   12     /*------------------------------------------------------------------
+ 2   12     ------
+ 2   13         File        : eOrderLine.i
+ 2   14         Purpose     : 
+ 2   15     
+ 2   16         Syntax      :
+ 2   17     
+ 2   18         Description :  
+ 2   19     
+ 2   20         Author(s)   : Mike Fechner / Consultingwerk Ltd.
+ 2   21         Created     : 04.07.2017 13:46:38
+ 2   22         Notes       :
+ 2   23       ------------------------------------------------------------------
+ 2   23     ----*/
+ 2   24     
+ 2   25     /* ***************************  Definitions  ***********************
+ 2   25     *** */
+ 2   26     
+ 2   27     @BusinessEntityGenerator (entityname="TrainingSamples.BusinessLogik.
+ 2   27     Order.OrderBusinessEntity", type="TempTable") .
+ 2   28     @openapi.openedge.entity.primarykey (fields="Ordernum,Linenum").
+ 2   29     
+ 2   30     DEFINE {&ACCESS} TEMP-TABLE eOrderLine{&SUFFIX} NO-UNDO {&REFERENCE-
+ 2   30     ONLY} &IF DEFINED (NO-BEFORE) EQ 0 &THEN BEFORE-TABLE eOrderLineBefo
+...rBusinessTask.cls                  07/05/2017 17:55:10   PROGRESS(R) Page 5   
+
+{} Line Blk
+-- ---- ---
+ 2   30     re{&SUFFIX} &ENDIF
+ 2   31         FIELD Ordernum AS INTEGER FORMAT "zzzzzzzzz9":U INITIAL "0":U LA
+ 2   31     BEL "Order Num":T
+ 2   32         FIELD Linenum AS INTEGER FORMAT ">>9":U INITIAL "0":U LABEL "Lin
+ 2   32     e Num":T
+ 2   33         FIELD Itemnum AS INTEGER FORMAT "zzzzzzzzz9":U INITIAL "0":U LAB
+ 2   33     EL "Item Num":T
+ 2   34         FIELD Price AS DECIMAL FORMAT "->,>>>,>>9.99":U INITIAL "0":U LA
+ 2   34     BEL "Price":T
+ 2   35         FIELD Qty AS INTEGER FORMAT "->>>>9":U INITIAL "0":U LABEL "Qty"
+ 2   35     :T
+ 2   36         FIELD Discount AS INTEGER FORMAT ">>9%":U INITIAL "0":U LABEL "D
+ 2   36     iscount":T
+ 2   37         FIELD ExtendedPrice AS DECIMAL FORMAT "->>>,>>9.99":U INITIAL "0
+ 2   37     ":U LABEL "Extended Price":T
+ 2   38         FIELD OrderLineStatus AS CHARACTER FORMAT "x(20)":U INITIAL "Ord
+ 2   38     ered":U LABEL "Order Line Status":T
+ 2   39     
+ 2   40         INDEX itemnum Itemnum ASCENDING
+ 2   41         INDEX orderline AS UNIQUE PRIMARY Ordernum ASCENDING Linenum ASC
+ 2   41     ENDING
+ 2   42         INDEX OrderLineStatus OrderLineStatus ASCENDING
+ 2   43     
+ 2   44         .
+ 2   45     
+ 2   45         
+ 1   34      
+ 1   35     
+ 1   36     
+ 1   37     @BusinessEntityGenerator (entityname="TrainingSamples.BusinessLogik.
+ 1   37     Order.OrderBusinessEntity", type="Dataset") .
+ 1   38     
+ 1   39     DEFINE {&ACCESS} DATASET dsOrder{&SUFFIX} {&REFERENCE-ONLY} FOR eOrd
+ 1   39     er{&SUFFIX}, eOrderLine{&SUFFIX} 
+ 1   40         DATA-RELATION eOrdereOrderLineRelation FOR eOrder{&SUFFIX}, eOrd
+ 1   40     erLine{&SUFFIX} 
+ 1   41             RELATION-FIELDS (Ordernum,Ordernum)
+ 1   42     
+ 1   43         .    
+     21      
+     22         {TrainingSamples/BusinessLogik/Customer/dsCustomer.i}
+ 1    1     /*******************************************************************
+ 1    1     ***
+ 1    2      * Copyright (C) 2006-2016 by Consultingwerk Ltd. ("CW") -          
+ 1    2       *
+ 1    3      * www.consultingwerk.de and other contributors as listed           
+ 1    3       *
+ 1    4      * below.  All Rights Reserved.                                     
+ 1    4       *
+ 1    5      *                                                                  
+ 1    5       *
+...rBusinessTask.cls                  07/05/2017 17:55:10   PROGRESS(R) Page 6   
+
+{} Line Blk
+-- ---- ---
+ 1    6      *  Software is distributed on an "AS IS", WITHOUT WARRANTY OF ANY  
+ 1    6       *
+ 1    7      *   KIND, either express or implied.                               
+ 1    7       *
+ 1    8      *                                                                  
+ 1    8       *
+ 1    9      *  Contributors:                                                   
+ 1    9       *
+ 1   10      *                                                                  
+ 1   10       *
+ 1   11      *******************************************************************
+ 1   11     ***/ 
+ 1   12     /*------------------------------------------------------------------
+ 1   12     ------
+ 1   13         File        : dsCustomer.i
+ 1   14         Purpose     : Business Entity for Customer
+ 1   15     
+ 1   16         Syntax      :
+ 1   17     
+ 1   18         Description : 
+ 1   19     
+ 1   20         Author(s)   : Mike Fechner / Consultingwerk Ltd.
+ 1   21         Created     : 04.07.2017 11:37:35
+ 1   22         Notes       :
+ 1   23       ------------------------------------------------------------------
+ 1   23     ----*/
+ 1   24     
+ 1   25     /* ***************************  Definitions  ***********************
+ 1   25     *** */
+ 1   26     
+ 1   27     &SCOPED-DEFINE ACCESS {&ACCESS}
+ 1   28     &SCOPED-DEFINE REFERENCE-ONLY {&REFERENCE-ONLY}
+ 1   29     &SCOPED-DEFINE SUFFIX {&SUFFIX}
+ 1   30     
+ 1   31     &GLOBAL-DEFINE DATASET-NAME dsCustomer
+ 1   32     
+ 1   33     { TrainingSamples/BusinessLogik/Customer/eCustomer.i }
+ 2    1     /*******************************************************************
+ 2    1     ***
+ 2    2      * Copyright (C) 2006-2016 by Consultingwerk Ltd. ("CW") -          
+ 2    2       *
+ 2    3      * www.consultingwerk.de and other contributors as listed           
+ 2    3       *
+ 2    4      * below.  All Rights Reserved.                                     
+ 2    4       *
+ 2    5      *                                                                  
+ 2    5       *
+ 2    6      *  Software is distributed on an "AS IS", WITHOUT WARRANTY OF ANY  
+ 2    6       *
+ 2    7      *   KIND, either express or implied.                               
+ 2    7       *
+...rBusinessTask.cls                  07/05/2017 17:55:10   PROGRESS(R) Page 7   
+
+{} Line Blk
+-- ---- ---
+ 2    8      *                                                                  
+ 2    8       *
+ 2    9      *  Contributors:                                                   
+ 2    9       *
+ 2   10      *                                                                  
+ 2   10       *
+ 2   11      *******************************************************************
+ 2   11     ***/ 
+ 2   12     /*------------------------------------------------------------------
+ 2   12     ------
+ 2   13         File        : eCustomer.i
+ 2   14         Purpose     : 
+ 2   15     
+ 2   16         Syntax      :
+ 2   17     
+ 2   18         Description :  
+ 2   19     
+ 2   20         Author(s)   : Mike Fechner / Consultingwerk Ltd.
+ 2   21         Created     : 04.07.2017 10:11:49
+ 2   22         Notes       :
+ 2   23       ------------------------------------------------------------------
+ 2   23     ----*/
+ 2   24     
+ 2   25     /* ***************************  Definitions  ***********************
+ 2   25     *** */
+ 2   26     
+ 2   27     @BusinessEntityGenerator (entityname="TrainingSamples.BusinessLogik.
+ 2   27     Customer.CustomerBusinessEntity", type="TempTable") .
+ 2   28     @openapi.openedge.entity.primarykey (fields="CustNum").
+ 2   29     
+ 2   30     DEFINE {&ACCESS} TEMP-TABLE eCustomer{&SUFFIX} NO-UNDO {&REFERENCE-O
+ 2   30     NLY} &IF DEFINED (NO-BEFORE) EQ 0 &THEN BEFORE-TABLE eCustomerBefore
+ 2   30     {&SUFFIX} &ENDIF
+ 2   31         FIELD CustNum AS INTEGER FORMAT ">>>>9":U INITIAL "0":U LABEL "C
+ 2   31     ust Num":T
+ 2   32         FIELD Country AS CHARACTER FORMAT "x(20)":U INITIAL "USA":U LABE
+ 2   32     L "Country":T
+ 2   33         FIELD Name AS CHARACTER FORMAT "x(30)":U LABEL "Name":T
+ 2   34         FIELD Address AS CHARACTER FORMAT "x(35)":U LABEL "Address":T
+ 2   35         FIELD Address2 AS CHARACTER FORMAT "x(35)":U LABEL "Address2":T
+ 2   36         FIELD City AS CHARACTER FORMAT "x(25)":U LABEL "City":T
+ 2   37         FIELD State AS CHARACTER FORMAT "x(20)":U LABEL "State":T
+ 2   38         FIELD PostalCode AS CHARACTER FORMAT "x(10)":U LABEL "Postal Cod
+ 2   38     e":T
+ 2   39         FIELD Contact AS CHARACTER FORMAT "x(30)":U LABEL "Contact":T
+ 2   40         FIELD Phone AS CHARACTER FORMAT "x(20)":U LABEL "Phone":T
+ 2   41         FIELD SalesRep AS CHARACTER FORMAT "x(4)":U LABEL "Sales Rep":T
+ 2   42         FIELD CreditLimit AS DECIMAL FORMAT "->,>>>,>>9":U INITIAL "1500
+ 2   42     ":U LABEL "Credit Limit":T
+ 2   43         FIELD Balance AS DECIMAL FORMAT "->,>>>,>>9.99":U INITIAL "0":U 
+ 2   43     LABEL "Balance":T
+...rBusinessTask.cls                  07/05/2017 17:55:10   PROGRESS(R) Page 8   
+
+{} Line Blk
+-- ---- ---
+ 2   44         FIELD Terms AS CHARACTER FORMAT "x(20)":U INITIAL "Net30":U LABE
+ 2   44     L "Terms":T
+ 2   45         FIELD Discount AS INTEGER FORMAT ">>9%":U INITIAL "0":U LABEL "D
+ 2   45     iscount":T
+ 2   46         FIELD Comments AS CHARACTER FORMAT "x(80)":U LABEL "Comments":T
+ 2   47         FIELD Fax AS CHARACTER FORMAT "x(20)":U LABEL "Fax":T
+ 2   48         FIELD EmailAddress AS CHARACTER FORMAT "x(50)":U LABEL "Email":T
+ 2   49         FIELD DuePayments AS LOGICAL FORMAT "yes/no":U LABEL "Due Paymen
+ 2   49     ts":T
+ 2   50         FIELD CustomerFlags AS CHARACTER FORMAT "X(8)":U LABEL "Customer
+ 2   50      Flags":T
+ 2   51     
+ 2   52         INDEX Comments AS WORD-INDEX Comments ASCENDING
+ 2   53         INDEX CountryPost Country ASCENDING PostalCode ASCENDING
+ 2   54         INDEX CustNum AS UNIQUE PRIMARY CustNum ASCENDING
+ 2   55         INDEX Name Name ASCENDING
+ 2   56         INDEX SalesRep SalesRep ASCENDING
+ 2   57     
+ 2   58         .
+ 2   59     
+ 2   59         
+ 1   33      
+ 1   34     { TrainingSamples/BusinessLogik/Customer/eSalesrep.i &NO-BEFORE=YES 
+ 1   34     }
+ 2    1     /*******************************************************************
+ 2    1     ***
+ 2    2      * Copyright (C) 2006-2016 by Consultingwerk Ltd. ("CW") -          
+ 2    2       *
+ 2    3      * www.consultingwerk.de and other contributors as listed           
+ 2    3       *
+ 2    4      * below.  All Rights Reserved.                                     
+ 2    4       *
+ 2    5      *                                                                  
+ 2    5       *
+ 2    6      *  Software is distributed on an "AS IS", WITHOUT WARRANTY OF ANY  
+ 2    6       *
+ 2    7      *   KIND, either express or implied.                               
+ 2    7       *
+ 2    8      *                                                                  
+ 2    8       *
+ 2    9      *  Contributors:                                                   
+ 2    9       *
+ 2   10      *                                                                  
+ 2   10       *
+ 2   11      *******************************************************************
+ 2   11     ***/ 
+ 2   12     /*------------------------------------------------------------------
+ 2   12     ------
+ 2   13         File        : eSalesrep.i
+ 2   14         Purpose     : 
+ 2   15     
+...rBusinessTask.cls                  07/05/2017 17:55:10   PROGRESS(R) Page 9   
+
+{} Line Blk
+-- ---- ---
+ 2   16         Syntax      :
+ 2   17     
+ 2   18         Description :  
+ 2   19     
+ 2   20         Author(s)   : Mike Fechner / Consultingwerk Ltd.
+ 2   21         Created     : 04.07.2017 10:11:49
+ 2   22         Notes       :
+ 2   23       ------------------------------------------------------------------
+ 2   23     ----*/
+ 2   24     
+ 2   25     /* ***************************  Definitions  ***********************
+ 2   25     *** */
+ 2   26     
+ 2   27     @BusinessEntityGenerator (entityname="TrainingSamples.BusinessLogik.
+ 2   27     Customer.CustomerBusinessEntity", type="TempTable") .
+ 2   28     @openapi.openedge.entity.primarykey (fields="SalesRep").
+ 2   29     
+ 2   30     DEFINE {&ACCESS} TEMP-TABLE eSalesrep{&SUFFIX} NO-UNDO {&REFERENCE-O
+ 2   30     NLY} &IF DEFINED (NO-BEFORE) EQ 0 &THEN BEFORE-TABLE eSalesrepBefore
+ 2   30     {&SUFFIX} &ENDIF
+ 2   31         FIELD SalesRep AS CHARACTER FORMAT "x(4)":U LABEL "Sales Rep":T
+ 2   32         FIELD RepName AS CHARACTER FORMAT "x(30)":U LABEL "Rep Name":T
+ 2   33         FIELD Region AS CHARACTER FORMAT "x(8)":U LABEL "Region":T
+ 2   34         FIELD MonthQuota_01 AS INTEGER FORMAT "->,>>>,>>9":U INITIAL "0"
+ 2   34     :U LABEL "Month Quota":T
+ 2   35         FIELD MonthQuota_02 AS INTEGER FORMAT "->,>>>,>>9":U INITIAL "0"
+ 2   35     :U LABEL "Month Quota":T
+ 2   36         FIELD MonthQuota_03 AS INTEGER FORMAT "->,>>>,>>9":U INITIAL "0"
+ 2   36     :U LABEL "Month Quota":T
+ 2   37         FIELD SmallImage AS BLOB FORMAT "x(8)":U INITIAL ? LABEL "SmallI
+ 2   37     mage":T
+ 2   38         FIELD EmailAddress AS CHARACTER FORMAT "x(80)":U LABEL "E-Mail":
+ 2   38     T
+ 2   39         FIELD PhoneOffice AS CHARACTER FORMAT "x(40)":U LABEL "Office Ph
+ 2   39     one":T
+ 2   40         FIELD PhonePrivate AS CHARACTER FORMAT "x(40)":U LABEL "Private 
+ 2   40     Phone":T
+ 2   41         FIELD PhoneHandy AS CHARACTER FORMAT "x(40)":U LABEL "Mobile Pho
+ 2   41     ne":T
+ 2   42         FIELD SmallImage1 AS BLOB FORMAT "x(8)":U LABEL "SmallImage":T
+ 2   43         FIELD SmallImage2 AS BLOB FORMAT "x(8)":U LABEL "SmallImage":T
+ 2   44         FIELD AverageQuota AS DECIMAL FORMAT "->>,>>9.99":U LABEL "Avera
+ 2   44     ge Quota":T
+ 2   45     
+ 2   46         INDEX SalesRep AS UNIQUE PRIMARY SalesRep ASCENDING
+ 2   47     
+ 2   48         .
+ 2   49     
+ 2   49         
+ 1   34      
+ 1   35     
+...rBusinessTask.cls                  07/05/2017 17:55:10   PROGRESS(R) Page 10  
+
+{} Line Blk
+-- ---- ---
+ 1   36     
+ 1   37     @BusinessEntityGenerator (entityname="TrainingSamples.BusinessLogik.
+ 1   37     Customer.CustomerBusinessEntity", type="Dataset") .
+ 1   38     
+ 1   39     DEFINE {&ACCESS} DATASET dsCustomer{&SUFFIX} {&REFERENCE-ONLY} FOR e
+ 1   39     Customer{&SUFFIX}, eSalesrep{&SUFFIX} 
+ 1   40         DATA-RELATION eCustomereSalesrepRelation FOR eCustomer{&SUFFIX},
+ 1   40      eSalesrep{&SUFFIX} 
+ 1   41             RELATION-FIELDS (SalesRep,SalesRep)
+ 1   42     
+ 1   43         .    
+     22      
+     23     
+     24         /*--------------------------------------------------------------
+     24     ----------------
+     25            Purpose:
+     26            Notes:
+     27         ----------------------------------------------------------------
+     27     --------------*/
+     28         METHOD PUBLIC VOID CancelOrder (INPUT-OUTPUT DATASET dsOrder,
+     29                                         INPUT-OUTPUT DATASET dsCustomer,
+     30                                         poParameter AS CancelOrderParame
+     30     ter):
+     31             
+     32             DEFINE VARIABLE deTotalOrderValue AS DECIMAL NO-UNDO.
+     33             
+     34             DEFINE VARIABLE oRequest AS IFetchDataRequest NO-UNDO . 
+     35             
+     36             oRequest = NEW FetchDataRequest ("eOrder,eOrderLine", 
+     37                                              SUBSTITUTE ("for each eOrde
+     37     r where eOrder.OrderNum = &1",
+     38                                                          QUOTER (poParam
+     38     eter:OrderNumber))) .
+     39             
+     40             ServiceInterface:FetchData ("TrainingSamples.BusinessLogik.O
+     40     rder.OrderBusinessEntity", 
+     41                                         oRequest, OUTPUT DATASET dsOrder
+     41     ) .                           
+     42                                                          
+     43             FIND FIRST eOrder . /* why not just fail, when not available
+     43     ? */                                                     
+     44             
+     45             oRequest = NEW FetchDataRequest ("eCustomer", 
+     46                                              SUBSTITUTE ("for each eCust
+     46     omer where eCustomer.CustNum = &1",
+     47                                                          QUOTER (eOrder.
+     47     KlantenNo))) .
+     48         
+     49     /* Disabled validation, to allow repeated usage ....  
+     50           IF eOrder.OrderStatus <> "Ordered" THEN 
+     51                 UNDO, THROW NEW AppError ("Cannot cancel this order beca
+...rBusinessTask.cls                  07/05/2017 17:55:10   PROGRESS(R) Page 11  
+
+{} Line Blk
+-- ---- ---
+     51     use of it's order status.", 0) .  */
+     52                 
+     53             DatasetHelper:SetTrackingChanges(DATASET dsOrder:HANDLE, TRU
+     53     E) .  
+     54         
+     55             ASSIGN eOrder.OrderStatus = "Cancelled" 
+     56                    eOrder.Instructions = "Cancelled because of: " + poPa
+     56     rameter:CancelationReason . 
+     57     
+     58             FIND order WHERE order.ordernum = poParameter:OrderNumber NO
+     58     -LOCK . 
+     59             MESSAGE "before" order.orderstatus 
+     60                 VIEW-AS ALERT-BOX.   
+     61          
+     62             ServiceInterface:SaveChanges("TrainingSamples.BusinessLogik.
+     62     Order.OrderBusinessEntity",
+     63                                          INPUT-OUTPUT DATASET dsOrder) .
+     63       
+     64         
+     65             FIND order WHERE order.ordernum = poParameter:OrderNumber NO
+     65     -LOCK . 
+     66             MESSAGE "after" order.orderstatus 
+     67                 VIEW-AS ALERT-BOX.
+     68                     
+     69             DatasetHelper:ThrowDatasetErrors(DATASET dsOrder:HANDLE) .
+     70                     
+     71   1         FOR EACH eOrderLine:
+     72                 ASSIGN deTotalOrderValue = deTotalOrderValue + eOrderLin
+     72   1 e.ExtendedPrice .
+     73             END.
+     74             
+     75             MESSAGE deTotalOrderValue
+     76                 VIEW-AS ALERT-BOX.
+     77     
+     78             FIND FIRST eOrder .
+     79     
+     80             ServiceInterface:FetchData ("TrainingSamples.BusinessLogik.C
+     80     ustomer.CustomerBusinessEntity", 
+     81                                         oRequest, OUTPUT DATASET dsCusto
+     81     mer) .                           
+     82             
+     83             FIND FIRST eCustomer . 
+     84             
+     85             DatasetHelper:SetTrackingChanges(DATASET dsCustomer:HANDLE, 
+     85     TRUE) .  
+     86     
+     87             ASSIGN eCustomer.Balance = eCustomer.Balance - deTotalOrderV
+     87     alue .
+     88     
+     89             ServiceInterface:SaveChanges("TrainingSamples.BusinessLogik.
+     89     Customer.CustomerBusinessEntity",
+...rBusinessTask.cls                  07/05/2017 17:55:10   PROGRESS(R) Page 12  
+
+{} Line Blk
+-- ---- ---
+     90                                          INPUT-OUTPUT DATASET dsCustomer
+     90     ) .  
+     91     
+     92             DatasetHelper:ThrowDatasetErrors(DATASET dsCustomer:HANDLE) 
+     92     .
+     93     
+     94         END METHOD.
+     95     
+     96     END CLASS.
+...rBusinessTask.cls                  07/05/2017 17:55:10   PROGRESS(R) Page 13  
+
+     File Name       Line Blk. Type   Tran            Blk. Label            
+-------------------- ---- ----------- ---- --------------------------------
+...rBusinessTask.cls   28 Method      No   Method CancelOrder               
+...rBusinessTask.cls   71 For         No                                    
+...rBusinessTask.cls   96 Constructor No   Constructor OrderBusinessTask    
+...rBusinessTask.cls    0 Class       No                                    
+    Buffers: sports2000.Order
+             eSalesrep
+             eCustomer
+             eOrderLine
+             eOrder
+
+

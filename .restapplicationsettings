@@ -10,7 +10,7 @@
     "SmtpSenderName":"no-reply@consultingwerk.de",
 
     "RestServiceName": "web",
-    "RestServiceAddress": "\/Resource",
+    "RestServiceAddress": "\/web\/Resource",
     "CountFunctionJsonCatalogType": "count",
     
     "_RestServiceName": "SmartJsdoBackendService",
@@ -22,8 +22,8 @@
     "AnnotationCacheMaxAge": "15",
     "BusinessEntityDescriptorCacheMaxAge": "15",    
 
-    "Web2MenuGuids": "c8f0d5f7-0bbb-0a82-0314-747d2c383b8a,d5f16ac1-54ae-52b7-e211-391384a9e03a,a0300c10-e163-2e84-1714-e709ccc6da44",
-    "Web2MenuLabels": "SmartComponentsWeb2 Demo,SmartFramework,Web2 Test",
+    "Web2MenuGuids": "c8f0d5f7-0bbb-0a82-0314-747d2c383b8a,d5f16ac1-54ae-52b7-e211-391384a9e03a,a0300c10-e163-2e84-1714-e709ccc6da44,cb53ae87-9c55-8798-2914-ee2a7085e786",
+    "Web2MenuLabels": "SmartComponentsWeb2 Demo,SmartFramework,Web2 Test,Web2 Training",
     "WebLocalizationScope": "webui",
 
     "performMenuStructureSecurityCheck": "true",

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<ttSmartBusinessEntityLookup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ttSmartBusinessEntityLookupRow>
+    <AdapterType/>
+    <AppServerPartition/>
+    <LookupBrowserFields>CustNum,Name,City,Country</LookupBrowserFields>
+    <LookupControls/>
+    <LookupDialogClassName/>
+    <LookupDialogFilterFields>Name,Country,City</LookupDialogFilterFields>
+    <LookupDialogFilterOperators>BEGINSMATCHES,EQ,BEGINSMATCHES</LookupDialogFilterOperators>
+    <LookupDialogQuerySort/>
+    <LookupDialogQueryString/>
+    <LookupDialogTitle>Lookup</LookupDialogTitle>
+    <LookupEntityName>TrainingSamples.BusinessLogik.Customer.CustomerBusinessEntity</LookupEntityName>
+    <LookupEntityTable>eCustomer</LookupEntityTable>
+    <LookupEntityView/>
+    <LookupFields/>
+    <LookupKeyField>CustNum</LookupKeyField>
+    <LookupKeyValueColumn/>
+    <LookupQuerySort/>
+    <LookupQueryString>FOR EACH eCustomer WHERE eCustomer.CustNum EQ &quot;&amp;1&quot;</LookupQueryString>
+    <LookupTimerDelay>750</LookupTimerDelay>
+  </ttSmartBusinessEntityLookupRow>
+</ttSmartBusinessEntityLookup>
