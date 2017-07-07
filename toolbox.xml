@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ToolBoxConfig>
+  <ControlGroup Text="Consultingwerk Support" Remove="True">
+    <Control Text="ApplicationIdle" Type="Consultingwerk.Support.Components.ApplicationIdle" Assembly="Consultingwerk.Support, Version=2.2.0.21852, Culture=neutral, PublicKeyToken=10603cb31df311b3" />
+  </ControlGroup>
+  <ControlGroup Text="Crainiate ERM" Remove="True">
+    <Control Text="Diagram" Type="Crainiate.ERM4.Diagram" Assembly="Crainiate.ERM4, Version=4.1.2665.32214, Culture=neutral, PublicKeyToken=df8e50c7fad67e61" />
+    <Control Text="Flowchart" Type="Crainiate.ERM4.Flowcharting.Flowchart" Assembly="Crainiate.ERM4, Version=4.1.2665.32214, Culture=neutral, PublicKeyToken=df8e50c7fad67e61" />
+    <Control Text="Model" Type="Crainiate.ERM4.Model" Assembly="Crainiate.ERM4, Version=4.1.2665.32214, Culture=neutral, PublicKeyToken=df8e50c7fad67e61" />
+    <Control Text="Overview" Type="Crainiate.ERM4.Navigation.Overview" Assembly="Crainiate.ERM4, Version=4.1.2665.32214, Culture=neutral, PublicKeyToken=df8e50c7fad67e61" />
+    <Control Text="Palette" Type="Crainiate.ERM4.Editing.Palette" Assembly="Crainiate.ERM4, Version=4.1.2665.32214, Culture=neutral, PublicKeyToken=df8e50c7fad67e61" />
+    <Control Text="Ruler" Type="Crainiate.ERM4.Editing.Ruler" Assembly="Crainiate.ERM4, Version=4.1.2665.32214, Culture=neutral, PublicKeyToken=df8e50c7fad67e61" />
+  </ControlGroup>
+  <ControlGroup Text="Microsoft Controls" Remove="False">
+    <Control Text="Button" Type="System.Windows.Forms.Button" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="CheckBox" Type="System.Windows.Forms.CheckBox" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="CheckedListBox" Type="System.Windows.Forms.CheckedListBox" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="ColorDialog" Type="System.Windows.Forms.ColorDialog" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="ComboBox" Type="System.Windows.Forms.ComboBox" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="ContextMenuStrip" Type="System.Windows.Forms.ContextMenuStrip" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="DataGridView" Type="System.Windows.Forms.DataGridView" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="DateTimePicker" Type="System.Windows.Forms.DateTimePicker" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="DirectoryEntry" Type="System.DirectoryServices.DirectoryEntry" Assembly="System.DirectoryServices, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Control Text="DirectorySearcher" Type="System.DirectoryServices.DirectorySearcher" Assembly="System.DirectoryServices, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Control Text="ErrorProvider" Type="System.Windows.Forms.ErrorProvider" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="EventLog" Type="System.Diagnostics.EventLog" Assembly="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="FileSystemWatcher" Type="System.IO.FileSystemWatcher" Assembly="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="FlowLayoutPanel" Type="System.Windows.Forms.FlowLayoutPanel" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="FolderBrowserDialog" Type="System.Windows.Forms.FolderBrowserDialog" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="FontDialog" Type="System.Windows.Forms.FontDialog" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="GroupBox" Type="System.Windows.Forms.GroupBox" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="HelpProvider" Type="System.Windows.Forms.HelpProvider" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="ImageList" Type="System.Windows.Forms.ImageList" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="Label" Type="System.Windows.Forms.Label" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="LinkLabel" Type="System.Windows.Forms.LinkLabel" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="ListBox" Type="System.Windows.Forms.ListBox" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="ListView" Type="System.Windows.Forms.ListView" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="MaskedTextBox" Type="System.Windows.Forms.MaskedTextBox" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="MenuStrip" Type="System.Windows.Forms.MenuStrip" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="MonthCalendar" Type="System.Windows.Forms.MonthCalendar" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="NumericUpDown" Type="System.Windows.Forms.NumericUpDown" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="OpenFileDialog" Type="System.Windows.Forms.OpenFileDialog" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="PageSetupDialog" Type="System.Windows.Forms.PageSetupDialog" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="Panel" Type="System.Windows.Forms.Panel" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="PerformanceCounter" Type="System.Diagnostics.PerformanceCounter" Assembly="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="PictureBox" Type="System.Windows.Forms.PictureBox" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="PrintDialog" Type="System.Windows.Forms.PrintDialog" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="PrintDocument" Type="System.Drawing.Printing.PrintDocument" Assembly="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Control Text="PrintPreviewControl" Type="System.Windows.Forms.PrintPreviewControl" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="PrintPreviewDialog" Type="System.Windows.Forms.PrintPreviewDialog" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="Process" Type=" System.Diagnostics.Process" Assembly="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="ProgressBar" Type="System.Windows.Forms.ProgressBar" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="PropertyGrid" Type="System.Windows.Forms.PropertyGrid" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="RadioButton" Type="System.Windows.Forms.RadioButton" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="RichTextBox" Type="System.Windows.Forms.RichTextBox" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="SaveFileDialog" Type="System.Windows.Forms.SaveFileDialog" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="SerialPort" Type="System.IO.Ports.SerialPort" Assembly="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="ServiceController" Type="System.ServiceProcess.ServiceController" Assembly="System.ServiceProcess, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Control Text="SplitContainer" Type="System.Windows.Forms.SplitContainer" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="Splitter" Type="System.Windows.Forms.Splitter" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="StatusStrip" Type="System.Windows.Forms.StatusStrip" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="TabControl" Type="System.Windows.Forms.TabControl" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="TableLayoutPanel" Type="System.Windows.Forms.TableLayoutPanel" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="TextBox" Type="System.Windows.Forms.TextBox" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="Timer" Type="System.Windows.Forms.Timer" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="ToolStrip" Type="System.Windows.Forms.ToolStrip" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="ToolStripContainer" Type="System.Windows.Forms.ToolStripContainer" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="ToolTip" Type="System.Windows.Forms.ToolTip" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="TreeView" Type="System.Windows.Forms.TreeView" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Control Text="WebBrowser" Type="System.Windows.Forms.WebBrowser" Assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  </ControlGroup>
+  <ControlGroup Text="OpenEdge Controls" Remove="True">
+    <Control Text="BindingSource" Type="Progress.Data.BindingSource" Assembly="Progress.NetUI, Version=10.2.2.1375, Culture=neutral, PublicKeyToken=null" />
+  </ControlGroup>
+  <ControlGroup Text="OpenEdge Ultra Controls" Remove="False">
+    <Control Text="AnimationControl" Type="Infragistics.Win.Misc.CommonControls.AnimationControl" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="InboxControlStyler" Type="Infragistics.Win.AppStyling.Runtime.InboxControlStyler" Assembly="Infragistics4.Win.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraActivityIndicator" Type="Infragistics.Win.UltraActivityIndicator.UltraActivityIndicator" Assembly="Infragistics4.Win.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraButton" Type="Infragistics.Win.Misc.UltraButton" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraCalcManager" Type="Infragistics.Win.UltraWinCalcManager.UltraCalcManager" Assembly="Infragistics4.Win.UltraWinCalcManager.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraCalculator" Type="Infragistics.Win.UltraWinEditors.UltraWinCalc.UltraCalculator" Assembly="Infragistics4.Win.UltraWinEditors.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraCalculatorDropDown" Type="Infragistics.Win.UltraWinEditors.UltraWinCalc.UltraCalculatorDropDown" Assembly="Infragistics4.Win.UltraWinEditors.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraCalendarCombo" Type="Infragistics.Win.UltraWinSchedule.UltraCalendarCombo" Assembly="Infragistics4.Win.UltraWinSchedule.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraCalendarInfo" Type="Infragistics.Win.UltraWinSchedule.UltraCalendarInfo" Assembly="Infragistics4.Win.UltraWinSchedule.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraCalendarLook" Type="Infragistics.Win.UltraWinSchedule.UltraCalendarLook" Assembly="Infragistics4.Win.UltraWinSchedule.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraChart" Type="Infragistics.Win.UltraWinChart.UltraChart" Assembly="Infragistics4.Win.UltraWinChart.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraCheckEditor" Type="Infragistics.Win.UltraWinEditors.UltraCheckEditor" Assembly="Infragistics4.Win.UltraWinEditors.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraColorPicker" Type="Infragistics.Win.UltraWinEditors.UltraColorPicker" Assembly="Infragistics4.Win.UltraWinEditors.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraCombo" Type="Infragistics.Win.UltraWinGrid.UltraCombo" Assembly="Infragistics4.Win.UltraWinGrid.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraComboEditor" Type="Infragistics.Win.UltraWinEditors.UltraComboEditor" Assembly="Infragistics4.Win.UltraWinEditors.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraControlContainerEditor" Type="Infragistics.Win.UltraWinEditors.UltraControlContainerEditor" Assembly="Infragistics4.Win.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraCurrencyEditor" Type="Infragistics.Win.UltraWinEditors.UltraCurrencyEditor" Assembly="Infragistics4.Win.UltraWinEditors.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraDataSource" Type="Infragistics.Win.UltraWinDataSource.UltraDataSource" Assembly="Infragistics4.Win.UltraWinDataSource.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraDateTimeEditor" Type="Infragistics.Win.UltraWinEditors.UltraDateTimeEditor" Assembly="Infragistics4.Win.UltraWinEditors.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraDayView" Type="Infragistics.Win.UltraWinSchedule.UltraDayView" Assembly="Infragistics4.Win.UltraWinSchedule.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraDesktopAlert" Type="Infragistics.Win.Misc.UltraDesktopAlert" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraDockManager" Type="Infragistics.Win.UltraWinDock.UltraDockManager" Assembly="Infragistics4.Win.UltraWinDock.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraDropDown" Type="Infragistics.Win.UltraWinGrid.UltraDropDown" Assembly="Infragistics4.Win.UltraWinGrid.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraDropDownButton" Type="Infragistics.Win.Misc.UltraDropDownButton" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraExpandableGroupBox" Type="Infragistics.Win.Misc.UltraExpandableGroupBox" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraExplorerBar" Type="Infragistics.Win.UltraWinExplorerBar.UltraExplorerBar" Assembly="Infragistics4.Win.UltraWinExplorerBar.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraFlowLayoutManager" Type="Infragistics.Win.Misc.UltraFlowLayoutManager" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraFontNameEditor" Type="Infragistics.Win.UltraWinEditors.UltraFontNameEditor" Assembly="Infragistics4.Win.UltraWinEditors.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraFormattedLinkLabel" Type="Infragistics.Win.FormattedLinkLabel.UltraFormattedLinkLabel" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraFormattedTextEditor" Type="Infragistics.Win.FormattedLinkLabel.UltraFormattedTextEditor" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraFormattedTextWordWriter" Type="Infragistics.Win.UltraWinFormattedText.WordWriter.UltraFormattedTextWordWriter" Assembly="Infragistics4.Win.UltraWinFormattedText.WordWriter.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraFormManager" Type="Infragistics.Win.UltraWinForm.UltraFormManager" Assembly="Infragistics4.Win.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraGanttView" Type="Infragistics.Win.UltraWinGanttView.UltraGanttView" Assembly="Infragistics4.Win.UltraWinGanttView.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraGanttViewPrintDocument" Type="Infragistics.Win.UltraWinGanttView.UltraGanttViewPrintDocument" Assembly="Infragistics4.Win.UltraWinGanttView.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraGauge" Type="Infragistics.Win.UltraWinGauge.UltraGauge" Assembly="Infragistics4.Win.UltraWinGauge.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraGrid" Type="Infragistics.Win.UltraWinGrid.UltraGrid" Assembly="Infragistics4.Win.UltraWinGrid.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraGridBagLayoutManager" Type="Infragistics.Win.Misc.UltraGridBagLayoutManager" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraGridBagLayoutPanel" Type="Infragistics.Win.Misc.UltraGridBagLayoutPanel" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraGridCellProxy" Type="Infragistics.Win.UltraWinGrid.UltraGridCellProxy" Assembly="Infragistics4.Win.UltraWinGrid.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraGridColumnChooser" Type="Infragistics.Win.UltraWinGrid.UltraGridColumnChooser" Assembly="Infragistics4.Win.UltraWinGrid.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraGridDocumentExporter" Type="Infragistics.Win.UltraWinGrid.DocumentExport.UltraGridDocumentExporter" Assembly="Infragistics4.Win.UltraWinGrid.DocumentExport.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraGridExcelExporter" Type="Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter" Assembly="Infragistics4.Win.UltraWinGrid.ExcelExport.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraGridPrintDocument" Type="Infragistics.Win.UltraWinGrid.UltraGridPrintDocument" Assembly="Infragistics4.Win.UltraWinGrid.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraGridRowEditTemplate" Type="Infragistics.Win.UltraWinGrid.UltraGridRowEditTemplate" Assembly="Infragistics4.Win.UltraWinGrid.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraGridWordWriter" Type="Infragistics.Win.UltraWinGrid.WordWriter.UltraGridWordWriter" Assembly="Infragistics4.Win.UltraWinGrid.WordWriter.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraGroupBox" Type="Infragistics.Win.Misc.UltraGroupBox" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraInkProvider" Type="Infragistics.Win.Ink.UltraInkProvider" Assembly="Infragistics4.Win.UltraWinInkProvider.Ink17.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraLabel" Type="Infragistics.Win.Misc.UltraLabel" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraListBar" Type="Infragistics.Win.UltraWinListBar.UltraListBar" Assembly="Infragistics4.Win.UltraWinListBar.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraListView" Type="Infragistics.Win.UltraWinListView.UltraListView" Assembly="Infragistics4.Win.UltraWinListView.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraMaskedEdit" Type="Infragistics.Win.UltraWinMaskedEdit.UltraMaskedEdit" Assembly="Infragistics4.Win.UltraWinMaskedEdit.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraMessageBoxManager" Type="Infragistics.Win.UltraMessageBox.UltraMessageBoxManager" Assembly="Infragistics4.Win.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraMonthViewMulti" Type="Infragistics.Win.UltraWinSchedule.UltraMonthViewMulti" Assembly="Infragistics4.Win.UltraWinSchedule.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraMonthViewSingle" Type="Infragistics.Win.UltraWinSchedule.UltraMonthViewSingle" Assembly="Infragistics4.Win.UltraWinSchedule.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraNavigationBar" Type="Infragistics.Win.Misc.UltraNavigationBar" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraNumericEditor" Type="Infragistics.Win.UltraWinEditors.UltraNumericEditor" Assembly="Infragistics4.Win.UltraWinEditors.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraOptionSet" Type="Infragistics.Win.UltraWinEditors.UltraOptionSet" Assembly="Infragistics4.Win.UltraWinEditors.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraPanel" Type="Infragistics.Win.Misc.UltraPanel" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraPictureBox" Type="Infragistics.Win.UltraWinEditors.UltraPictureBox" Assembly="Infragistics4.Win.UltraWinEditors.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraPopupControlContainer" Type="Infragistics.Win.Misc.UltraPopupControlContainer" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraPrintPreviewControl" Type="Infragistics.Win.Printing.UltraPrintPreviewControl" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraPrintPreviewDialog" Type="Infragistics.Win.Printing.UltraPrintPreviewDialog" Assembly="Infragistics4.Win.UltraWinPrintPreviewDialog.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraPrintPreviewThumbnail" Type="Infragistics.Win.Printing.UltraPrintPreviewThumbnail" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraProgressBar" Type="Infragistics.Win.UltraWinProgressBar.UltraProgressBar" Assembly="Infragistics4.Win.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraRibbonCustomizationProvider" Type="Infragistics.Win.SupportDialogs.RibbonCustomizationProvider.UltraRibbonCustomizationProvider" Assembly="Infragistics4.Win.SupportDialogs.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraSchedulePrintDocument" Type="Infragistics.Win.UltraWinSchedule.UltraSchedulePrintDocument" Assembly="Infragistics4.Win.UltraWinSchedule.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraScrollBar" Type="Infragistics.Win.UltraWinScrollBar.UltraScrollBar" Assembly="Infragistics4.Win.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraSpellChecker" Type="Infragistics.Win.UltraWinSpellChecker.UltraSpellChecker" Assembly="Infragistics4.Win.UltraWinSpellChecker.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraSplitter" Type="Infragistics.Win.Misc.UltraSplitter" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraStatusBar" Type="Infragistics.Win.UltraWinStatusBar.UltraStatusBar" Assembly="Infragistics4.Win.UltraWinStatusBar.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraTabbedMdiManager" Type="Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager" Assembly="Infragistics4.Win.UltraWinTabbedMdi.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraTabControl" Type="Infragistics.Win.UltraWinTabControl.UltraTabControl" Assembly="Infragistics4.Win.UltraWinTabControl.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraTabStripControl" Type="Infragistics.Win.UltraWinTabControl.UltraTabStripControl" Assembly="Infragistics4.Win.UltraWinTabControl.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraTextEditor" Type="Infragistics.Win.UltraWinEditors.UltraTextEditor" Assembly="Infragistics4.Win.UltraWinEditors.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraTilePanel" Type="Infragistics.Win.Misc.UltraTilePanel" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraTimelineView" Type="Infragistics.Win.UltraWinSchedule.UltraTimelineView" Assembly="Infragistics4.Win.UltraWinSchedule.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraTimeSpanEditor" Type="Infragistics.Win.UltraWinEditors.UltraTimeSpanEditor" Assembly="Infragistics4.Win.UltraWinEditors.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraTimeZoneEditor" Type="Infragistics.Win.UltraWinEditors.UltraTimeZoneEditor" Assembly="Infragistics4.Win.UltraWinEditors.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraToolbarsManager" Type="Infragistics.Win.UltraWinToolbars.UltraToolbarsManager" Assembly="Infragistics4.Win.UltraWinToolbars.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraToolTipManager" Type="Infragistics.Win.UltraWinToolTip.UltraToolTipManager" Assembly="Infragistics4.Win.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraTouchProvider" Type="Infragistics.Win.Touch.UltraTouchProvider" Assembly="Infragistics4.Win.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraTrackBar" Type="Infragistics.Win.UltraWinEditors.UltraTrackBar" Assembly="Infragistics4.Win.UltraWinEditors.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraTree" Type="Infragistics.Win.UltraWinTree.UltraTree" Assembly="Infragistics4.Win.UltraWinTree.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraValidator" Type="Infragistics.Win.Misc.UltraValidator" Assembly="Infragistics4.Win.Misc.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Control Text="UltraWeekView" Type="Infragistics.Win.UltraWinSchedule.UltraWeekView" Assembly="Infragistics4.Win.UltraWinSchedule.v16.2, Version=16.2.20162.2040, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+  </ControlGroup>
+  <ControlGroup Text="SmartComponents4.NET" Remove="True">
+    <Control Text="SmartBindingSource" Type="Consultingwerk.SmartComponents.Implementation.SmartBindingSource" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartBusinessEntityAdapter" Type="Consultingwerk.SmartComponents.Implementation.SmartBusinessEntityAdapter" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartBusinessEntityBindingSource" Type="Consultingwerk.SmartComponents.Implementation.SmartBusinessEntityBindingSource" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartBusinessEntityLookup" Type="Consultingwerk.SmartComponents.Implementation.SmartBusinessEntityLookup" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartComboEditor" Type="Consultingwerk.SmartComponents.Implementation.SmartComboEditor" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartDataBrowser" Type="Consultingwerk.SmartComponents.Implementation.SmartDataBrowser" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartDataCombo" Type="Consultingwerk.SmartComponents.Implementation.SmartDataCombo" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartDataObjectAdapter" Type="Consultingwerk.SmartComponents.Implementation.SmartDataObjectAdapter" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartDataObjectBindingSource" Type="Consultingwerk.SmartComponents.Implementation.SmartDataObjectBindingSource" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartDataObjectLookup" Type="Consultingwerk.SmartComponents.Implementation.SmartDataObjectLookup" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartDatasetChildAdapter" Type="Consultingwerk.SmartComponents.Implementation.SmartDatasetChildAdapter" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartDynamicViewer" Type="Consultingwerk.SmartComponents.Implementation.SmartDynamicViewer" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartGenericLookup" Type="Consultingwerk.SmartComponents.Implementation.SmartGenericLookup" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartNavigationPanel" Type="Consultingwerk.SmartComponents.Implementation.SmartNavigationPanel" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartPanelController" Type="Consultingwerk.SmartComponents.Implementation.SmartPanelController" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartTempTableAdapter" Type="Consultingwerk.SmartComponents.Implementation.SmartTempTableAdapter" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartToolbarController" Type="Consultingwerk.SmartComponents.Implementation.SmartToolbarController" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+    <Control Text="SmartUpdatableBrowser" Type="Consultingwerk.SmartComponents.Implementation.SmartUpdatableBrowser" Assembly="Consultingwerk.SmartComponents.Implementation" ABLControl="True" />
+  </ControlGroup>
+</ToolBoxConfig>
